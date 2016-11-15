@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h4>店务管理</h4>
+  <div class="pull-right">
+      <div class="pull-right">
+      <a href uiSref="shop-outline" class="btn btn-info btn-circle"><i class="fa fa-home"></i></a>
+      <a href uiSref="shop-stores" class="btn btn-default btn-circle"><i class="fa fa-building"></i></a>
+      <a href uiSref="shop-employees" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
+      <a href uiSref="shop-services" class="btn btn-default btn-circle"><i class="fa fa-bed"></i></a>
+      <a href uiSref="shop-customer" class="btn btn-default btn-circle"><i class="fa fa-female"></i></a>
+      <a href uiSref="shop-records" class="btn btn-default btn-circle"><i class="fa fa-archive"></i></a>
+      <a href uiSref="shop-records" class="btn btn-default btn-circle"><i class="fa fa-id-card"></i></a>
+  </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-12">
+    <div class="thumbnail">
+      <img src="{{shop.brand}}" alt="">
+      <div class="caption">
+        <h4>{{shop.name}}</h4>
+        <p>{{shop.description | excerpt}}</p>
+        <p class="text-right">
+          <button class="btn btn-primary" role="button" [disabled]="true" *ngIf="shop.verificationInd==='N'">
+            审核中..
+          </button>
+          <button uiSref="shop.edit" class="btn btn-default btn-circle-sm" title="修改" *ngIf="shop.verificationInd==='Y'">
+            <i class="fa fa-pencil"></i>
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

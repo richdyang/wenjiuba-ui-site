@@ -1,0 +1,90 @@
+<div class="col-sm-12">
+  <a uiSref="questions.new">ssss</a>
+  <div class="panel">
+    <div class="panel-heading">
+      <h4>{{question.title}}</h4>
+      <img [src]="question.creator?.avatar" class="img-circle" width="15" height="15">
+      <span style="vertical-align: middle">
+          <a href="/profile">{{question.creator?.displayName}}</a>
+          提问于 {{question.createdAt | date:'yyyy-MM-dd HH:mm:ss'}} ·
+          <a href="/questions/tags/{{tag.id}}" class="tag" *ngFor="let tag of question.tags">
+              {{tag.name}}
+          </a>
+      </span>
+    </div>
+    <div class="panel-body" >
+
+      <p [innerHtml]="question.content">
+      </p>
+    </div>
+  </div>
+  <!--<a uiSref=".setting">open setting in subpeek</a>-->
+  <div  class="seperator">
+    <h5>共{{question.answers?.length}}个回答</h5>
+
+    <p class="alert alert-warning" *ngIf="myanswer">
+      <span class="glyphicon glyphicon-info-sign"></span> 您已经回答过此问题，请修改 已有回答
+    </p>
+
+    <div class="panel panel-default" *ngIf="!myanswer">
+      <div class="panel-heading">
+        <img src="{{session.currentUser?.avatar}}" class="img-circle" width="15" height="15">
+        {{session.currentUser?.displayName}}
+      </div>
+      <answer-form [question]="question" (saved)="question.answers.unshift($event);myanswer=$event"></answer-form>
+    </div>
+
+  </div>
+
+  <div class="panel">
+      <section *ngFor="let answer of question.answers; let i = index" id="answer-{{answer.id}}" [ngClass]="{'bg-info': myanswer && answer.id==myanswer.id}" #section
+      style="padding: 2px 15px; border-bottom: solid #e5e5e5 1px">
+
+      <!-- Normal show answer -->
+      <!--<table class="table table-noborder " *ngIf="!section.showEditForm">-->
+      <dl *ngIf="!section.showEditForm" >
+        <dd style="color: #999999; font-size: 0.9em">
+          <img src="{{answer.creator?.avatar}}" class="img-circle" width="15" height="15">
+                <span style="vertical-align: middle">
+                    <a href="/profile">{{answer.creator?.displayName}}</a>
+                    回答于 {{answer.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}
+                </span>
+        </dd>
+        <dd [innerHTML]="answer.content" style="padding-top: 15px; padding-bottom: 15px">
+        </dd>
+        <dd style="font-size: .9em">
+          <answer-vote [answer]="answer" [question]="question" *ngIf="canVote(answer)"></answer-vote>
+          <!--*ngIf="answer.can_edit"-->
+          <a class="action-link" *ngIf="canModify(answer)" (click)="section.showEditForm=true">修改</a>
+          <a class="action-link" *ngIf="canModify(answer)" (click)="deleteAnswer(answer)">删除</a>
+          <a class="action-link" href="#">分享</a>
+
+          <div class="btn-group pull-right" >
+
+
+            <a class="action-link" data-toggle="dropdown">•••</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">举报不良内容</a></li>
+              <li role="separator" class="divider"></li>
+            </ul>
+          </div>
+        </dd>
+      </dl>
+      <!--</table>-->
+
+      <!-- Answer Edit Form -->
+      <div class="panel panel-default" *ngIf="section.showEditForm">
+        <div class="panel-heading">
+          <img [src]="answer.creator?.avatar" class="img-circle" width="25" height="25">
+          {{answer.creator?.displayName}}
+        </div>
+
+        <answer-form [answer]="answer | clone" [question]="question" (saved)="question.answers[i]=$event;section.showEditForm=false" (canceled)="section.showEditForm=false"></answer-form>
+      </div>
+
+    </section>
+  </div>
+
+
+
+</div>

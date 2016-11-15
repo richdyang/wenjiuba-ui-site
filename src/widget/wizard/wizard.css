@@ -1,0 +1,56 @@
+.ui-wizard {
+  margin-bottom: 20px;
+}
+
+.ui-wizard .ui-wizard-steps {
+  position: relative;
+  display: inline-block;
+}
+
+.ui-wizard .ui-wizard-steps:before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: -5%;
+  width: 110%;
+  height: 4px;
+  z-index: -1;
+  background: #d7e4ed;
+}
+
+.ui-wizard .ui-wizard-steps .ui-wizard-step {
+  cursor: pointer;
+  display: inline-block;
+  margin: auto 10px;
+  text-decoration:none;
+}
+
+.ui-wizard .ui-wizard-steps a.active {
+  background: none;
+}
+
+.ui-wizard .ui-wizard-steps .ui-wizard-step.active .ui-wizard-step-number {
+  background:#00BC8C;
+}
+
+.ui-wizard .ui-wizard-steps .ui-wizard-step .ui-wizard-step-number {
+  color: white;
+  font-size: 2em;
+  background: #666666;
+  display:block;
+  height:54px;
+  width:54px;
+  margin:0 auto 10px;
+  padding-top:2px;
+  border-radius:50%;
+  border: solid 4px #FFFFFF;
+}
+
+
+.ui-wizard .ui-wizard-steps a {
+  display:inline-block;
+  font-size:12px;
+  margin-right:10px;
+  text-align:center;
+  text-transform:uppercase;
+}

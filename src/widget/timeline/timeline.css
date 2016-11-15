@@ -1,0 +1,81 @@
+.ui-timeline {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+.ui-timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 150px;
+  height: 100%;
+  width: 4px;
+  background: #d7e4ed;
+}
+
+.ui-timeline .ui-timeline-block {
+  margin: 1em 0 5em 0;
+  position: relative;
+}
+
+.ui-timeline .ui-timeline-block .ui-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 110px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  background: #51a1cc;
+  color: #FFFFFF;
+}
+
+.ui-timeline .ui-timeline-block .ui-timeline-img img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+
+.ui-timeline .ui-timeline-block .ui-timeline-img i {
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -12px;
+  margin-top: -12px;
+  line-height: 24px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.ui-timeline .ui-timeline-block .ui-timeline-content {
+  position: relative;
+  margin-left: 180px;
+  word-break: break-all;
+}
+
+.ui-timeline .ui-timeline-block .ui-timeline-content .ui-timeline-date {
+  position: absolute;
+  width: 120px;
+  left: -210px;
+  top:  8px;
+  text-align: right;
+  font-size: .9em;
+  color: #999;
+}
+
+.ui-timeline .ui-timeline-block .ui-timeline-content .ui-timeline-readmore {
+  display: block;
+  padding: 5px;
+  border: 3px solid rgba(0, 0, 0, .3);
+  border-radius: 3px;
+  float: right;
+}
