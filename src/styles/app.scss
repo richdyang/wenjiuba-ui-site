@@ -1,0 +1,297 @@
+@import "bs_overriden";
+
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import "~trix/dist/trix.css";
+@import "~quill/dist/quill.snow.css";
+
+@import "fontface";
+
+@import "primeng-bootstrap";
+@import "primeng";
+
+.noscroll {
+  overflow: hidden;
+}
+
+.active {
+  background: #1C1C1C;
+}
+
+img {
+  max-width: 400px;
+}
+
+// bootstrap fixture
+.panel {
+  border: none;
+}
+
+.navbar-brand {
+  padding-top: 0px;
+}
+
+.alert {
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.bg-light-gray {
+  background-color: #eff1f5;
+}
+
+// page header
+.page-header {
+  padding-bottom: 11.5px;
+  margin: 10px 0 25px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page-header {
+  h2,h3,h4,h5 {
+    display: inline-block;
+  }
+}
+
+// cicular button
+.btn-circle {
+  width: 49px;
+  height: 49px;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 20px;
+  line-height: 2.00;
+  border-radius: 30px;
+}
+
+.btn-circle-micro {
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  padding: 1px 0;
+  font-size: 13px;
+  line-height: 0.1;
+  border-radius: 30px;
+}
+
+.btn-circle-sm {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  padding: 2px 0;
+  font-size: 20px;
+  line-height: 1.65;
+  border-radius: 30px;
+}
+
+.btn-circle-lg {
+  width: 79px;
+  height: 79px;
+  text-align: center;
+  padding: 13px 0;
+  font-size: 30px;
+  line-height: 2.00;
+  border-radius: 70px;
+}
+
+
+/* Angular form  validation */
+.ng-invalid.ng-touched {
+  border-color: $brand-danger;
+  .ql-container { // for quill editor
+    border-color: $brand-danger;
+  }
+  .ql-toolbar {
+    border-bottom-color: $brand-danger;
+  }
+}
+
+.ng-valid.ng-touched {
+  border-color: $brand-success;
+  .ql-container { // for quill editor
+    border-color: $brand-success;
+  }
+  .ql-toolbar {
+    border-bottom-color: $brand-success;
+  }
+}
+
+.text-center {
+  th { text-align: center}
+}
+
+a:focus {
+  outline: none;
+}
+
+  /* ng-cloak */
+[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
+
+
+
+trix-toolbar {
+  .button_groups {
+    border-color: #d6d6d6 #d6d6d6 transparent;
+    border-image: none;
+    border-radius: 2px 2px 0 0;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 5px;
+  }
+
+  .button_group {
+    //border-color: #d6d6d6;
+    //border-radius: 2px;
+    border: none;
+    //box-shadow: none;
+    margin-bottom: 0;
+    margin-right: 2px;
+    margin-top: 5px;
+    margin-bottom: -2px;
+
+    button {
+      border: none !important;
+      cursor: pointer;
+      opacity: 0.75;
+      transition: opacity 0.2s ease 0s;
+    }
+
+    button.active, button.active:hover {
+      background-color: rgba(0, 0, 0, 0.03);
+      border: $gray solid 1px;
+      opacity: 1;
+    }
+  }
+}
+
+trix-editor {
+  //border-color: #d6d6d6;
+  border-radius: 0 0 $border-radius-base $border-radius-base !important;
+  //word-wrap: break-word;
+  //color: #333;
+  min-height: 10em;
+}
+
+//---------------site-----------------
+$search-form-width: 262px;
+#search-form {
+
+  .form-group {
+    margin-top: 4px;
+    width: $search-form-width;
+  }
+
+  .form-control {
+    width: $search-form-width;
+    border-radius: 1.5em;
+    background: lighten($gray, 60%);
+  }
+
+  input:focus {
+    background: $input-bg;
+  }
+
+  .form-control-feedback {
+    color: $gray-light;
+  }
+}
+
+
+.hand-cursor {
+  cursor: pointer;
+}
+
+.cursor-over:hover {
+  background: #f9f9f9;
+}
+
+section.question-section {
+  border-bottom: solid 1px $gray-lighter;
+
+  .question-info {
+    color: lighten($gray-light, 10%);
+    font-size: 0.85em;
+  }
+
+  .question-content {
+    color: lighten($gray-dark, 10%);
+  }
+}
+
+// vote functionalities
+.action-link, .action-button, .action-button-toggled {
+  color: #999999;
+  display: inline-block;
+  margin-right: 5px;
+  cursor: pointer;
+  text-align: center;
+
+  vertical-align: middle;
+}
+
+.action-button {
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);
+  padding: 1px 7px 1px 7px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: #f1f8fb;
+  color: #2b6dad !important;
+  border: 1px solid #bbcadc;
+  box-sizing: border-box;
+  transition: color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
+}
+
+span.action-button {
+  background: #dbdbdb;
+}
+
+a.action-button:hover, a.action-button-toggled:hover {
+  text-decoration: none;
+  border-color: #2b669a;
+}
+
+.action-button-toggled {
+  display: inline-block;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px 0 rgba(200,200,200,0.2);
+  padding: 1px 7px 1px 7px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background: #bbcadc;
+  color: #2b6dad !important;
+  border: 1px solid #bbcadc;
+  box-sizing: border-box;
+  transition: color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
+}
+
+.upvote-num {
+  display: inline-block;
+  padding-left: 3px;
+  border-left: groove 2px #eee;
+}
+
+// wizard
+
+/* numbered buttons */
+
+
+.progress-bar-warning {
+  background: linear-gradient(90deg, #fcf698, #47ae45) !important;
+}
+
+.progress-bar-success {
+  background: linear-gradient(90deg, #47ae45 80% , #47ae45 90%) !important;
+}
+
+.progress-bar-danger {
+  background: linear-gradient(90deg, #47ae45 , #e8666e) !important;
+}

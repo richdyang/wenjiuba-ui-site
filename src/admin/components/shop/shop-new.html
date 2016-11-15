@@ -1,0 +1,95 @@
+<div class="page-header">
+  <h4>灸馆信息</h4>
+</div>
+
+<div class="row">
+  <div class="col-sm-9">
+    <p-wizard [model]="steps" [(activeIndex)]="activeIndex"></p-wizard>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-body">
+
+  <div class="row" *ngIf="activeIndex==0">
+    <div class="well col-sm-9">
+        <form #employeeForm="ngForm">
+          <p-form-field label="真实姓名 *">
+            <input type="text" [(ngModel)]="employee.fullName" name="fullName" class="form-control" required minlength="2">
+          </p-form-field>
+          <p-form-field label="联系地址 *">
+            <input type="text" [(ngModel)]="employee.address" name="address" class="form-control" required minlength="10">
+          </p-form-field>
+          <p-form-field label="联系手机 *">
+            <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11">
+          </p-form-field>
+          <p-form-field label="出生日期 *">
+            <input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式：1980-08-29">
+          </p-form-field>
+          <p-form-field label="性别 *">
+            <input type="text" [(ngModel)]="employee.gender" name="gender" class="form-control" required>
+          </p-form-field>
+
+          <button class="btn btn-primary" [disabled]="!employeeForm.valid" (click)="activeIndex=1">下一步</button>
+        </form>
+    </div>
+
+    <div class=" col-sm-3">
+        <i class="fa fa-info-circle"></i>
+        请按实填写基本资料，这将是开店审核的一部分。中间可能会使用到您填写的信息联系到您进行核实。
+    </div>
+  </div>
+
+  <div class="row" *ngIf="activeIndex==1">
+    <div class="well col-sm-9">
+      <form #shopForm="ngForm">
+        <p-form-field label="店名 *">
+          <input type="text" [(ngModel)]="shop.name" name="name" class="form-control" required minlength="2">
+        </p-form-field>
+        <p-form-field label="介绍 *">
+          <p-editor [(ngModel)]="shop.description" name="description" [uploadHandler]="api.uploadHander" required mintextlength="20"></p-editor>
+        </p-form-field>
+        <p-form-field label="品牌图片 *">
+          <p-file-input [(ngModel)]="shop.brand" name="brand" [uploadOptions]="api.uploadOptions" required></p-file-input>
+        </p-form-field>
+
+        <button class="btn btn-primary" [disabled]="!shopForm.valid" (click)="activeIndex=2">下一步</button>
+      </form>
+    </div>
+
+    <div class=" col-sm-3">
+      <i class="fa fa-info-circle"></i>
+      这些信息非常重要，他们将是该店的品牌名片，客户将通过这些直观地了解您的店。
+    </div>
+  </div>
+
+  <div class="row" *ngIf="activeIndex==2">
+    <div class="well col-sm-9">
+      <form #verificationForm="ngForm">
+        <p-form-field label="身份证图片 *">
+          <p-file-input [(ngModel)]="shopVerification.uploadIdCard" name="uploadIdCard" [uploadOptions]="api.uploadOptions" required></p-file-input>
+        </p-form-field>
+        <p-form-field label="营业执照图片 *">
+          <p-file-input [(ngModel)]="shopVerification.uploadLicense" name="uploadLicense" [uploadOptions]="api.uploadOptions" required></p-file-input>
+        </p-form-field>
+        <p-form-field label="协议同意书图片 *">
+          <p-file-input [(ngModel)]="shopVerification.uploadAgreement" name="uploadAgreement" [uploadOptions]="api.uploadOptions" required></p-file-input>
+          <i class="fa fa-question-circle"></i>
+          <a href="images/agreement.doc">
+            <small>协议书下载</small>
+          </a>
+          <small>下载此文件，打印后填写、签字/盖章后，扫描或拍照上传</small>
+        </p-form-field>
+
+        <button class="btn btn-primary" [disabled]="!verificationForm.valid" (click)="onSubmit()">提交审核</button>
+      </form>
+    </div>
+
+    <div class=" col-sm-3">
+      <i class="fa fa-info-circle"></i>
+      这些扫描件/拍照将是审核您开店信息的重要凭据，请如实上传。
+    </div>
+  </div>
+
+  </div>
+</div>
