@@ -7,7 +7,7 @@ import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {states} from "./admin.routes";
 import {ShopNewComponent} from "./components/shop/shop-new";
-import {ShopOutlineComponent} from "./components/shop/shop-outline";
+import {ShopOverviewComponent} from "./components/shop/shop-overview";
 import {StoreListComponent} from "./components/shop/store-list";
 import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
@@ -22,14 +22,14 @@ import {AdminComponent} from "./components/admin";
     ],
     declarations: [
         AdminComponent,
-        ShopOutlineComponent, ShopNewComponent,
+        ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [
         AdminComponent,
-        ShopOutlineComponent, ShopNewComponent,
+        ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent
     ]  // make some declarations public

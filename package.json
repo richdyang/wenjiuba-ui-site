@@ -1,5 +1,5 @@
 {
-  "name": "wenjiuba-ui-apex",
+  "name": "wenjiuba-ui-site",
   "version": "1.0.0",
   "description": "Angular2 + Bootstrap + Webpack",
   "scripts": {
@@ -38,16 +38,16 @@
     "webpack-merge": "^0.8.4"
   },
   "dependencies": {
-    "@angular/common": "2.1.2",
-    "@angular/compiler": "2.1.2",
-    "@angular/core": "2.1.2",
-    "@angular/forms": "2.1.2",
-    "@angular/http": "2.1.2",
-    "@angular/platform-browser": "2.1.2",
-    "@angular/platform-browser-dynamic": "2.1.2",
-    "@angular/platform-server": "2.1.2",
+    "@angular/common": "2.2.0",
+    "@angular/compiler": "2.2.0",
+    "@angular/core": "2.2.0",
+    "@angular/forms": "2.2.0",
+    "@angular/http": "2.2.0",
+    "@angular/platform-browser": "2.2.0",
+    "@angular/platform-browser-dynamic": "2.2.0",
+    "@angular/platform-server": "2.2.0",
     "@angular/router": "^3.1.2",
-    "@angular/upgrade": "2.1.2",
+    "@angular/upgrade": "2.2.0",
     "angular2-in-memory-web-api": "0.0.20",
     "angular2-moment": "1.0.0-beta.4",
     "bootstrap-sass": "^3.3.7",
@@ -55,6 +55,7 @@
     "font-awesome": "^4.7.0",
     "ie-shim": "^0.1.0",
     "lodash": "^4.13.1",
+    "moment": "2.15.2",
     "ng2-bootstrap": "^1.1.13",
     "ng2-uploader": "^1.4.1",
     "quill": "^1.0.6",
@@ -67,10 +68,10 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/richdyang/wenjiuba-ui-apex.git"
+    "url": "git+https://github.com/richdyang/wenjiuba-ui-site.git"
   },
   "bugs": {
-    "url": "https://github.com/richdyang/wenjiuba-ui-apex/issues"
+    "url": "https://github.com/richdyang/wenjiuba-ui-site/issues"
   },
-  "homepage": "https://github.com/richdyang/wenjiuba-ui-apex#readme"
+  "homepage": "https://github.com/richdyang/wenjiuba-ui-site#readme"
 }

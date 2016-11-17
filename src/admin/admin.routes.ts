@@ -1,5 +1,5 @@
 import {ShopNewComponent} from "./components/shop/shop-new";
-import {ShopOutlineComponent} from "./components/shop/shop-outline";
+import {ShopOverviewComponent} from "./components/shop/shop-overview";
 import {StoreListComponent} from "./components/shop/store-list";
 import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
@@ -17,10 +17,10 @@ export const states:any[] = [
     {
         name: 'shop-outline',
         url:  '/shop',
-        resolve: ShopOutlineComponent.resolve,
+        resolve: ShopOverviewComponent.resolve,
         views:
         {
-            'shop-outline@base': {component: ShopOutlineComponent}
+            'shop-outline@base': {component: ShopOverviewComponent}
         },
         parent: 'admin',
         peek: true,
@@ -32,7 +32,7 @@ export const states:any[] = [
       {
         'shop-new@base': {component: ShopNewComponent}
       },
-      parent: 'admin', 
+      parent: 'admin',
       peek: true
     },
     // --------shop stores -------------------
