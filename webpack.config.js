@@ -38,7 +38,8 @@ var webpackConfig = {
   module: {
     loaders: [
       // .ts files for TypeScript
-      { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader']/*, exclude: /node_modules/*/ },
+      { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: /node_modules/ },
+      { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], include: /node_modules\/ng2-uploader/ },
       { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
       { test: /\.html$/, loader: 'raw-loader' },
       /* global styles */
