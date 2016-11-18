@@ -40,12 +40,11 @@ import {DictService} from "../../../shared/services/dict";
       <!--<input type="radio" [(ngModel)]="employee.gender" value="F" name="gender" required> 女-->
     </p-form-field>
     <p-form-field label="出生日期 *">
-      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required pattern="\\d{4}-\\d{2}-\\d{2}"></p-calendar>
+      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required></p-calendar>
       <!--<input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式如: 1980-01-01">-->
     </p-form-field>
-    <p-form-field label="实操技师? * ">
+    <p-form-field label="实操技师? * " help="实操技师可以对客户进行养生服务">
       <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.technicianInd" name="technicianInd" required></p-selectButton>
-      (<i class="fa fa-question-circle text-info"></i> 实操技师可以对客户进行养生服务）
     </p-form-field>
     <p-form-field label="其他后勤员工? *">
       <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.receptionistInd" name="receptionistInd" required></p-selectButton>
@@ -53,9 +52,8 @@ import {DictService} from "../../../shared/services/dict";
     <p-form-field label="启用该员工? *">
       <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.availableInd" name="availableInd" required></p-selectButton>
     </p-form-field>
-    <p-form-field label="设为管理员? *">
+    <p-form-field label="设为管理员? *" help="管理员拥有极大的权限，请谨慎设置">
       <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.adminInd" name="adminInd" required></p-selectButton>
-      (<i class="fa fa-exclamation-triangle text-danger"></i> 管理员拥有极大的权限，请谨慎设置）
     </p-form-field>
     
     <button class="btn btn-primary" [disabled]="!employeeForm.valid" (click)="onSubmit()">保存</button>
