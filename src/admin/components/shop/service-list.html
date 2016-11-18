@@ -41,3 +41,34 @@
         </tbody>
     </table>
 </div>
+
+<div class="row">
+    <table class="table table-striped table-hover">
+        <caption class="text-right">
+            <a href uiSref="shop-services.new-package" class="btn btn-primary btn-circle-sm"><i class="fa fa-plus"></i></a>
+        </caption>
+        <thead>
+        <tr>
+            <th>名称</th>
+            <th>网上开放?</th>
+            <th>线下可用?</th>
+            <th>预约价格</th>
+            <th>自动计算价格？</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let servicePackage of servicePackages">
+            <td>{{servicePackage.name}}</td>
+            <td>{{dict.display('yesno', servicePackage.onlineInd)}}</td>
+            <td>{{dict.display('yesno', servicePackage.offlineInd)}}</td>
+            <td>{{servicePackage.depositFee}}</td>
+            <td>{{dict.display('yesno', service.autoPriceInd)}}</td>
+            <td class="text-right">
+                <button uiSref="shop-services.edit-package" [uiParams]="{id: servicePackage.id}" class="btn btn-default btn-circle-sm" title="修改">
+                    <i class="fa fa-pencil"></i>
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

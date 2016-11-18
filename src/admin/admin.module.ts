@@ -15,6 +15,7 @@ import {EmployeeListComponent} from "./components/shop/employee-list";
 import {AdminComponent} from "./components/admin";
 import {ServiceListComponent} from "./components/shop/service-list";
 import {ServiceFormComponent} from "./components/shop/service-form";
+import {ServicePackageFormComponent} from "./components/shop/service-package-form";
 
 @NgModule({
     imports     : [
@@ -27,7 +28,7 @@ import {ServiceFormComponent} from "./components/shop/service-form";
         ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
-        ServiceListComponent, ServiceFormComponent,
+        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [
@@ -35,7 +36,7 @@ import {ServiceFormComponent} from "./components/shop/service-form";
         ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
-        ServiceListComponent, ServiceFormComponent,
+        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent
     ]  // make some declarations public
 })
 export class AdminModule {

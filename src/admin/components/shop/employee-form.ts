@@ -40,7 +40,8 @@ import {DictService} from "../../../shared/services/dict";
       <!--<input type="radio" [(ngModel)]="employee.gender" value="F" name="gender" required> 女-->
     </p-form-field>
     <p-form-field label="出生日期 *">
-      <input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式如: 1980-01-01">
+      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required pattern="\\d{4}-\\d{2}-\\d{2}"></p-calendar>
+      <!--<input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式如: 1980-01-01">-->
     </p-form-field>
     <p-form-field label="实操技师? * ">
       <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.technicianInd" name="technicianInd" required></p-selectButton>
@@ -68,6 +69,8 @@ export class EmployeeFormComponent {
 
   constructor(private api:ApiService, private dict: DictService) {}
 
+  private today:Date = new Date();
+
   static resolve = [
     {
       token: 'employee',
@@ -83,8 +86,8 @@ export class EmployeeFormComponent {
   ]
 
   // models
-  @Input() employee:any= {};
-  @Input() stores:any= {};
+  @Input() employee:any = {};
+  @Input() stores:any = {};
 
 
   private onSubmit() {
