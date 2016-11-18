@@ -16,7 +16,12 @@ export class ServiceListComponent {
             token: 'services',
             deps: [ApiService],
             resolveFn: (api) => api.get('/shops/default/services')
-        }
+        },
+        {
+            token: 'servicePackages',
+            deps: [ApiService],
+            resolveFn: (api) => api.get('/shops/default/services/packages')
+        },
     ]
 
     @Input() services;
