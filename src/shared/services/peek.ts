@@ -29,7 +29,7 @@ export class PeekService {
                 params: params,
                 options: options
               }
-              stack.push({state: state.name, baseState: baseState})
+              stack.unshift({state: state.name, baseState: baseState})
             }
             state = state.parent
           }

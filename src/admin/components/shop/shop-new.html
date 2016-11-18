@@ -27,7 +27,7 @@
             <input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式：1980-08-29">
           </p-form-field>
           <p-form-field label="性别 *">
-            <input type="text" [(ngModel)]="employee.gender" name="gender" class="form-control" required>
+              <p-selectButton [options]="dict.options('genders')" [(ngModel)]="employee.gender" name="gender" required></p-selectButton>
           </p-form-field>
 
           <button class="btn btn-primary" [disabled]="!employeeForm.valid" (click)="activeIndex=1">下一步</button>

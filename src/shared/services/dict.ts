@@ -5,13 +5,40 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class DictService {
 
-  yesno = [
-    {label: '是', value: 'Y'},
-    {label: '否', value: 'N'}
-  ];
+    private optionsCache:{[id: string]:DictEntry[]} = {}
 
-  genders = [
-    {label: '男', value: 'M'},
-    {label: '女', value: 'F'}
-  ];
+    private map:{[id: string]:{[id: string]:string}} = {
+        yesno: {
+            'Y': '是',
+            'N': '否'
+        },
+        genders: {
+            'M': '男',
+            'F': '女'
+        }
+    }
+
+    public options(dictKey:string):DictEntry[] {
+        let dict = this.map[dictKey];
+        if(this.optionsCache[dictKey]) return this.optionsCache[dictKey];
+
+        let options:DictEntry[] = [];
+        for(let prop in dict) {
+            options.push({
+                label: dict[prop],
+                value: prop
+            })
+        }
+        this.optionsCache[dictKey] = options;
+        return options;
+    }
+
+    public display(dictKey, value):string {
+        return this.map[dictKey][value];
+    }
+}
+
+interface DictEntry {
+    label:string,
+    value:string
 }

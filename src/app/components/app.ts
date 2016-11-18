@@ -9,7 +9,7 @@ import {EventBus} from "../../shared/services/event";
     <!--<flash></flash>-->
     
     <ui-view></ui-view>
-    <p-growl [value]="messages" [life]="5000"></p-growl>
+    <p-growl [value]="messages" [life]="5000" [sticky]="true"></p-growl>
   `
 })
 export class AppComponent implements OnInit {

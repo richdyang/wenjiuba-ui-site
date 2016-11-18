@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
+import {DictService} from "../../../shared/services/dict";
 
 @Component({
   selector: 'employee-list',
@@ -17,11 +18,11 @@ import {ApiService} from "../../../shared/services/api";
       </div>
   </div>
 
-  <div class="pull-right">
-    <a href uiSref="shop-employees.new" class="btn btn-primary btn-circle-sm"><i class="fa fa-plus"></i></a>
-  </div>
   <div class="row">
     <table class="table table-striped table-hover">
+      <caption class="text-right">
+        <a href uiSref="shop-employees.new" class="btn btn-primary btn-circle-sm"><i class="fa fa-plus"></i></a>
+      </caption>
       <thead>
         <tr>
           <th>姓名</th>
@@ -34,10 +35,10 @@ import {ApiService} from "../../../shared/services/api";
       <tbody>
         <tr *ngFor="let employee of employees">
           <td>{{employee.fullName}}</td>
-          <td>{{employee.gender === 'M' ? '男' : '女'}}</td>
+          <td>{{dict.display('genders', employee.gender)}}</td>
           <td>{{employee.mobile}}</td>
-          <td>{{employee.technicianInd === 'Y' ? '是' : '否'}}</td>
-          <td>
+          <td>{{dict.display('yesno', employee.technicianInd)}}</td>
+          <td class="text-right">
             <button uiSref="shop-employees.edit" [uiParams]="{id: employee.id}" class="btn btn-default btn-circle-sm" title="修改">
               <i class="fa fa-pencil"></i>
             </button>
@@ -51,7 +52,7 @@ import {ApiService} from "../../../shared/services/api";
   providers: []
 })
 export class EmployeeListComponent {
-  constructor(private api:ApiService) {}
+  constructor(private api:ApiService, private dict:DictService) {}
 
   static resolve = [
     {
