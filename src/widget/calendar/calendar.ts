@@ -756,7 +756,7 @@ export class Calendar implements AfterViewInit,OnInit,OnDestroy,ControlValueAcce
     }
 
     writeValue(value: any) : void {
-        this.value = new Date(value);
+        this.value = value ? new Date(value) : null;
 
         this.updateInputfield();
         this.updateUI();

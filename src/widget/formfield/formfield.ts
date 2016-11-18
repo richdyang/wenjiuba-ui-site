@@ -12,6 +12,9 @@ import {CommonModule} from "@angular/common";
 
       <div [ngClass]="{'col-sm-8': horizontal && label, 'col-md-8': horizontal && label}">
         <ng-content ></ng-content>
+        <span class="help-block" *ngIf="help">
+            <i class="fa fa-question-circle text-info"></i> {{help}}
+        </span>
         <span *ngIf="isFeedbackValid()" 
               class="glyphicon glyphicon-ok form-control-feedback text-success"
               aria-hidden="true"></span>
@@ -49,6 +52,8 @@ export class FormField {
 
   @Input()
   feedback: boolean = false;
+
+  @Input() help:string;
 
   @Input()
   horizontal = false;

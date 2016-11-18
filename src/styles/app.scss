@@ -102,27 +102,52 @@ caption {
   border-radius: 70px;
 }
 
+input.ng-invalid, p-calendar.ng-invalid input {
+    border-color: $brand-danger;
+}
+
+p-editor.ng-invalid {
+    .ql-container { // for quill editor
+        border-color: $brand-danger;
+    }
+    .ql-toolbar {
+        border-bottom-color: $brand-danger;
+    }
+}
+
+input.ng-valid, p-calendar.ng-valid input {
+    border-color: $brand-success;
+}
+
+p-editor.ng-valid {
+    .ql-container { // for quill editor
+        border-color: $brand-success;
+    }
+    .ql-toolbar {
+        border-bottom-color: $brand-success;
+    }
+}
 
 /* Angular form  validation */
-.ng-invalid.ng-touched {
-  border-color: $brand-danger;
-  .ql-container { // for quill editor
-    border-color: $brand-danger;
-  }
-  .ql-toolbar {
-    border-bottom-color: $brand-danger;
-  }
-}
-
-.ng-valid.ng-touched {
-  border-color: $brand-success;
-  .ql-container { // for quill editor
-    border-color: $brand-success;
-  }
-  .ql-toolbar {
-    border-bottom-color: $brand-success;
-  }
-}
+//.ng-invalid {
+//  border-color: $brand-danger;
+//  .ql-container { // for quill editor
+//    border-color: $brand-danger;
+//  }
+//  .ql-toolbar {
+//    border-bottom-color: $brand-danger;
+//  }
+//}
+//
+//.ng-valid {
+//  border-color: $brand-success;
+//  .ql-container { // for quill editor
+//    border-color: $brand-success;
+//  }
+//  .ql-toolbar {
+//    border-bottom-color: $brand-success;
+//  }
+//}
 
 .text-center {
   th { text-align: center}

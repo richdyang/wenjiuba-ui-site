@@ -27,7 +27,7 @@ import {Transition} from "ui-router-ng2/ng2";
         <p-form-field label="额外费用 *">
           <input type="number" [(ngModel)]="servicePackage.extraCost" name="extraCost" class="form-control" required>
         </p-form-field>
-        <p-form-field label="是否自动计算价格? *">
+        <p-form-field label="是否自动计算价格? *" help="自动计算价格">
           <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="servicePackage.autoPriceInd" name="autoPriceInd" required></p-selectButton>
         </p-form-field>
         <p-form-field label="是否当前可用? *">
@@ -35,7 +35,7 @@ import {Transition} from "ui-router-ng2/ng2";
         </p-form-field>
         
         <div class="row">
-        <p-pickList [source]="servicesNotInPackage" [sourceHeader]="'可选服务'" [showSourceControls]="false" [target]="servicePackage.services" [targetHeader]="'已有服务'" [responsive]="true">
+        <p-pickList [source]="servicesNotInPackage" sourceHeader="可选服务" [showSourceControls]="false" [target]="servicePackage.services" targetHeader="已有服务" [responsive]="true">
             <template let-service>
                 <div class="ui-helper-clearfix">
                     {{service.name}}
