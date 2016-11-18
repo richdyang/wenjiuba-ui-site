@@ -5,6 +5,8 @@ import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
 import {EmployeeListComponent} from "./components/shop/employee-list";
 import {AdminComponent} from "./components/admin";
+import {ServiceListComponent} from "./components/shop/service-list";
+import {ServiceFormComponent} from "./components/shop/service-form";
 
 export const states:any[] = [
     {
@@ -103,5 +105,40 @@ export const states:any[] = [
         'shop-employees-edit@base': {component: EmployeeFormComponent}
       },
       peek: true
+    },
+    // -------------shop services ------------
+    {
+        name: 'shop-services',
+        url:  '/shop/services',
+        resolve: ServiceListComponent.resolve,
+        views:
+        {
+            'shop-services@base': {component: ServiceListComponent}
+        },
+        parent: 'admin',
+        peek: true
+    },
+    {
+        name: 'shop-services.new',
+        url:  '/new',
+        views:
+        {
+            'shop-services-new@base': {component: ServiceFormComponent}
+        },
+        // resolve: ServiceFormComponent.resolve.slice(1),
+        peek: true
+    },
+    {
+        name: 'shop-services.edit',
+        url:  '/:id/edit',
+        params: {
+            id: {type: "int"}
+        },
+        resolve: ServiceFormComponent.resolve,
+        views:
+        {
+            'shop-services-edit@base': {component: ServiceFormComponent}
+        },
+        peek: true
     }
 ]

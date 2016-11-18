@@ -35,7 +35,7 @@ import {DictService} from "../../../shared/services/dict";
       <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11">
     </p-form-field>
     <p-form-field label="性别 *">
-      <p-selectButton [options]="dict.genders" [(ngModel)]="employee.gender" name="gender" required></p-selectButton>
+      <p-selectButton [options]="dict.options('genders')" [(ngModel)]="employee.gender" name="gender" required></p-selectButton>
       <!--<input type="radio" [(ngModel)]="employee.gender" value="M" name="gender" required> 男-->
       <!--<input type="radio" [(ngModel)]="employee.gender" value="F" name="gender" required> 女-->
     </p-form-field>
@@ -43,17 +43,17 @@ import {DictService} from "../../../shared/services/dict";
       <input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式如: 1980-01-01">
     </p-form-field>
     <p-form-field label="实操技师? * ">
-      <p-selectButton [options]="dict.yesno" [(ngModel)]="employee.technicianInd" name="technicianInd" required></p-selectButton>
+      <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.technicianInd" name="technicianInd" required></p-selectButton>
       (<i class="fa fa-question-circle text-info"></i> 实操技师可以对客户进行养生服务）
     </p-form-field>
     <p-form-field label="其他后勤员工? *">
-      <p-selectButton [options]="dict.yesno" [(ngModel)]="employee.receptionistInd" name="receptionistInd" required></p-selectButton>
+      <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.receptionistInd" name="receptionistInd" required></p-selectButton>
     </p-form-field>
     <p-form-field label="启用该员工? *">
-      <p-selectButton [options]="dict.yesno" [(ngModel)]="employee.availableInd" name="availableInd" required></p-selectButton>
+      <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.availableInd" name="availableInd" required></p-selectButton>
     </p-form-field>
     <p-form-field label="设为管理员? *">
-      <p-selectButton [options]="dict.yesno" [(ngModel)]="employee.adminInd" name="adminInd" required></p-selectButton>
+      <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="employee.adminInd" name="adminInd" required></p-selectButton>
       (<i class="fa fa-exclamation-triangle text-danger"></i> 管理员拥有极大的权限，请谨慎设置）
     </p-form-field>
     

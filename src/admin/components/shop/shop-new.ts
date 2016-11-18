@@ -1,6 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
 import {MenuItem} from "../../../widget/common/api";
+import {DictService} from "../../../shared/services/dict";
 
 @Component({
   selector: 'shop-new',
@@ -10,7 +11,7 @@ import {MenuItem} from "../../../widget/common/api";
   encapsulation: ViewEncapsulation.None
 })
 export class ShopNewComponent {
-  constructor(private api:ApiService) {}
+  constructor(private api:ApiService, private dict:DictService) {}
 
   // ui control
   private steps: MenuItem[];
