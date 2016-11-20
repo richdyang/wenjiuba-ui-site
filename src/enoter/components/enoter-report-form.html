@@ -1,0 +1,159 @@
+<div class="page-header">
+    <h4>e络通信息</h4>
+</div>
+
+<div class="row">
+    <div class="col-sm-9">
+        <p-wizard [model]="steps" [(activeIndex)]="activeIndex"></p-wizard>
+    </div>
+</div>
+{{report | json}}
+<!-- 客户信息 -->
+<div class="row" *ngIf="activeIndex==0">
+    <main class="col-sm-9">
+        <form #customerForm="ngForm">
+            <p-form-field label="姓名 *">
+                <input type="text" [(ngModel)]="report.fullName" name="name" class="form-control" required>
+            </p-form-field>
+            <p-form-field label="年龄 *">
+                <input type="number" [(ngModel)]="report.age" name="age" class="form-control" required>
+            </p-form-field>
+            <p-form-field label="性别 *">
+                <p-selectButton [options]="dict.options('genders')" [(ngModel)]="report.gender" name="gender"
+                                required></p-selectButton>
+            </p-form-field>
+            <p-form-field label="月经情况?" *ngIf="report.gender === 'F'">
+                <p-selectButton [options]="dict.options('menses')" [(ngModel)]="report.menses" name="menses"
+                                required></p-selectButton>
+            </p-form-field>
+            <p-form-field label="身高 " help="身高、体重等数据对于健康档案很重要">
+                <input type="number" [(ngModel)]="report.height" name="height" class="form-control">
+            </p-form-field>
+            <p-form-field label="体重 ">
+                <input type="number" [(ngModel)]="report.weight" name="weight" class="form-control">
+            </p-form-field>
+            <p-form-field label="血压（高） ">
+                <input type="number" [(ngModel)]="report.bpHigh" name="bpHigh" class="form-control">
+            </p-form-field>
+            <p-form-field label="血压（低） ">
+                <input type="number" [(ngModel)]="report.bpLow" name="bpLow" class="form-control">
+            </p-form-field>
+
+            <button type="button" class="btn btn-primary" (click)="activeIndex=1" [disabled]="!customerForm.valid">
+                下一步
+            </button>
+        </form>
+    </main>
+
+    <aside class="col-sm-3">
+        <h4><i class="fa fa-info-circle"></i> 小提示</h4>
+        <p>
+            如果您为客人测量,请务必请客人仔细核对所填个人信息, 这将是您的健康档案的一部分
+        </p>
+    </aside>
+</div>
+
+
+<!-- 能量数据 -->
+<div class="row" *ngIf="activeIndex==1">
+    <main class="col-sm-9">
+        <form #engeriesForm="ngForm">
+            <table class="table">
+                <thead class="text-center">
+                <tr>
+                    <th>经络穴位</th>
+                    <th>能量值(左)</th>
+                    <th>能量值(右)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let meridian of meridians">
+                    <td class="col-sm-1 text-center text-danger">
+                        {{meridian.name}}
+                    </td>
+                    <td class="col-sm-3">
+                        <input type="number" class="form-control" name="l{{meridian.code}}"
+                               [(ngModel)]="report['l' + meridian.code]"
+                               required pattern="(\d|[1-9](\d+))?(\.\d{1,2})?">
+                    </td>
+                    <td class="col-sm-3">
+                        <input type="number" class="form-control" name="r{{meridian.code}}"
+                               [(ngModel)]="report['r' + meridian.code]"
+                               required pattern="(\d|[1-9](\d+))?(\.\d{1,2})?">
+                    </td>
+                </tr>
+
+                </tbody>
+
+            </table>
+            <button type="button" class="btn btn-primary" (click)="activeIndex=2"
+                    [disabled]="!engeriesForm.valid">下一步
+            </button>
+        </form>
+    </main>
+
+    <aside class="col-sm-3">
+        <h4><i class="fa fa-info-circle"></i> 关于穴位</h4>
+        <p>
+            测量时,如果您不能很好的找准穴位,请其他有经验人员帮助测量.穴位能量的准确直接决定了判读症状的正确.
+        </p>
+    </aside>
+</div>
+
+<!-- 预览,免责声明并提交 -->
+<div class="row" *ngIf="activeIndex==2">
+    <main class="col-sm-9">
+        <form #paymentForm="ngForm">
+            <fieldset>
+                <legend>订单支付</legend>
+                <p-form-field label="判读套餐 *">
+                    <p-selectButton [options]="packageOptions" [(ngModel)]="report.requestPackage" name="requestPackage" required></p-selectButton>
+                </p-form-field>
+
+                <div class="well" style="margin-top: 10px">
+                    <p>
+                        你需要支付：
+                        <span class="label label-danger" *ngIf="report.requestPackage==='R'">
+                            <del>{{package.namedRobotPrice}}</del>
+                            {{package.robotPrice}}元/次
+                        </span>
+                        <span class="label label-danger" *ngIf="report.requestPackage==='E'">
+                            <del>{{package.namedExpertPrice}}</del>
+                            {{package.expertPrice}}元/次
+                        </span>
+                    </p>
+                    <p class="text-warning">
+                        <i class="fa fa-info-circle"></i>
+                        当前仅支持支付宝在线支付，请确保您有支付宝账户。
+                    </p>
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>免责声明</legend>
+                <div class="well">
+                    <p>本判读报告仅做参考用途, 其解读不能代替医学检查。如您身体有病患, 请及时咨询医生。</p>
+                    <p>您同意本声明,代表您已知晓相关事项。</p>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" required #agreeCheckbox (change)="agree=agreeCheckbox.checked">
+                        同意
+                    </label>
+                </div>
+
+                <button type="button" class="btn btn-primary" (click)="submit()" [disabled]="!paymentForm.valid || !agree">提交判读并支付</button>
+            </fieldset>
+        </form>
+    </main>
+
+    <aside class="col-sm-3">
+        <h4><i class="fa fa-info-circle"></i> 小提示</h4>
+        <p>
+            仔细阅读免责声明,以及收费款项,只有你同意这些内容,才可以提交判读.
+            我们会根据您的套餐决定是否仅自动判读, 以及是否加入专家判读.
+        </p>
+    </aside>
+</div>

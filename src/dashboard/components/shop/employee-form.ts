@@ -36,11 +36,9 @@ import {DictService} from "../../../shared/services/dict";
     </p-form-field>
     <p-form-field label="性别 *">
       <p-selectButton [options]="dict.options('genders')" [(ngModel)]="employee.gender" name="gender" required></p-selectButton>
-      <!--<input type="radio" [(ngModel)]="employee.gender" value="M" name="gender" required> 男-->
-      <!--<input type="radio" [(ngModel)]="employee.gender" value="F" name="gender" required> 女-->
     </p-form-field>
     <p-form-field label="出生日期 *">
-      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required></p-calendar>
+      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required pattern="[1-9][0-9]{3}-[0-1][0-9]-[0-3][0-9]"></p-calendar>
       <!--<input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式如: 1980-01-01">-->
     </p-form-field>
     <p-form-field label="实操技师? * " help="实操技师可以对客户进行养生服务">
