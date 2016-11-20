@@ -2080,6 +2080,9 @@ button.ui-button::-moz-focus-inner {
 }
 
 /* Growl */
+.ui-growl-item-container.ui-state-highlight {
+    background-image: none;
+}
 .ui-growl-item-container.ui-state-highlight.ui-growl-message-info {
   background-color: #2196f3;
   border-color :#2196f3;

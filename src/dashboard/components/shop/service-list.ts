@@ -25,4 +25,5 @@ export class ServiceListComponent {
     ]
 
     @Input() services;
+    @Input() servicePackages;
 }

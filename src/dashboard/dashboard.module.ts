@@ -5,17 +5,20 @@ import {UIRouterModule} from "ui-router-ng2";
 import {NgModule} from "@angular/core";
 import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
-import {states} from "./admin.routes";
+import {states} from "./dashboard.routes";
 import {ShopNewComponent} from "./components/shop/shop-new";
 import {ShopOverviewComponent} from "./components/shop/shop-overview";
 import {StoreListComponent} from "./components/shop/store-list";
 import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
 import {EmployeeListComponent} from "./components/shop/employee-list";
-import {AdminComponent} from "./components/admin";
 import {ServiceListComponent} from "./components/shop/service-list";
 import {ServiceFormComponent} from "./components/shop/service-form";
 import {ServicePackageFormComponent} from "./components/shop/service-package-form";
+import {CustomerFormComponent} from "./components/shop/customer-form";
+import {CustomerListComponent} from "./components/shop/customer-list";
+import {CustomerAccountComponent} from "./components/shop/customer-account";
+import {DashboardComponent} from "./components/dashboard";
 
 @NgModule({
     imports     : [
@@ -24,22 +27,24 @@ import {ServicePackageFormComponent} from "./components/shop/service-package-for
         UIRouterModule.forChild({states: states})          // feature routes
     ],
     declarations: [
-        AdminComponent,
+        DashboardComponent,
         ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
-        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent
+        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent,
+        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [
-        AdminComponent,
+        DashboardComponent,
         ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
-        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent
+        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent,
+        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent
     ]  // make some declarations public
 })
-export class AdminModule {
+export class DashboardModule {
 
 }
 

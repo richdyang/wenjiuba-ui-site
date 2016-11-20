@@ -4,17 +4,20 @@ import {StoreListComponent} from "./components/shop/store-list";
 import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
 import {EmployeeListComponent} from "./components/shop/employee-list";
-import {AdminComponent} from "./components/admin";
 import {ServiceListComponent} from "./components/shop/service-list";
 import {ServiceFormComponent} from "./components/shop/service-form";
 import {ServicePackageFormComponent} from "./components/shop/service-package-form";
+import {CustomerListComponent} from "./components/shop/customer-list";
+import {CustomerFormComponent} from "./components/shop/customer-form";
+import {CustomerAccountComponent} from "./components/shop/customer-account";
+import {DashboardComponent} from "./components/dashboard";
 
 export const states:any[] = [
     {
-        name: 'admin',
-        url:  '/admin',
-        component: AdminComponent,
-        resolve: AdminComponent.resolve,
+        name: 'i',
+        url:  '/i',
+        component: DashboardComponent,
+        resolve: DashboardComponent.resolve,
         parent: 'base'
     },
     {
@@ -25,7 +28,7 @@ export const states:any[] = [
         {
             'shop-outline@base': {component: ShopOverviewComponent}
         },
-        parent: 'admin',
+        parent: 'i',
         peek: true,
     },
     {
@@ -35,7 +38,7 @@ export const states:any[] = [
       {
         'shop-new@base': {component: ShopNewComponent}
       },
-      parent: 'admin',
+      parent: 'i',
       peek: true
     },
     // --------shop stores -------------------
@@ -47,7 +50,7 @@ export const states:any[] = [
       {
         'shop-stores@base': {component: StoreListComponent}
       },
-      parent: 'admin',
+      parent: 'i',
       peek: true
     },
     {
@@ -81,7 +84,7 @@ export const states:any[] = [
       {
         'shop-employees@base': {component: EmployeeListComponent}
       },
-      parent: 'admin',
+      parent: 'i',
       peek: true
     },
     {
@@ -116,7 +119,7 @@ export const states:any[] = [
         {
             'shop-services@base': {component: ServiceListComponent}
         },
-        parent: 'admin',
+        parent: 'i',
         peek: true
     },
     {
@@ -164,5 +167,53 @@ export const states:any[] = [
             'shop-services-edit-package@base': {component: ServicePackageFormComponent}
         },
         peek: true
-    }
+    },
+    // -------------shop customers ------------
+    {
+        name: 'shop-customers',
+        url:  '/shop/customers',
+        resolve: CustomerListComponent.resolve,
+        views:
+        {
+            'shop-customers@base': {component: CustomerListComponent}
+        },
+        parent: 'i',
+        peek: true
+    },
+    {
+        name: 'shop-customers.new',
+        url:  '/new',
+        views:
+        {
+            'shop-customers-new@base': {component: CustomerFormComponent}
+        },
+        resolve: EmployeeFormComponent.resolve.slice(1),
+        peek: true
+    },
+    {
+        name: 'shop-customers.edit',
+        url:  '/:id/edit',
+        params: {
+            id: {type: "int"}
+        },
+        resolve: CustomerFormComponent.resolve,
+        views:
+        {
+            'shop-customers-edit@base': {component: CustomerFormComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'shop-customers.account',
+        url:  '/:id/account',
+        params: {
+            id: {type: "int"}
+        },
+        resolve: CustomerAccountComponent.resolve,
+        views:
+        {
+            'shop-customers-account@base': {component: CustomerAccountComponent}
+        },
+        peek: true
+    },
 ]

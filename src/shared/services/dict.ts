@@ -15,6 +15,11 @@ export class DictService {
         genders: {
             'M': '男',
             'F': '女'
+        },
+        menses: {
+            'P': '未行经',
+            'M': '行经',
+            'A': '闭经'
         }
     }
 

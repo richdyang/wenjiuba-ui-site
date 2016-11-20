@@ -1,0 +1,109 @@
+<div id="banner">
+    <div id="avatar">
+        <img src="{{session.currentUser.avatar}}" alt="..." class="img-circle">
+    </div>
+    <div>
+        下午好, {{session.currentUser.displayName}}
+    </div>
+</div>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        我的判读
+    </div>
+    <div class="panel-body">
+        <div class="row">
+
+            <div class="panel col-sm-4 ">
+                <div class="panel-body bg-info text-center">
+                    需要付款<br>
+                    0
+                </div>
+            </div>
+            <div class="panel col-sm-4 ">
+                <div class="panel-body bg-info text-center">
+                    等待报告<br>
+                    0
+                </div>
+            </div>
+            <div class="panel col-sm-4 ">
+                <div class="panel-body bg-info text-center">
+                    <a href="/emoxi/enoter/reviews">全部报告</a><br>
+                    0
+                </div>
+            </div>
+        </div>
+
+        <div style="border: dashed 2px #cccccc; padding: 10px">
+            <h4 class="text-muted text-center">您没有任何进行中的判读。</h4>
+            <p class="text-muted text-center">
+                不要忽视！对于亚健康状态的了解需要每隔一段时间了解身体状况。
+                <br>
+                <a uiSref="enoter">什么是"灸灸判读&trade;"？</a>
+            </p>
+            <div class="text-center">
+                <a class="btn btn-danger" href="/emoxi/enoter/reviews/new">开始一个判读</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        我的灸馆
+    </div>
+    <div class="panel-body">
+        <div class="row" *ngIf="shop">
+            <div class="col-xs-6 col-md-4">
+                <a uiSref="shop-outline" class="thumbnail">
+                    <img src="{{shop.brand}}" alt="店务管理">
+                </a>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!shop">
+            <div class="col-xs-12 col-md-12">
+                <div style="border: dashed 2px #cccccc; padding: 10px">
+                    <h4 class="text-muted text-center">您还没有开店。</h4>
+                    <p class="text-muted text-center">
+                        开店需要提供真实营业执照、个人身份等扫描件。
+                    </p>
+                    <div class="text-center">
+                        <a uiSref="shop-new" class="btn btn-primary" role="button">现在开始开店</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        我是灸专家
+    </div>
+    <div class="panel-body">
+        <div class="row" *ngIf="shop">
+            <div class="col-xs-6 col-md-4">
+                <a uiSref="shop-outline" class="thumbnail">
+                    <img src="{{shop.brand}}" alt="店务管理">
+                </a>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!shop">
+            <div class="col-xs-12 col-md-12">
+                <div style="border: dashed 2px #cccccc; padding: 10px">
+                    <h4 class="text-muted text-center">您还没有认证为辩证专家。</h4>
+                    <p class="text-muted text-center">
+                        认证为辩证专家可以参与e络通辩证解读，生成专家报告，并可以得到收入。
+                    </p>
+                    <div class="text-center">
+                        <a uiSref="shop-new" class="btn btn-primary" role="button">现在开始申请</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

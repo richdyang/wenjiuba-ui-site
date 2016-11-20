@@ -8,7 +8,7 @@ import {Transition} from "ui-router-ng2/ng2";
     selector: 'service-form',
     template: `
     <div class="page-header">
-        <h4>服务信息</h4>
+        <h4>产品信息</h4>
     </div>
     
     <form #serviceForm="ngForm">

@@ -8,7 +8,7 @@ import {Transition} from "ui-router-ng2/ng2";
     selector: 'service-package-form',
     template: `
     <div class="page-header">
-        <h4>服务套餐信息</h4>
+        <h4>产品包信息</h4>
     </div>
     
     <form #serviceForm="ngForm">
@@ -73,8 +73,12 @@ export class ServicePackageFormComponent {
     private servicesNotInPackage:any[] = [];
 
     ngOnInit() {
-        function diff(a1:any[], a2:any[]):any[] {
-           return a1.filter(function(i) {return a2.indexOf(i) < 0;});
+        function diff(arr1:any[], arr2:any[]):any[] {
+            let a2 = {}
+            for(let el of arr2) {
+                a2[el.id] = el;
+            }
+           return arr1.filter(function(el) {return !a2[el.id]});
         }
         this.servicesNotInPackage = diff(this.services, this.servicePackage.services);
     }

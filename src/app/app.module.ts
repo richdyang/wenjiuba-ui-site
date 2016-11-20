@@ -23,10 +23,9 @@ import {LoginForm} from "./components/login-form";
 import {StreamModule} from "../stream/stream.module";
 import {EventBus} from "../shared/services/event";
 import {SignupForm} from "./components/signup-form";
-import {DashboardComponent} from "./components/dashboard";
 import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
-import {AdminModule} from "../admin/admin.module";
+import {DashboardModule} from "../dashboard/dashboard.module";
 
 @NgModule({
   imports     : [
@@ -35,11 +34,11 @@ import {AdminModule} from "../admin/admin.module";
     WidgetModule,  SharedModule,            // common ui and shared module
     QandaModule,                            // feature module
     CaseModule,
-    StreamModule,
-    AdminModule
+    StreamModule, 
+    DashboardModule
   ],
   declarations: [
-    AppComponent, BaseComponent, DashboardComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
+    AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
     PeekAnchor, PeekPanel,
   ],
   providers   : [
