@@ -9,7 +9,7 @@ import {EventBus} from "../../shared/services/event";
     <!--<flash></flash>-->
     
     <ui-view></ui-view>
-    <p-growl [value]="messages" [life]="5000" [sticky]="true"></p-growl>
+    <p-growl [value]="messages" [life]="5000" [sticky]="false"></p-growl>
   `
 })
 export class AppComponent implements OnInit {
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     this.eventBus.httpPostSuccess.subscribe((data) => {
       this.messages.push({severity: 'success', detail: data})
     })
-    this.eventBus.httpServerError.subscribe((data) => this.messages.push({severity: 'danger', detail: data}))
+    this.eventBus.httpServerError.subscribe((data) => this.messages.push({severity: 'error', detail: data}))
   }
 
   constructor(private eventBus: EventBus) {}

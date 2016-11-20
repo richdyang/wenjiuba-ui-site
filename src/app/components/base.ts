@@ -16,7 +16,7 @@ import {SessionService} from "../../shared/services/session";
                   </a>
               </li>
               <li uiSrefActive="active">
-                  <a href uiSref="dashboard" *ngIf="session?.logined && session?.currentUser">
+                  <a href uiSref="i" *ngIf="session?.logined && session?.currentUser">
                       <i class="fa fa-user"></i>&nbsp;&nbsp;
                       {{session.currentUser.displayName}}
                   </a>
@@ -55,12 +55,6 @@ import {SessionService} from "../../shared/services/session";
                   <a href>
                       <i class="fa fa-bus"></i>&nbsp;&nbsp;
                       在线访谈
-                  </a>
-              </li>
-              <li uiSrefActive="active">
-                  <a href uiSref="admin">
-                      <i class="fa fa-cogs"></i>&nbsp;&nbsp;
-                      我的灸馆
                   </a>
               </li>
               <li uiSrefActive="active">

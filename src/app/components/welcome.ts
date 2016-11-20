@@ -9,6 +9,6 @@ export class WelcomeComponent {
   constructor(private router: UIRouter) {}
 
   onLogined() {
-    this.router.stateService.go('dashboard')
+    this.router.stateService.go('i')
   }
 }
