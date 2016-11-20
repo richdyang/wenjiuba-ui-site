@@ -8,6 +8,7 @@ import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {EnoterComponent} from "./components/enoter";
 import {EnoterReportFormComponent} from "./components/enoter-report-form";
+import {EnoterReportListComponent} from "./components/enoter-report-list";
 
 @NgModule({
     imports     : [
@@ -16,11 +17,11 @@ import {EnoterReportFormComponent} from "./components/enoter-report-form";
         UIRouterModule.forChild({states: states})          // feature routes
     ],
     declarations: [
-        EnoterComponent, EnoterReportFormComponent
+        EnoterComponent, EnoterReportFormComponent, EnoterReportListComponent
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [
-        EnoterComponent, EnoterReportFormComponent
+        EnoterComponent, EnoterReportFormComponent, EnoterReportListComponent
     ]  // make some declarations public
 })
 export class EnoterModule {

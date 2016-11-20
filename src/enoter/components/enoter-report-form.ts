@@ -36,7 +36,7 @@ export class EnoterReportFormComponent implements OnInit {
     ];
     private activeIndex:number = 0;
 
-    @Input() report = {}
+    @Input() report:any = {}
 
     private meridians= [
         {name: '肺', code: 'lu'},
@@ -57,6 +57,8 @@ export class EnoterReportFormComponent implements OnInit {
     private packageOptions;
 
     submit() {
+        this.report.robotRequestInd = this.report.requestPackage === 'R' ? 'Y': 'N';
+        this.report.expertRequestInd = this.report.requestPackage === 'E' ? 'Y' : 'N';
         this.apiService.post('/enoter/reports', this.report)
     }
 }
