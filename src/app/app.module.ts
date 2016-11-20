@@ -26,25 +26,27 @@ import {SignupForm} from "./components/signup-form";
 import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {DashboardModule} from "../dashboard/dashboard.module";
+import {EnoterModule} from "../enoter/enoter.module";
 
 @NgModule({
-  imports     : [
-    BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, // ng
-    UIRouterModule.forRoot(<RootModule>{states: states, configClass: PeekService}),           // root routes
-    WidgetModule,  SharedModule,            // common ui and shared module
-    QandaModule,                            // feature module
-    CaseModule,
-    StreamModule, 
-    DashboardModule
-  ],
-  declarations: [
-    AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
-    PeekAnchor, PeekPanel,
-  ],
-  providers   : [
-    // {provide: LocationStrategy, useClass: PathLocationStrategy},
-  ],
-  bootstrap   : [AppComponent]
+    imports: [
+        BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, // ng
+        UIRouterModule.forRoot(<RootModule>{states: states, configClass: PeekService}),           // root routes
+        WidgetModule, SharedModule,            // common ui and shared module
+        QandaModule,                            // feature module
+        CaseModule,
+        StreamModule,
+        DashboardModule,
+        EnoterModule,
+    ],
+    declarations: [
+        AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
+        PeekAnchor, PeekPanel,
+    ],
+    providers: [
+        // {provide: LocationStrategy, useClass: PathLocationStrategy},
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 

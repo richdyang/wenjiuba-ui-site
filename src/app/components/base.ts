@@ -40,7 +40,7 @@ import {SessionService} from "../../shared/services/session";
                   </a>
               </li>
               <li uiSrefActive="active">
-                  <a href>
+                  <a href uiSref="enoter">
                       <i class="fa fa-rocket"></i>&nbsp;&nbsp;
                       灸灸判读
                   </a>
