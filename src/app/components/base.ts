@@ -18,7 +18,7 @@ import {SessionService} from "../../shared/services/session";
               <li uiSrefActive="active">
                   <a href uiSref="i" *ngIf="session?.logined && session?.currentUser">
                       <i class="fa fa-user"></i>&nbsp;&nbsp;
-                      {{session.currentUser.displayName}}
+                      {{session.currentUser.realName || session.currentUser.displayName}}
                   </a>
               </li>
               <li uiSrefActive="active">
