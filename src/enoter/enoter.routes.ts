@@ -30,5 +30,5 @@ export const states:any[] = [
         },
         peek: true
     },
-    
+
 ]

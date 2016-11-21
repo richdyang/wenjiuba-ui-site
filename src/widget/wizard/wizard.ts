@@ -1,7 +1,7 @@
 import {NgModule,Component,Input,Output,EventEmitter} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MenuItem} from '../common/api';
-import {Router} from '@angular/router';
+import {UIRouter} from "ui-router-ng2/ng2";
 
 @Component({
     selector: 'p-wizard',
@@ -31,7 +31,7 @@ export class Wizard {
 
     @Output() activeIndexChange: EventEmitter<any> = new EventEmitter();
 
-    constructor(public router: Router) {}
+    constructor(public router: UIRouter) {}
 
     itemClick(event: Event, item: MenuItem, i: number) {
         if(this.readonly) {
@@ -65,7 +65,7 @@ export class Wizard {
         }
 
         if(item.routerLink) {
-            this.router.navigate(item.routerLink);
+            this.router.stateService.go(item.routerLink);
         }
     }
 

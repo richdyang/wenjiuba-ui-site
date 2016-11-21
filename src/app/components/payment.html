@@ -1,0 +1,38 @@
+<div class="page-header">
+    <h4>e络通辩证订单支付</h4>
+</div>
+
+<!--{{report | json}}-->
+<div class="row">
+    <main class="col-sm-9">
+
+        <form ngNoForm action="{{paymentSubmitUrl}}" method="POST" target="_blank">
+            <input type="hidden" name="Authorization" value="Bearer {{session.token}}">
+            <p-form-field label="商户订单号">
+                <p class="form-control-static">{{alipayTrade.tradeNo}}</p>
+                <input type="hidden" name="WIDout_trade_no" id="out_trade_no" value="{{alipayTrade.tradeNo}}">
+            </p-form-field>
+            <p-form-field label="产品名称">
+                <p class="form-control-static">{{alipayTrade.subject}}</p>
+                <input type="hidden" name="WIDsubject" value="{{alipayTrade.subject}}">
+            </p-form-field>
+            <p-form-field label="付款金额">
+                <p class="form-control-static">{{alipayTrade.totalFee}}</p>
+                <input type="hidden" name="WIDtotal_fee" value="{{alipayTrade.totalFee}}">
+            </p-form-field>
+            <p-form-field label="商品描述">
+                <p class="form-control-static">{{alipayTrade.body}}</p>
+                <input type="hidden" name="WIDbody" value="{{alipayTrade.body}}">
+            </p-form-field>
+
+            <input type="submit" class="btn btn-danger" value ="确认支付">
+        </form>
+    </main>
+
+    <aside class="col-sm-3">
+        <h4><i class="fa fa-info-circle"></i> 小提示</h4>
+        <p>
+            请仔细核对确认后，点击支付
+        </p>
+    </aside>
+</div>

@@ -9,8 +9,8 @@ import {UIRouter} from "ui-router-ng2/ng2";
     styles: [`
     #banner {
         margin-bottom: 40px;
-        margin-left: -15px;
-        margin-right: -15px;
+        margin-left: -30px;
+        margin-right: -30px;
         
         padding: 10px 25px 10px 25px;
         height: 65px;
