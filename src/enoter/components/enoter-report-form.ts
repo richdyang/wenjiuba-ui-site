@@ -1,9 +1,8 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Router} from "@angular/router";
 import {ApiService} from "../../shared/services/api";
 import {MenuItem} from "../../widget/common/api";
 import {DictService} from "../../shared/services/dict";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "ui-router-ng2/ng2";
 
 @Component({
     selector: 'enoter-report-form',
@@ -13,10 +12,7 @@ import {Transition} from "ui-router-ng2/ng2";
 })
 export class EnoterReportFormComponent implements OnInit {
     ngOnInit():void {
-        this.packageOptions = [
-            {label: '机器人判读', value: 'R'},
-            {label: '专家判读', value: 'E'},
-        ]
+
     }
     static resolve = [
         {
@@ -26,7 +22,7 @@ export class EnoterReportFormComponent implements OnInit {
         },
     ]
 
-    constructor(public apiService: ApiService, private dict:DictService, private router: Router) {}
+    constructor(public apiService: ApiService, private dict:DictService, private router: UIRouter) {}
 
     // ui control
     private steps:MenuItem[] = [
@@ -54,11 +50,10 @@ export class EnoterReportFormComponent implements OnInit {
     ]
 
     @Input() package;
-    private packageOptions;
 
     submit() {
-        this.report.robotRequestInd = this.report.requestPackage === 'R' ? 'Y': 'N';
-        this.report.expertRequestInd = this.report.requestPackage === 'E' ? 'Y' : 'N';
-        this.apiService.post('/enoter/reports', this.report)
+        this.apiService.post('/enoter/reports', this.report).then((report) => {
+            this.router.stateService.go('payment', {alipayTrade: report.alipayTrade})
+        })
     }
 }

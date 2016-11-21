@@ -107,17 +107,17 @@
             <fieldset>
                 <legend>订单支付</legend>
                 <p-form-field label="判读套餐 *">
-                    <p-selectButton [options]="packageOptions" [(ngModel)]="report.requestPackage" name="requestPackage" required></p-selectButton>
+                    <p-selectButton [options]="dict.options('enoter.requests')" [(ngModel)]="report.requestInd" name="requestInd" required></p-selectButton>
                 </p-form-field>
 
                 <div class="well" style="margin-top: 10px">
                     <p>
                         你需要支付：
-                        <span class="label label-danger" *ngIf="report.requestPackage==='R'">
+                        <span class="label label-danger" *ngIf="report.requestInd==='R'">
                             <del>{{package.namedRobotPrice}}</del>
                             {{package.robotPrice}}元/次
                         </span>
-                        <span class="label label-danger" *ngIf="report.requestPackage==='E'">
+                        <span class="label label-danger" *ngIf="report.requestInd==='E'">
                             <del>{{package.namedExpertPrice}}</del>
                             {{package.expertPrice}}元/次
                         </span>

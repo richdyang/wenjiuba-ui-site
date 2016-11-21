@@ -16,15 +16,24 @@ import {Transition} from "ui-router-ng2/ng2";
         <th>支付状态</th>
         <th>判读状态</th>
         <th>日期</th>
+        <th></th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let report of reports">
-        <td><a uiSref="enoter.reports-detail" [uiParams]="{id: report.id}">{{report.fullName}}</a></td>
-        <td>{{report.expertRequestInd === 'Y' ? '专家判读' : '机器人判读'}}</td>
-        <td>{{report.expertPaymentInd === 'Y' || report.robotPaymentInd === 'Y' ? '已付款' : '等待付款'}}</td>
-        <td>{{report.expertReport || report.robotReport ? '报告已出' : '正在判读'}}</td>
+        <td>{{report.fullName}}</td>
+        <td>{{report.requestInd === 'E' ? '专家判读' : '机器人判读'}}</td>
+        <td>{{report.paymentInd === 'Y' ? '已付款' : '等待付款'}}</td>
+        <td>{{report.reviewInd === 'F' ? '报告已出' : report.reviewInd === 'O' ? '正在判读' : '没有开始' }}</td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
+        <td class="text-right">
+            <a class="btn btn-default btn-circle-micro" uiSref="payment" [uiParams]="{id: report.id}" *ngIf="report.publishInd !== 'Y'">
+                <i class="fa fa-paypal"></i>
+            </a>
+            <a class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="report.publishInd !== 'Y'">
+                <i class="fa fa-eye"></i>
+            </a> 
+        </td>
       </tr>
       </tbody>
     </table>
@@ -33,6 +42,7 @@ import {Transition} from "ui-router-ng2/ng2";
     styles: [],
 })
 export class EnoterReportListComponent {
+
     static resolve = [
         {
             token: 'reports',
@@ -45,6 +55,7 @@ export class EnoterReportListComponent {
 
     //resolve
     @Input() reports: any[] = []
+
 
 
 }

@@ -20,6 +20,10 @@ export class DictService {
             'P': '未行经',
             'M': '行经',
             'A': '闭经'
+        },
+        "enoter.requests": {
+            'R': '机器人判读',
+            'E': '专家判读',
         }
     }
 

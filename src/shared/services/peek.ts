@@ -8,7 +8,7 @@ import {PeekPanel} from "../../app/components/peekpanel";
 export class PeekService {
 
     constructor(private router: UIRouter) {
-      this.router.transitionService.onSuccess({/*from: (state) => state.name != '', */to: (state) => state['peek']}, (transition:Transition) => {
+      this.router.transitionService.onSuccess({/*from: (state) => state.name != '', to: (state) => state['peek']*/}, (transition:Transition) => {
         let fromState:StateDeclaration = transition.from()
         let toState:StateDeclaration = transition.to()
 

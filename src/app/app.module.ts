@@ -27,6 +27,7 @@ import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {DashboardModule} from "../dashboard/dashboard.module";
 import {EnoterModule} from "../enoter/enoter.module";
+import {PaymentComponent} from "./components/payment";
 
 @NgModule({
     imports: [
@@ -41,7 +42,7 @@ import {EnoterModule} from "../enoter/enoter.module";
     ],
     declarations: [
         AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
-        PeekAnchor, PeekPanel,
+        PeekAnchor, PeekPanel, PaymentComponent
     ],
     providers: [
         // {provide: LocationStrategy, useClass: PathLocationStrategy},

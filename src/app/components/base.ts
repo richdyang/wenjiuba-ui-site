@@ -98,8 +98,8 @@ import {SessionService} from "../../shared/services/session";
   
   #main-content-wrap {
     position: relative;
-    padding-left: 215px;
-    padding-right: 15px;
+    padding-left: 230px;
+    padding-right: 30px;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
