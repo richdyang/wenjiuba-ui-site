@@ -31,7 +31,13 @@ import {DictService} from "../../../shared/services/dict";
     <p-form-field label="联系地址 *">
       <input type="text" [(ngModel)]="employee.address" name="address" class="form-control" required minlength="10">
     </p-form-field>
-    <p-form-field label="联系电话 *">
+    <p-form-field label="邮编 ">
+      <input type="text" [(ngModel)]="employee.postcode" name="postcode" class="form-control">
+    </p-form-field>
+    <p-form-field label="联系电话 ">
+      <input type="text" [(ngModel)]="employee.telephone" name="telephone" class="form-control" >
+    </p-form-field>
+    <p-form-field label="手机 *">
       <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11">
     </p-form-field>
     <p-form-field label="性别 *">

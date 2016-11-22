@@ -21,8 +21,8 @@ import {Transition} from "ui-router-ng2/ng2";
         <p-form-field label="价格 *">
           <input type="number" [(ngModel)]="service.price" name="mobile" class="form-control" required>
         </p-form-field>
-        <p-form-field label="是否为e络通项目? *">
-          <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="service.enoterInd" name="enoterInd" required></p-selectButton>
+        <p-form-field label="项目类型? *">
+          <p-selectButton [options]="dict.options('service.types')" [(ngModel)]="service.serviceType" name="serviceType" required></p-selectButton>
         </p-form-field>
         
         <button class="btn btn-primary" [disabled]="!serviceForm.valid" (click)="onSubmit()">保存</button>

@@ -22,10 +22,10 @@
             </p-form-field>
             <p-form-field label="商品描述">
                 <p class="form-control-static">{{alipayTrade.body}}</p>
-                <input type="hidden" name="WIDbody" value="{{alipayTrade.body}}">
+                <input type="hidden" name="WIDbody" value="{{alipayTrade.totalFee}}">
             </p-form-field>
 
-            <input type="submit" class="btn btn-danger" value ="确认支付">
+            <input type="submit" class="btn btn-danger" [disabled]="!(alipayTrade.tradeNo && alipayTrade.subject && alipayTrade.totalFee)" value ="确认支付">
         </form>
     </main>
 
