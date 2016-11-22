@@ -24,14 +24,14 @@ import {Transition} from "ui-router-ng2/ng2";
         <p-form-field label="预约费用 *">
           <input type="number" [(ngModel)]="servicePackage.depositFee" name="depositFee" class="form-control" required>
         </p-form-field>
-        <p-form-field label="额外费用 *">
+        <p-form-field label="额外费用 *" help="除了其包含项目以外的收费">
           <input type="number" [(ngModel)]="servicePackage.extraCost" name="extraCost" class="form-control" required>
         </p-form-field>
-        <p-form-field label="是否自动计算价格? *" help="自动计算价格">
+        <p-form-field label="是否自动计算价格? *" help="通过其包含的项目+额外费用自动计算此套餐总价格">
           <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="servicePackage.autoPriceInd" name="autoPriceInd" required></p-selectButton>
         </p-form-field>
         <p-form-field label="是否当前可用? *">
-          <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="servicePackage.openInd" name="openInd" required></p-selectButton>
+          <p-selectButton [options]="dict.options('yesno')" [(ngModel)]="servicePackage.availableInd" name="availableInd" required></p-selectButton>
         </p-form-field>
         
         <div class="row">
