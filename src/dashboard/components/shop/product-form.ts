@@ -5,53 +5,53 @@ import {DictService} from "../../../shared/services/dict";
 import {Transition} from "ui-router-ng2/ng2";
 
 @Component({
-    selector: 'service-form',
+    selector: 'product-form',
     template: `
     <div class="page-header">
         <h4>产品信息</h4>
     </div>
     
-    <form #serviceForm="ngForm">
+    <form #productForm="ngForm">
         <p-form-field label="名称 *">
-          <input type="text" [(ngModel)]="service.name" name="name" class="form-control" required minlength="2">
+          <input type="text" [(ngModel)]="product.name" name="name" class="form-control" required minlength="2">
         </p-form-field>
         <p-form-field label="描述 *">
-          <p-editor [(ngModel)]="service.introduction" name="introduction" [uploadHandler]="api.uploadHandler" required mintextlength="20"></p-editor>
+          <p-editor [(ngModel)]="product.introduction" name="introduction" [uploadHandler]="api.uploadHandler" required mintextlength="20"></p-editor>
         </p-form-field>
         <p-form-field label="价格 *">
-          <input type="number" [(ngModel)]="service.price" name="mobile" class="form-control" required>
+          <input type="number" [(ngModel)]="product.price" name="mobile" class="form-control" required>
         </p-form-field>
         <p-form-field label="项目类型? *">
-          <p-selectButton [options]="dict.options('service.types')" [(ngModel)]="service.serviceType" name="serviceType" required></p-selectButton>
+          <p-selectButton [options]="dict.options('product.types')" [(ngModel)]="product.productType" name="productType" required></p-selectButton>
         </p-form-field>
         
-        <button class="btn btn-primary" [disabled]="!serviceForm.valid" (click)="onSubmit()">保存</button>
+        <button class="btn btn-primary" [disabled]="!productForm.valid" (click)="onSubmit()">保存</button>
     </form>
     `,
     styles: [],
     providers: [],
     encapsulation: ViewEncapsulation.None
 })
-export class ServiceFormComponent {
+export class ProductFormComponent {
     constructor(private api:ApiService, private dict:DictService) {}
 
     static resolve = [
         {
-            token: 'service',
+            token: 'product',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/services/${transition.params().id}`)
+            resolveFn: (api, transition) => api.get(`/shops/default/products/${transition.params().id}`)
         },
         // for new only
     ]
 
     // models
-    @Input() service:any= {};
+    @Input() product:any= {};
 
     ngOnInit() {
     }
 
     private onSubmit() {
-        this.api.save('/shops/default/services', this.service);
+        this.api.save('/shops/default/products', this.product);
     }
 
 }

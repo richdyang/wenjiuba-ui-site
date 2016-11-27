@@ -12,9 +12,9 @@ import {StoreListComponent} from "./components/shop/store-list";
 import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
 import {EmployeeListComponent} from "./components/shop/employee-list";
-import {ServiceListComponent} from "./components/shop/service-list";
-import {ServiceFormComponent} from "./components/shop/service-form";
-import {ServicePackageFormComponent} from "./components/shop/service-package-form";
+import {ProductListComponent} from "./components/shop/product-list";
+import {ProductFormComponent} from "./components/shop/product-form";
+import {ProductPackageFormComponent} from "./components/shop/product-package-form";
 import {CustomerFormComponent} from "./components/shop/customer-form";
 import {CustomerListComponent} from "./components/shop/customer-list";
 import {CustomerAccountComponent} from "./components/shop/customer-account";
@@ -31,7 +31,7 @@ import {DashboardComponent} from "./components/dashboard";
         ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
-        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent,
+        ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
         CustomerListComponent, CustomerFormComponent, CustomerAccountComponent
     ], // all private by default
     providers   : [], // services which are public globally
@@ -40,7 +40,7 @@ import {DashboardComponent} from "./components/dashboard";
         ShopOverviewComponent, ShopNewComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
-        ServiceListComponent, ServiceFormComponent, ServicePackageFormComponent,
+        ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
         CustomerListComponent, CustomerFormComponent, CustomerAccountComponent
     ]  // make some declarations public
 })
