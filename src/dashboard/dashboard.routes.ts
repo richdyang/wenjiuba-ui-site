@@ -4,9 +4,9 @@ import {StoreListComponent} from "./components/shop/store-list";
 import {StoreFormComponent} from "./components/shop/store-form";
 import {EmployeeFormComponent} from "./components/shop/employee-form";
 import {EmployeeListComponent} from "./components/shop/employee-list";
-import {ServiceListComponent} from "./components/shop/service-list";
-import {ServiceFormComponent} from "./components/shop/service-form";
-import {ServicePackageFormComponent} from "./components/shop/service-package-form";
+import {ProductListComponent} from "./components/shop/product-list";
+import {ProductFormComponent} from "./components/shop/product-form";
+import {ProductPackageFormComponent} from "./components/shop/product-package-form";
 import {CustomerListComponent} from "./components/shop/customer-list";
 import {CustomerFormComponent} from "./components/shop/customer-form";
 import {CustomerAccountComponent} from "./components/shop/customer-account";
@@ -110,61 +110,61 @@ export const states:any[] = [
       },
       peek: true
     },
-    // -------------shop services ------------
+    // -------------shop products ------------
     {
-        name: 'shop-services',
-        url:  '/shop/services',
-        resolve: ServiceListComponent.resolve,
+        name: 'shop-products',
+        url:  '/shop/products',
+        resolve: ProductListComponent.resolve,
         views:
         {
-            'shop-services@base': {component: ServiceListComponent}
+            'shop-products@base': {component: ProductListComponent}
         },
         parent: 'i',
         peek: true
     },
     {
-        name: 'shop-services.new',
+        name: 'shop-products.new',
         url:  '/new',
         views:
         {
-            'shop-services-new@base': {component: ServiceFormComponent}
+            'shop-products-new@base': {component: ProductFormComponent}
         },
-        // resolve: ServiceFormComponent.resolve.slice(1),
+        // resolve: ProductFormComponent.resolve.slice(1),
         peek: true
     },
     {
-        name: 'shop-services.edit',
+        name: 'shop-products.edit',
         url:  '/:id/edit',
         params: {
             id: {type: "int"}
         },
-        resolve: ServiceFormComponent.resolve,
+        resolve: ProductFormComponent.resolve,
         views:
         {
-            'shop-services-edit@base': {component: ServiceFormComponent}
+            'shop-products-edit@base': {component: ProductFormComponent}
         },
         peek: true
     },
     {
-        name: 'shop-services.new-package',
+        name: 'shop-products.new-package',
         url:  '/packages/new',
         views:
         {
-            'shop-services-new-package@base': {component: ServicePackageFormComponent}
+            'shop-products-new-package@base': {component: ProductPackageFormComponent}
         },
-        // resolve: ServicePackageFormComponent.resolve.slice(1),
+        // resolve: ProductPackageFormComponent.resolve.slice(1),
         peek: true
     },
     {
-        name: 'shop-services.edit-package',
+        name: 'shop-products.edit-package',
         url:  '/packages/:id/edit',
         params: {
             id: {type: "int"}
         },
-        resolve: ServicePackageFormComponent.resolve,
+        resolve: ProductPackageFormComponent.resolve,
         views:
         {
-            'shop-services-edit-package@base': {component: ServicePackageFormComponent}
+            'shop-products-edit-package@base': {component: ProductPackageFormComponent}
         },
         peek: true
     },

@@ -10,7 +10,7 @@ import {ApiService} from "../../../shared/services/api";
         <a href uiSref="shop-outline" class="btn btn-default btn-circle"><i class="fa fa-home"></i></a>
         <a href uiSref="shop-stores" class="btn btn-info btn-circle"><i class="fa fa-building"></i></a>
         <a href uiSref="shop-employees" class="btn btn-default btn-circle"><i class="fa fa-user"></i></a>
-        <a href uiSref="shop-services" class="btn btn-default btn-circle"><i class="fa fa-bed"></i></a>
+        <a href uiSref="shop-products" class="btn btn-default btn-circle"><i class="fa fa-bed"></i></a>
         <a href uiSref="shop-customers" class="btn btn-default btn-circle"><i class="fa fa-female"></i></a>
         <a href uiSref="shop-records" class="btn btn-default btn-circle"><i class="fa fa-archive"></i></a>
         <a href uiSref="shop-records" class="btn btn-default btn-circle"><i class="fa fa-id-card"></i></a>

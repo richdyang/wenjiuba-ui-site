@@ -3,27 +3,27 @@ import {ApiService} from "../../../shared/services/api";
 import {DictService} from "../../../shared/services/dict";
 
 @Component({
-    selector: 'service-list',
-    templateUrl: './service-list.html',
+    selector: 'product-list',
+    templateUrl: './product-list.html',
     styles: [],
     providers: [],
 })
-export class ServiceListComponent {
+export class ProductListComponent {
     constructor(private api: ApiService, private dict: DictService) {}
 
     static resolve = [
         {
-            token: 'services',
+            token: 'products',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/shops/default/services')
+            resolveFn: (api) => api.get('/shops/default/products')
         },
         {
-            token: 'servicePackages',
+            token: 'productPackages',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/shops/default/services/packages')
+            resolveFn: (api) => api.get('/shops/default/products/packages')
         },
     ]
 
-    @Input() services;
-    @Input() servicePackages;
+    @Input() products;
+    @Input() productPackages;
 }
