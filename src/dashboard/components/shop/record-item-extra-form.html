@@ -1,0 +1,131 @@
+<div class="page-header">
+    <h4>灸例单项信息</h4>
+    <div class="pull-right">
+        <a href uiSref="shop-records.record.item" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-default btn-circle btn-circle-sm"><i class="fa fa-book"></i></a>
+        <a href uiSref="shop-records.record.extra" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-primary btn-circle btn-circle-sm"><i class="fa fa-ellipsis-h"></i></a>
+    </div>
+</div>
+
+<form #extraForm="ngForm">
+    <fieldset *ngIf="recordItem.product.productType === 'MISC'">
+        <p-form-field label="记录 *">
+            <p-editor [(ngModel)]="extra.content" name="content"></p-editor>
+        </p-form-field>
+        <p-form-field label="反馈 *">
+            <p-editor [(ngModel)]="extra.feedback" name=" feedback"></p-editor>
+        </p-form-field>
+    </fieldset>
+
+    <fieldset *ngIf="recordItem.product.productType === 'MOXI'">
+        <p-form-field label="主症 *">
+            <input type="text" [(ngModel)]="extra.symptom" name="symptom" class="form-control" required minlength="2">
+        </p-form-field>
+        <div *ngFor="let i of acupoints">
+            <p-form-field label="穴位{{i}} *">
+                <input type="text" [(ngModel)]="extra['acupoint'+i]" name="acupoint{{i}}" class="form-control" required minlength="2">
+            </p-form-field>
+            <p-form-field label="施灸时间{{i}} *">
+                <input type="text" [(ngModel)]="extra['duration'+i]" name="duration{{i}}" class="form-control" required minlength="2">
+            </p-form-field>
+            <p-form-field label="灸感{{i}} *">
+                <input type="text" [(ngModel)]="extra['response'+i]" name="response{{i}}" class="form-control" required minlength="2">
+            </p-form-field>
+        </div>
+        <a class="btn btn-circle" ngClass="{hide: apSeq.length >= 5}" (click)="addAcupoint()">增加一个穴位</a>
+        <p-form-field label="回访 *">
+            <p-editor [(ngModel)]="extra.feedback" name="feedback" [uploadHandler]="api.uploadHandler"></p-editor>
+        </p-form-field>
+        <p-form-field label="辅助技法">
+            <input type="text" [(ngModel)]="extra.ancillaryTechnique" name="ancillaryTechnique" class="form-control">
+        </p-form-field>
+    </fieldset>
+
+    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'">
+        <h4>客户基本信息</h4>
+        <p-form-field label="姓名 *">
+            <input type="text" [(ngModel)]="extra.fullName" name="name" class="form-control" required>
+        </p-form-field>
+        <p-form-field label="年龄 *">
+            <input type="number" [(ngModel)]="extra.age" name="age" class="form-control" required>
+        </p-form-field>
+        <p-form-field label="性别 *">
+            <p-selectButton [options]="dict.options('genders')" [(ngModel)]="extra.gender" name="gender"
+                            required></p-selectButton>
+        </p-form-field>
+        <p-form-field label="月经情况?" *ngIf="extra.gender === 'F'">
+            <p-selectButton [options]="dict.options('menses')" [(ngModel)]="extra.menses" name="menses"
+                            required></p-selectButton>
+        </p-form-field>
+        <p-form-field label="身高 " help="身高、体重等数据对于健康档案很重要">
+            <input type="number" [(ngModel)]="extra.height" name="height" class="form-control">
+        </p-form-field>
+        <p-form-field label="体重 ">
+            <input type="number" [(ngModel)]="extra.weight" name="weight" class="form-control">
+        </p-form-field>
+        <p-form-field label="血压（高） ">
+            <input type="number" [(ngModel)]="extra.bpHigh" name="bpHigh" class="form-control">
+        </p-form-field>
+        <p-form-field label="血压（低） ">
+            <input type="number" [(ngModel)]="extra.bpLow" name="bpLow" class="form-control">
+        </p-form-field>
+
+
+        <table class="table">
+            <thead class="text-center">
+            <tr>
+                <th>经络穴位</th>
+                <th>能量值(左)</th>
+                <th>能量值(右)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let meridian of meridians">
+                <td class="col-sm-1 text-center text-danger">
+                    {{meridian.name}}
+                </td>
+                <td class="col-sm-3">
+                    <input type="number" class="form-control" name="l{{meridian.code}}"
+                           [(ngModel)]="extra['l' + meridian.code]"
+                           required pattern="(\d|[1-9](\d+))?(\.\d{1,2})?">
+                </td>
+                <td class="col-sm-3">
+                    <input type="number" class="form-control" name="r{{meridian.code}}"
+                           [(ngModel)]="extra['r' + meridian.code]"
+                           required pattern="(\d|[1-9](\d+))?(\.\d{1,2})?">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>订单支付</h4>
+        <p-form-field label="判读套餐 *">
+            <p-selectButton [options]="dict.options('enoter.requests')" [(ngModel)]="extra.requestInd" name="requestInd" required></p-selectButton>
+        </p-form-field>
+
+        <div class="well" style="margin-top: 10px">
+            <p>
+                你需要支付：
+                    <span class="label label-danger" *ngIf="extra.requestInd==='R'">
+                        <del>{{package.namedRobotPrice}}</del>
+                        {{package.robotPrice}}元/次
+                    </span>
+                    <span class="label label-danger" *ngIf="extra.requestInd==='E'">
+                        <del>{{package.namedExpertPrice}}</del>
+                        {{package.expertPrice}}元/次
+                    </span>
+            </p>
+            <p class="text-warning">
+                <i class="fa fa-info-circle"></i>
+                请保证您的灸馆账户有足够余额。
+            </p>
+        </div>
+
+        <h4>免责声明</h4>
+        <div class="well">
+            <p>本判读报告仅做参考用途, 其解读不能代替医学检查。如您身体有病患, 请及时咨询医生。</p>
+            <p>您同意本声明,代表您已知晓相关事项。</p>
+        </div>
+    </fieldset>
+
+    <button class="btn btn-primary" [disabled]="!extraForm.valid" (click)="onSubmit()">保存</button>
+</form>
