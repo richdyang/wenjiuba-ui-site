@@ -19,12 +19,17 @@ import {CustomerFormComponent} from "./components/shop/customer-form";
 import {CustomerListComponent} from "./components/shop/customer-list";
 import {CustomerAccountComponent} from "./components/shop/customer-account";
 import {DashboardComponent} from "./components/dashboard";
+import {RecordListComponent} from "./components/shop/record-list";
+import {RecordFormComponent} from "./components/shop/record-form";
+import {RecordItemFormComponent} from "./components/shop/record-item-form";
+import {EnoterModule} from "../enoter/enoter.module";
+import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-form";
 
 @NgModule({
     imports     : [
         CommonModule, FormsModule, ReactiveFormsModule, HttpModule, // ng
         WidgetModule,  SharedModule,                        // common ui and shared module
-        UIRouterModule.forChild({states: states})          // feature routes
+        UIRouterModule.forChild({states: states}),          // feature routes
     ],
     declarations: [
         DashboardComponent,
@@ -32,7 +37,8 @@ import {DashboardComponent} from "./components/dashboard";
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
         ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
-        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent
+        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
+        RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [
@@ -41,7 +47,8 @@ import {DashboardComponent} from "./components/dashboard";
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
         ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
-        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent
+        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
+        RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
     ]  // make some declarations public
 })
 export class DashboardModule {

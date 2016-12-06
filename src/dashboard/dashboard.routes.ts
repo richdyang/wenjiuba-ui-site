@@ -11,6 +11,10 @@ import {CustomerListComponent} from "./components/shop/customer-list";
 import {CustomerFormComponent} from "./components/shop/customer-form";
 import {CustomerAccountComponent} from "./components/shop/customer-account";
 import {DashboardComponent} from "./components/dashboard";
+import {RecordListComponent} from "./components/shop/record-list";
+import {RecordFormComponent} from "./components/shop/record-form";
+import {RecordItemFormComponent} from "./components/shop/record-item-form";
+import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-form";
 
 export const states:any[] = [
     {
@@ -216,4 +220,68 @@ export const states:any[] = [
         },
         peek: true
     },
+    // -------------shop records ------------
+    {
+        name: 'shop-records',
+        url:  '/shop/records',
+        resolve: RecordListComponent.resolve,
+        views:
+        {
+            'shop-records@base': {component: RecordListComponent}
+        },
+        parent: 'i',
+        peek: true
+    },
+    {
+        name: 'shop-records.new',
+        url:  '/new',
+        views:
+        {
+            'shop-records-new@base': {component: RecordFormComponent}
+        },
+        resolve: RecordFormComponent.resolve_new,
+        peek: true
+    },
+    {
+        name: 'shop-records.record',
+        url:  '/{recordId:int}',
+        resolve: RecordFormComponent.resolve_edit,
+        views:
+        {
+            'shop-records-record@base': {component: RecordFormComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'shop-records.record.new-item',
+        url:  '/items/new',
+        params: {
+        },
+        views:
+        {
+            'shop-records-record-new-item@base': {component: RecordItemFormComponent}
+        },
+        resolve: RecordItemFormComponent.resolve_new,
+        peek: true
+    },
+    {
+        name: 'shop-records.record.item',
+        url:  '/items/{recordItemId:int}',
+        resolve: RecordItemFormComponent.resolve_edit,
+        views:
+        {
+            'shop-records-record-item@base': {component: RecordItemFormComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'shop-records.record.extra',
+        url:  '/items/{recordItemId:int}/extra',
+        resolve: RecordItemExtraFormComponent.resolve_edit,
+        views:
+        {
+            'shop-records-record-extra@base': {component: RecordItemExtraFormComponent}
+        },
+        peek: true
+    }
 ]

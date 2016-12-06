@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="881a1833-c32a-42ab-990e-ccb0f4b6d167" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/service-form.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/product-form.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/service-list.html" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/product-list.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/service-list.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/product-list.ts" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/service-package-form.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/product-package-form.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/components/expert/enoter-report-form.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/components/expert/enoter-report-list.ts" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/dashboard/components/expert/expert-form.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/customer-list.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/customer-list.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/employee-list.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/employee-list.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/shop-overview.html" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/shop-overview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/store-list.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/store-list.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboard.module.ts" afterPath="$PROJECT_DIR$/src/dashboard/dashboard.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/dashboard.routes.ts" afterPath="$PROJECT_DIR$/src/dashboard/dashboard.routes.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/record-form.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/record-form.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/record-item-form.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/record-item-form.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dashboard/components/shop/record-list.ts" afterPath="$PROJECT_DIR$/src/dashboard/components/shop/record-list.ts" />
     </list>
     <ignored path="wenjiuba-ui-site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,46 +29,114 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="shop-new.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-new.html">
+      <file leaf-file-name="record-form.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-form.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1127">
-              <caret line="49" column="37" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="37" />
+            <state relative-caret-position="345">
+              <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+              <folding>
+                <marker date="1481021151000" expanded="true" signature="379:414" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="451:1265" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="487:731" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="577:707" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="767:990" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="852:966" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1026:1140" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1266:2393" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1326:2392" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1363:1509" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1525:1688" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1538:1671" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1704:2379" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1840:2362" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="2104:2348" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="2255:2330" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="record-item-form.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-form.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+              <folding>
+                <marker date="1481017876000" expanded="true" signature="393:901" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="472:890" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="937:3059" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="956:2930" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="996:1148" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="1188:1449" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="1285:1421" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="1489:1774" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="1594:1746" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="1814:2360" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="2401:2561" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="2600:2737" ph="..." />
+                <marker date="1481017876000" expanded="true" signature="2779:2910" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="expert-form.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/components/expert/expert-form.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shop-overview.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-overview.html">
+      <file leaf-file-name="enoter.routes.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/enoter/enoter.routes.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+            <state relative-caret-position="345">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="store-list.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/store-list.ts">
+      <file leaf-file-name="enoter-report-list.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/components/expert/enoter-report-list.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enoter-report-form.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/components/expert/enoter-report-form.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="record-list.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-list.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
-              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <caret line="34" column="73" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
               <folding>
-                <element signature="e#0#47#0" expanded="true" />
-                <marker date="1480229592000" expanded="true" signature="191:1006" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="242:995" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1036:1155" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1180:2216" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1222:1311" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1391:2201" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1425:2186" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1506:2169" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1620:1711" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1729:1824" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1842:1926" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="1963:2150" ph="..." />
-                <marker date="1480229592000" expanded="true" signature="2080:2131" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="192:1007" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="243:996" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1011:1994" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1072:1993" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1109:1243" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1259:1398" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1272:1381" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1414:1980" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1532:1963" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1718:1949" ph="..." />
+                <marker date="1481021151000" expanded="true" signature="1856:1931" ph="..." />
               </folding>
             </state>
           </provider>
@@ -81,103 +145,9 @@
       <file leaf-file-name="product-list.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-list.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#55#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboard.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.routes.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboard.routes.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1610">
-              <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+            <state relative-caret-position="46">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customer-list.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/customer-list.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-                <marker date="1480229573000" expanded="true" signature="247:1060" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="298:1051" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1113:2174" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1148:1278" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1292:1444" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1305:1429" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1458:2161" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1506:2146" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1724:2132" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1854:1919" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="2052:2116" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee-list.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/employee-list.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-                <marker date="1480229573000" expanded="true" signature="247:1060" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="298:1051" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1113:2009" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1148:1278" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1292:1447" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1305:1432" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1461:1996" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1509:1981" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1756:1967" ph="..." />
-                <marker date="1480229573000" expanded="true" signature="1886:1951" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-package-form.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-package-form.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="851">
-              <caret line="37" column="133" selection-start-line="37" selection-start-column="133" selection-end-line="37" selection-end-column="133" />
-              <folding>
-                <element signature="e#0#66#0" expanded="true" />
-                <marker date="1480230037000" expanded="true" signature="378:412" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="450:2443" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="486:630" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="671:838" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="879:1048" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="1086:1230" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="1288:1430" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="1504:1677" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="1718:1891" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="1926:2308" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="2103:2293" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="2138:2271" ph="..." />
-                <marker date="1480230037000" expanded="true" signature="2187:2247" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -185,9 +155,21 @@
       <file leaf-file-name="product-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+            <state relative-caret-position="1104">
+              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.routes.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dashboard/dashboard.routes.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5231">
+              <caret line="265" column="6" selection-start-line="265" selection-start-column="6" selection-end-line="265" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,8 +179,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="HTML File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -208,20 +190,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/admin/admin.module.ts" />
-        <option value="$PROJECT_DIR$/src/admin/admin.routes.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/shop/service-form.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/shop/service-package-form.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/shop/customer-list.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/shop/employee-list.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/shop/store-list.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/shop/service-list.html" />
-        <option value="$PROJECT_DIR$/src/styles/primeng.css" />
-        <option value="$PROJECT_DIR$/src/app/components/app.ts" />
-        <option value="$PROJECT_DIR$/src/dashboard/components/admin.ts" />
-        <option value="$PROJECT_DIR$/src/app/components/welcome.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/typings.json" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/shop-new.ts" />
         <option value="$PROJECT_DIR$/src/styles/app.scss" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/shop-new.html" />
@@ -240,8 +208,6 @@
         <option value="$PROJECT_DIR$/src/app/app.routes.ts" />
         <option value="$PROJECT_DIR$/src/app/components/payment.ts" />
         <option value="$PROJECT_DIR$/src/enoter/components/enoter-report-list.ts" />
-        <option value="$PROJECT_DIR$/src/enoter/components/enoter-report-form.ts" />
-        <option value="$PROJECT_DIR$/src/enoter/components/enoter-report-form.html" />
         <option value="$PROJECT_DIR$/src/app/components/base.ts" />
         <option value="$PROJECT_DIR$/src/dashboard/components/dashboard.ts" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/employee-form.ts" />
@@ -250,15 +216,31 @@
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/service-package-form.ts" />
         <option value="$PROJECT_DIR$/src/app/components/payment.html" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/service-form.ts" />
-        <option value="$PROJECT_DIR$/src/dashboard/components/shop/product-list.html" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/product-list.ts" />
-        <option value="$PROJECT_DIR$/src/dashboard/dashboard.module.ts" />
-        <option value="$PROJECT_DIR$/src/dashboard/dashboard.routes.ts" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/customer-list.ts" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/employee-list.ts" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/shop-overview.html" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/store-list.ts" />
         <option value="$PROJECT_DIR$/src/dashboard/components/shop/product-package-form.ts" />
+        <option value="$PROJECT_DIR$/src/app/components/welcome.html" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-list.ts" />
+        <option value="$PROJECT_DIR$/src/enoter/components/enoter-report-form.html" />
+        <option value="$PROJECT_DIR$/src/enoter/components/enoter-report-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-enoter-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-misc-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-moxibustion-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/product-list.html" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-form.html" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboard.module.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/dashboard.routes.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-extra-form.html" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-extra-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-item-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/expert/expert-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/expert/report-list.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/expert/report-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-form.ts" />
+        <option value="$PROJECT_DIR$/src/dashboard/components/shop/record-list.ts" />
       </list>
     </option>
   </component>
@@ -301,6 +283,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -330,6 +313,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenjiuba-ui-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenjiuba-ui-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enoter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenjiuba-ui-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wenjiuba-ui-site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="enoter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,13 +436,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="expert" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,19 +461,20 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="typescript-compiler-editor-notification" value="false" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/enoter/components" />
-      <recent name="$PROJECT_DIR$/src/enoter" />
-      <recent name="$PROJECT_DIR$/src/admin/components/shop" />
-      <recent name="$PROJECT_DIR$/src/widget/picklist" />
-      <recent name="$PROJECT_DIR$/src/widget" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/components" />
       <recent name="$PROJECT_DIR$/src/enoter/components" />
       <recent name="$PROJECT_DIR$/src/admin/components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/enoter/components" />
+      <recent name="$PROJECT_DIR$/src/enoter" />
+      <recent name="$PROJECT_DIR$/src/admin/components/shop" />
+      <recent name="$PROJECT_DIR$/src/widget/picklist" />
     </key>
   </component>
   <component name="RunManager">
@@ -518,26 +549,28 @@
       <workItem from="1479262301294" duration="7521000" />
       <workItem from="1479433640509" duration="22038000" />
       <workItem from="1479550039534" duration="22780000" />
-      <workItem from="1479708244783" duration="22213000" />
+      <workItem from="1479708244783" duration="22571000" />
+      <workItem from="1480261025700" duration="7604000" />
+      <workItem from="1480741147357" duration="22416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74583000" />
+    <option name="totallyTimeSpent" value="104961000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="827" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24524313" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23537703" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32971507" sideWeight="0.5024665" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33061224" sideWeight="0.49753347" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32971507" sideWeight="0.49753347" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -566,143 +599,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/typings/globals/moment/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/typings/globals/moment/typings.json" />
-    <entry file="file://$PROJECT_DIR$/typings/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/typings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/angular2-moment/difference.pipe.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-new.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="33" column="10" selection-start-line="29" selection-start-column="21" selection-end-line="33" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#59#0" expanded="false" />
-            <marker date="1479628085000" expanded="true" signature="329:373" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/enoter/components/enoter.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-            <marker date="1479634682000" expanded="true" signature="177:1222" ph="..." />
-            <marker date="1479634682000" expanded="true" signature="205:1209" ph="..." />
-            <marker date="1479634682000" expanded="true" signature="242:1194" ph="..." />
-            <marker date="1479634682000" expanded="true" signature="629:724" ph="..." />
-            <marker date="1479634682000" expanded="false" signature="688:702" ph="..." />
-            <marker date="1479634682000" expanded="false" signature="766:807" ph="..." />
-            <marker date="1479634682000" expanded="true" signature="808:1175" ph="..." />
-            <marker date="1479634682000" expanded="true" signature="923:990" ph="..." />
-            <marker date="1479634682000" expanded="true" signature="1032:1145" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/enoter/enoter.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/typescript/lib/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="12793" column="53" selection-start-line="12793" selection-start-column="48" selection-end-line="12793" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@angular/router/src/router.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="254" column="21" selection-start-line="254" selection-start-column="21" selection-end-line="254" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/common/api.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-857">
-          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/wizard/wizard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="67" column="51" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#75#0" expanded="true" />
-            <marker date="1479731118000" expanded="true" signature="300:695" ph="..." />
-            <marker date="1479731118000" expanded="true" signature="337:684" ph="..." />
-            <marker date="1479731118000" expanded="true" signature="490:670" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/enoter/enoter.routes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/transition/transition.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="112" column="4" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,15 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-402">
           <caret line="28" column="12" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/state/stateService.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="170" column="76" selection-start-line="170" selection-start-column="76" selection-end-line="170" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="82" column="25" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -734,15 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/_src/state/interface.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="268" column="73" selection-start-line="268" selection-start-column="73" selection-end-line="268" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,19 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/enoter/components/enoter-report-form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="120" column="67" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-713">
           <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -837,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-207">
           <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -854,23 +724,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/enoter/components/enoter-report-form.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.routes.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -879,7 +736,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#69#0" expanded="true" />
+            <element signature="e#0#69#0" expanded="false" />
             <marker date="1479262244000" expanded="true" signature="299:362" ph="..." />
           </folding>
         </state>
@@ -890,7 +747,7 @@
         <state relative-caret-position="-66">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -900,7 +757,7 @@
         <state relative-caret-position="598">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#0#55#0" expanded="true" />
+            <element signature="e#0#55#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -933,9 +790,150 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/services/dict.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/_fontface.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/payment.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/employee-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+            <marker date="1480229573000" expanded="true" signature="247:1060" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="298:1051" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1113:2009" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1148:1278" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1292:1447" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1305:1432" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1461:1996" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1509:1981" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1756:1967" ph="..." />
+            <marker date="1480229573000" expanded="true" signature="1886:1951" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="49" column="37" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-overview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-package-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="37" column="133" selection-start-line="37" selection-start-column="133" selection-end-line="37" selection-end-column="133" />
+          <folding>
+            <element signature="e#0#66#0" expanded="false" />
+            <marker date="1480230037000" expanded="true" signature="378:412" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="450:2443" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="486:630" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="671:838" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="879:1048" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="1086:1230" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="1288:1430" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="1504:1677" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="1718:1891" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="1926:2308" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="2103:2293" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="2138:2271" ph="..." />
+            <marker date="1480230037000" expanded="true" signature="2187:2247" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/welcome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/store-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-989">
+          <caret line="14" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <marker date="1480229592000" expanded="true" signature="191:1006" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="242:995" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1036:1155" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1180:2216" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1222:1311" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1391:2201" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1425:2186" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1506:2169" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1620:1711" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1729:1824" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1842:1926" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="1963:2150" ph="..." />
+            <marker date="1480229592000" expanded="true" signature="2080:2131" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="41" column="102" selection-start-line="41" selection-start-column="77" selection-end-line="41" selection-end-column="102" />
+          <folding>
+            <marker date="1480228767000" expanded="true" signature="370:403" ph="..." />
+            <marker date="1480228767000" expanded="true" signature="441:1326" ph="..." />
+            <marker date="1480228767000" expanded="true" signature="477:614" ph="..." />
+            <marker date="1480228767000" expanded="true" signature="650:825" ph="..." />
+            <marker date="1480228767000" expanded="true" signature="861:989" ph="..." />
+            <marker date="1480228767000" expanded="true" signature="1028:1200" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/store-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-789">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#74#0" expanded="false" />
+            <marker date="1479262244000" expanded="true" signature="258:285" ph="..." />
+            <marker date="1479262244000" expanded="true" signature="317:1239" ph="..." />
+            <marker date="1479262244000" expanded="true" signature="351:464" ph="..." />
+            <marker date="1479262244000" expanded="true" signature="498:663" ph="..." />
+            <marker date="1479262244000" expanded="true" signature="697:816" ph="..." />
+            <marker date="1479262244000" expanded="true" signature="850:973" ph="..." />
+            <marker date="1479262244000" expanded="true" signature="1006:1125" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/customer-form.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
+        <state relative-caret-position="-726">
           <caret line="52" column="107" selection-start-line="52" selection-start-column="107" selection-end-line="52" selection-end-column="107" />
           <folding>
             <marker date="1479819353000" expanded="true" signature="320:347" ph="..." />
@@ -965,70 +963,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/services/dict.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/transition/transitionService.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-937">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/router.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/params/stateParams.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/state/stateService.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-moxibustion-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-misc-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="24" column="10" selection-start-line="7" selection-start-column="4" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/enoter/components/enoter-report-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1090">
+          <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/enoter/components/enoter-report-form.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <caret line="26" column="10" selection-start-line="22" selection-start-column="8" selection-end-line="26" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/_fontface.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/components/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-form.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <marker date="1480228767000" expanded="true" signature="370:403" ph="..." />
-            <marker date="1480228767000" expanded="true" signature="441:1326" ph="..." />
-            <marker date="1480228767000" expanded="true" signature="477:614" ph="..." />
-            <marker date="1480228767000" expanded="true" signature="650:825" ph="..." />
-            <marker date="1480228767000" expanded="true" signature="861:989" ph="..." />
-            <marker date="1480228767000" expanded="true" signature="1028:1200" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/dashboard.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+        <state relative-caret-position="305">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboard.routes.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1610">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/customer-list.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="345">
+          <caret line="17" column="12" selection-start-line="9" selection-start-column="6" selection-end-line="17" selection-end-column="12" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
             <marker date="1480229573000" expanded="true" signature="247:1060" ph="..." />
             <marker date="1480229573000" expanded="true" signature="298:1051" ph="..." />
             <marker date="1480229573000" expanded="true" signature="1113:2174" ph="..." />
@@ -1044,102 +1063,155 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/employee-list.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/ui-router-ng2/_src/state/interface.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="-4366">
+          <caret line="108" column="17" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-extra-form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="65" column="72" selection-start-line="65" selection-start-column="66" selection-end-line="65" selection-end-column="72" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
-            <marker date="1480229573000" expanded="true" signature="247:1060" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="298:1051" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1113:2009" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1148:1278" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1292:1447" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1305:1432" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1461:1996" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1509:1981" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1756:1967" ph="..." />
-            <marker date="1480229573000" expanded="true" signature="1886:1951" ph="..." />
+            <element signature="n#fieldset#0;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#fieldset#1;n#form#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#fieldset#2;n#form#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-extra-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/dashboard.routes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5231">
+          <caret line="265" column="6" selection-start-line="265" selection-start-column="6" selection-end-line="265" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/expert/expert-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/enoter/enoter.routes.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/expert/enoter-report-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/expert/enoter-report-form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-list.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="46">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+        <state relative-caret-position="1104">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-new.html">
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-form.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="49" column="37" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/shop-overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/store-list.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="345">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
-            <marker date="1480229592000" expanded="true" signature="191:1006" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="242:995" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1036:1155" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1180:2216" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1222:1311" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1391:2201" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1425:2186" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1506:2169" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1620:1711" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1729:1824" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1842:1926" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="1963:2150" ph="..." />
-            <marker date="1480229592000" expanded="true" signature="2080:2131" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="379:414" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="451:1265" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="487:731" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="577:707" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="767:990" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="852:966" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1026:1140" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1266:2393" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1326:2392" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1363:1509" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1525:1688" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1538:1671" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1704:2379" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1840:2362" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="2104:2348" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="2255:2330" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/product-package-form.ts">
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-item-form.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="851">
-          <caret line="37" column="133" selection-start-line="37" selection-start-column="133" selection-end-line="37" selection-end-column="133" />
+        <state relative-caret-position="207">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
-            <marker date="1480230037000" expanded="true" signature="378:412" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="450:2443" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="486:630" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="671:838" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="879:1048" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="1086:1230" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="1288:1430" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="1504:1677" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="1718:1891" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="1926:2308" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="2103:2293" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="2138:2271" ph="..." />
-            <marker date="1480230037000" expanded="true" signature="2187:2247" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="393:901" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="472:890" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="937:3059" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="956:2930" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="996:1148" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="1188:1449" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="1285:1421" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="1489:1774" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="1594:1746" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="1814:2360" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="2401:2561" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="2600:2737" ph="..." />
+            <marker date="1481017876000" expanded="true" signature="2779:2910" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dashboard/components/shop/record-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="34" column="73" selection-start-line="34" selection-start-column="73" selection-end-line="34" selection-end-column="73" />
+          <folding>
+            <marker date="1481021151000" expanded="true" signature="192:1007" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="243:996" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1011:1994" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1072:1993" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1109:1243" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1259:1398" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1272:1381" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1414:1980" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1532:1963" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1718:1949" ph="..." />
+            <marker date="1481021151000" expanded="true" signature="1856:1931" ph="..." />
           </folding>
         </state>
       </provider>
