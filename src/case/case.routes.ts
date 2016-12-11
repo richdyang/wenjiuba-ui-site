@@ -1,5 +1,6 @@
 import {CaseListComponent} from "./components/case-list";
 import {CaseNewComponent} from "./components/case-new";
+import {CaseFormComponent} from "./components/case-form";
 
 export const states:any[] = [
     {
@@ -14,7 +15,7 @@ export const states:any[] = [
         url: '/new',
         views:
         {
-            'cases-new@base': {component: CaseNewComponent}
+            'cases-new@base': {component: CaseFormComponent}
         },
         peek: true
     },

@@ -25,7 +25,7 @@ export class DictService {
             'R': '机器人判读',
             'E': '专家判读',
         },
-        "service.types": {
+        "product.types": {
             'ENOTER': 'e络通',
             'MOXI': '艾灸',
             'MISC': '其它'

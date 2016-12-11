@@ -1,8 +1,8 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {ApiService, API_BASE} from "../../shared/services/api";
-import {DictService} from "../../shared/services/dict";
+import {ApiService, API_BASE} from "../services/api";
+import {DictService} from "../services/dict";
 import {Transition, UIRouter} from "ui-router-ng2/ng2";
-import {SessionService} from "../../shared/services/session";
+import {SessionService} from "../services/session";
 
 @Component({
     selector: 'payment',

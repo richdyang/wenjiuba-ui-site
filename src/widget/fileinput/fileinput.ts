@@ -1,7 +1,7 @@
 import {NgModule, Component, Input, forwardRef, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NG_VALUE_ACCESSOR, ControlValueAccessor} from "@angular/forms";
-import {NgFileSelectDirective, UploadRejected} from "ng2-uploader";
+import {NgFileSelectDirective, UploadRejected} from "ng2-uploader/ng2-uploader";
 
 export const FILEINPUT_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,

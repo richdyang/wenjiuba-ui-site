@@ -8,7 +8,7 @@ import {EventBus} from "../../shared/services/event";
     templateUrl: './question-list.html',
     styles: []
 })
-export class QuestionListComponent implements OnInit {
+export class QuestionListComponent {
 
     static resolve = [
         {
@@ -26,7 +26,7 @@ export class QuestionListComponent implements OnInit {
 
     constructor(private eventService: EventBus) {}
 
-    ngOnInit():void {
+    ngAfterViewInit():void {
         this.eventService.questionCreated.subscribe((question) => {
             this.questions.unshift(question)
         })

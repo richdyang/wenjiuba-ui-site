@@ -13,17 +13,22 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
 export class EnoterReportFormComponent implements OnInit {
     @Input() pageHeader = 'e络通信息';
     @Input() paymentHandler = function(report) {
-        this.router.stateService.go('payment', {alipayTrade: report.alipayTrade})
+        this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: report.alipayTrade})
     }
 
-    ngOnInit():void {
 
-    }
+
+
     static resolve = [
         {
             token: 'package',
             deps: [ApiService,Transition],
             resolveFn: (api, transition) => api.get(`/enoter/packages/default`)
+        },
+        {
+            token: 'experts',
+            deps: [ApiService,Transition],
+            resolveFn: (api, transition) => api.get(`/experts`)
         },
     ]
 
@@ -55,6 +60,16 @@ export class EnoterReportFormComponent implements OnInit {
     ]
 
     @Input() package;
+    @Input() experts:any[];
+
+    ngOnInit():void {
+        this.experts = this.experts.map(expert => ({id: expert.id, text: expert.fullName}))
+    }
+
+    availableExperts(exclude:number) {
+        let selectedExpert = this.report[`expert${exclude}`];
+        return this.experts.filter(expert => expert.id !== selectedExpert );
+    }
 
     submit() {
         this.apiService.post('/enoter/reports', this.report).then((report) => {

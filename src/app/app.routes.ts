@@ -1,7 +1,7 @@
 import {BaseComponent} from "./components/base";
 import {WelcomeComponent} from "./components/welcome";
 import {SignupForm} from "./components/signup-form";
-import {PaymentComponent, AlipayTrade} from "./components/payment";
+import {PaymentComponent, AlipayTrade} from "../shared/components/payment";
 import {DashboardComponent} from "../dashboard/components/dashboard";
 
 export const states = [
@@ -19,15 +19,5 @@ export const states = [
         name: 'signup',
         url: '/signup',
         component: SignupForm
-    },
-    {
-        name: 'payment',
-        url: '/payment',
-        component: PaymentComponent,
-        params: {
-            alipayTrade: { }
-        },
-        resolve: PaymentComponent.resolve,
-        parent: 'base'
-    },
+    }
 ]

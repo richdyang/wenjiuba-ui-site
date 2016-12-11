@@ -4,7 +4,7 @@ import {ApiService} from "../../shared/services/api";
 
 @Component({
     selector: 'answer-form',
-    template: `
+    template: `  
     <form #answerForm="ngForm">
         <p-form-field label="内容 *">
             <p-editor [(ngModel)]="answer.content" [uploadHandler]="api.uploadHandler" name="content" required mintextlength="20">

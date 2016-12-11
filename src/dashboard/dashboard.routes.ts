@@ -15,6 +15,8 @@ import {RecordListComponent} from "./components/shop/record-list";
 import {RecordFormComponent} from "./components/shop/record-form";
 import {RecordItemFormComponent} from "./components/shop/record-item-form";
 import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-form";
+import {ExpertFormComponent} from "./components/expert/expert-form";
+import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
 
 export const states:any[] = [
     {
@@ -283,5 +285,32 @@ export const states:any[] = [
             'shop-records-record-extra@base': {component: RecordItemExtraFormComponent}
         },
         peek: true
-    }
+    },
+    // -------------shop records ------------
+    {
+        name: 'expert',
+        url: '/expert',
+        abstract: true,
+        parent: 'i',
+    },
+    {
+        name: 'expert.new',
+        url:  '/new',
+        resolve: RecordListComponent.resolve,
+        views:
+        {
+            'expert-new@base': {component: ExpertFormComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'expert.enoter-reports',
+        url:  '/enoter-reports',
+        resolve: ExpertEnoterReportListComponent.resolve,
+        views:
+        {
+            'expert-enoter-reports@base': {component: ExpertEnoterReportListComponent}
+        },
+        peek: true
+    },
 ]

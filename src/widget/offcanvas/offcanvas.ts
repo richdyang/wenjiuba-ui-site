@@ -174,7 +174,8 @@ export class CloseOffcanvas {
 
      
      .overlay--2 {
-        left: 200px;
+        padding-left: 200px;
+        background-clip: content-box;
         z-index: 2000;
      }
      
@@ -189,7 +190,8 @@ export class CloseOffcanvas {
      }
      
      .overlay--3 {
-        left: 300px;
+        padding-left: 300px;
+        background-clip: content-box;
         z-index: 3000;
      }
      

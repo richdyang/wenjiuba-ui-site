@@ -40,7 +40,7 @@
         </p-form-field>
     </fieldset>
 
-    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'">
+    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'" [disabled]="extra.robotReviewInd !== 'P' || extra.expert1ReviewInd !== 'P' || extra.expert2ReviewInd !== 'P'">
         <h4>客户基本信息</h4>
         <p-form-field label="姓名 *">
             <input type="text" [(ngModel)]="extra.fullName" name="name" class="form-control" required>
@@ -98,32 +98,37 @@
         </table>
 
         <h4>订单支付</h4>
-        <p-form-field label="判读套餐 *">
-            <p-selectButton [options]="dict.options('enoter.requests')" [(ngModel)]="extra.requestInd" name="requestInd" required></p-selectButton>
-        </p-form-field>
+        <div *ngIf="!extra.id">
+            <p-form-field label="判读套餐 *">
+                <p-selectButton [options]="dict.options('enoter.requests')" [(ngModel)]="extra.requestPackageInd" name="requestInd" required></p-selectButton>
+            </p-form-field>
 
-        <div class="well" style="margin-top: 10px">
-            <p>
-                你需要支付：
-                    <span class="label label-danger" *ngIf="extra.requestInd==='R'">
-                        <del>{{package.namedRobotPrice}}</del>
-                        {{package.robotPrice}}元/次
-                    </span>
-                    <span class="label label-danger" *ngIf="extra.requestInd==='E'">
-                        <del>{{package.namedExpertPrice}}</del>
-                        {{package.expertPrice}}元/次
-                    </span>
-            </p>
-            <p class="text-warning">
-                <i class="fa fa-info-circle"></i>
-                请保证您的灸馆账户有足够余额。
-            </p>
+            <div class="well" style="margin-top: 10px">
+                <p>
+                    你需要支付：
+                        <span class="label label-danger" *ngIf="extra.requestInd==='R'">
+                            <del>{{package.namedRobotPrice}}</del>
+                            {{package.robotPrice}}元/次
+                        </span>
+                        <span class="label label-danger" *ngIf="extra.requestInd==='E'">
+                            <del>{{package.namedExpertPrice}}</del>
+                            {{package.expertPrice}}元/次
+                        </span>
+                </p>
+                <p class="text-warning">
+                    <i class="fa fa-info-circle"></i>
+                    请保证您的灸馆账户有足够余额。
+                </p>
+            </div>
+
+            <h4>免责声明</h4>
+            <div class="well">
+                <p>本判读报告仅做参考用途, 其解读不能代替医学检查。如您身体有病患, 请及时咨询医生。</p>
+                <p>您同意本声明,代表您已知晓相关事项。</p>
+            </div>
         </div>
-
-        <h4>免责声明</h4>
-        <div class="well">
-            <p>本判读报告仅做参考用途, 其解读不能代替医学检查。如您身体有病患, 请及时咨询医生。</p>
-            <p>您同意本声明,代表您已知晓相关事项。</p>
+        <div *ngIf="extra.id">
+            您选择了{{dict.display('enoter.requests', extra.requestPackageInd)}}，支付状态: {{dict.display('yesno', extra.paymentInd)}}
         </div>
     </fieldset>
 

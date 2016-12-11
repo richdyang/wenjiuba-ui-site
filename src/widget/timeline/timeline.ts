@@ -20,7 +20,7 @@ moment.locale('zh-cn');
 			</div> <!-- ui-timeline-img -->
 
 			<div class="ui-timeline-content">
-				<h4>{{item.title}}</h4>
+				<h5>{{item.title}}</h5>
 				<p>{{item.content}}</p>
 				<a uiSref="{{item.uiSref}}" [uiParams]="item.uiParams" class="ui-timeline-readmore">Read more</a>
 				<span class="ui-timeline-date">{{item.date | amTimeAgo}}</span>

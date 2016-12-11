@@ -28,7 +28,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
-                    <p><a uiSref="enoter.reports-list">全部报告</a></p>
+                    <p><a uiSref="enoter.reports">全部报告</a></p>
                     <p class="badge">0</p>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <a uiSref="enoter">什么是"灸灸判读&trade;"？</a>
             </p>
             <div class="text-center">
-                <a class="btn btn-danger" uiSref="enoter.reports-new">开始一个判读</a>
+                <a class="btn btn-danger" uiSref="enoter.reports.new">开始一个判读</a>
             </div>
 
         </div>
@@ -78,20 +78,32 @@
     </div>
 </div>
 
-<div class="panel panel-default">
+<div class="panel panel-default" *ngIf="expert">
+    <div class="panel-heading">
+        我是灸专家
+    </div>
+    <div class="panel-body" *ngIf="expert.verificationInd === 'N'">
+        <div class="row" >
+            <div class="col-xs-6 col-md-4">
+                申请已经提交，正在审核中
+            </div>
+        </div>
+    </div>
+    <div class="panel-body" *ngIf="expert.verificationInd === 'Y'">
+        <div class="row" >
+            <div class="col-xs-6 col-md-4">
+                <a class="btn btn-link" uiSref="expert.enoter-reports">判读报告</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" *ngIf="!expert && expertInvitation">
     <div class="panel-heading">
         我是灸专家
     </div>
     <div class="panel-body">
-        <div class="row" *ngIf="shop">
-            <div class="col-xs-6 col-md-4">
-                <a uiSref="shop-outline" class="thumbnail">
-                    <img src="{{shop.brand}}" alt="店务管理">
-                </a>
-            </div>
-        </div>
-
-        <div class="row" *ngIf="!shop">
+        <div class="row">
             <div class="col-xs-12 col-md-12">
                 <div style="border: dashed 2px #cccccc; padding: 10px">
                     <h4 class="text-muted text-center">您还没有认证为辩证专家。</h4>
@@ -99,7 +111,7 @@
                         认证为辩证专家可以参与e络通辩证解读，生成专家报告，并可以得到收入。
                     </p>
                     <div class="text-center">
-                        <a uiSref="shop-new" class="btn btn-primary" role="button">现在开始申请</a>
+                        <a uiSref="expert.new" class="btn btn-primary" role="button">现在开始申请</a>
                     </div>
                 </div>
             </div>

@@ -67,7 +67,7 @@ export class RecordItemExtraFormComponent {
         let next = this.acupoints.length+1;
         this.acupoints.push(next)
     }
-    
+
     ngOnInit() {
         function toAge(birthday:string) {
             let birth = new Date(birthday);
@@ -86,7 +86,7 @@ export class RecordItemExtraFormComponent {
 
     private onSubmit() {
         let params:any = this.router.stateService.params
-        this.api.save(`/shops/default/records/${params.recordId}/items/${params.recordItemId}`, this.extra);
+        this.api.post(`/shops/default/records/${params.recordId}/items/${params.recordItemId}/extra`, this.extra);
     }
 
 }

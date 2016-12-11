@@ -5,6 +5,9 @@ import {EventBus} from "../../shared/services/event";
 @Component({
     selector: 'question-form',
     template: `
+    <div class="page-header">
+        <h4>问题</h4>
+    </div>
     <form #questionForm="ngForm">
         <p-form-field label="标题 *">
             <input type="text" [(ngModel)]="question.title" class="form-control" name="title" required minlength="10">
@@ -15,12 +18,8 @@ import {EventBus} from "../../shared/services/event";
         <p-form-field label="标签">
             <p-tag-input [(ngModel)]="question.tags" name="tags"></p-tag-input>
         </p-form-field>
-        <p-form-field label="文件">
-            <p-file-input [(ngModel)]="question.file" name="file" [uploadOptions]="api.uploadOptions" ></p-file-input>
-        </p-form-field>
         
         <button [disabled]="!questionForm.valid" class="btn btn-primary" (click)="onSave()">保存</button>
-        <button class="btn btn-default" (click)="onCancel()">取消</button>
     </form>
     {{question.file}}
     `,
@@ -45,7 +44,7 @@ export class QuestionFormComponent {
       question['tags'] = question['tags'].map( tag => tag.name).join(",")
 
       this.api.save('/questions', question).then(question => {
-            this.saved.emit(question);
+            // this.saved.emit(question);
             this.eventService.questionCreated.next(question);
         })
     }
