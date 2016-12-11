@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SessionService} from "../../shared/services/session";
 import {ApiService} from "../../shared/services/api";
 import {UIRouter} from "ui-router-ng2/ng2";
@@ -32,6 +32,7 @@ import {UIRouter} from "ui-router-ng2/ng2";
     providers: [],
 })
 export class DashboardComponent {
+
     streamEvents: any[] = []
 
     constructor(public session:SessionService, public apiService:ApiService, private router: UIRouter) {
@@ -43,10 +44,23 @@ export class DashboardComponent {
             token: 'shop',
             deps: [ApiService],
             resolveFn: (api) => api.get('/shops/default')
+        },
+        {
+            token: 'expert',
+            deps: [ApiService],
+            resolveFn: (api) => api.get('/experts/default')
+        },
+        {
+            token: 'expertInvitation',
+            deps: [ApiService],
+            resolveFn: (api) => api.get('/experts/default/invitation')
         }
     ]
 
     @Input() shop;
+
+    @Input() expert;
+    @Input() expertInvitation;
 
 
 }

@@ -107,17 +107,26 @@
             <fieldset>
                 <legend>订单支付</legend>
                 <p-form-field label="判读套餐 *">
-                    <p-selectButton [options]="dict.options('enoter.requests')" [(ngModel)]="report.requestInd" name="requestInd" required></p-selectButton>
+                    <p-selectButton [options]="dict.options('enoter.requests')" [(ngModel)]="report.requestPackageInd" name="requestInd" required></p-selectButton>
                 </p-form-field>
+
+                <p *ngIf="report.requestPackageInd === 'E'">
+                <p-form-field label="判读专家1 *">
+                    <p-select [(ngModel)]="report.expert1" name="expert1" [items]="availableExperts(2)" placeholder="请选择专家1.." [allowClear]="true" required></p-select>
+                </p-form-field>
+                <p-form-field label="判读专家2 *">
+                    <p-select [(ngModel)]="report.expert2" name="expert2" [items]="availableExperts(1)" placeholder="请选择专家2.." [allowClear]="true" required></p-select>
+                </p-form-field>
+                </p>
 
                 <div class="well" style="margin-top: 10px">
                     <p>
                         你需要支付：
-                        <span class="label label-danger" *ngIf="report.requestInd==='R'">
+                        <span class="label label-danger" *ngIf="report.requestPackageInd==='R'">
                             <del>{{package.namedRobotPrice}}</del>
                             {{package.robotPrice}}元/次
                         </span>
-                        <span class="label label-danger" *ngIf="report.requestInd==='E'">
+                        <span class="label label-danger" *ngIf="report.requestPackageInd==='E'">
                             <del>{{package.namedExpertPrice}}</del>
                             {{package.expertPrice}}元/次
                         </span>

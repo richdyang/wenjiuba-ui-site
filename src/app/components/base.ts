@@ -24,7 +24,7 @@ import {SessionService} from "../../shared/services/session";
               <li uiSrefActive="active">
                   <a href uiSref="stream">
                       <i class="fa fa-steam"></i>&nbsp;&nbsp;
-                      我的事件
+                      我的动态
                   </a>
               </li>
               <li uiSrefActive="active">

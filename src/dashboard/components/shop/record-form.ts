@@ -8,7 +8,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
     selector: 'record-form',
     template: `
     <div class="page-header">
-        <h4>病例基本信息</h4>
+        <h4>灸例基本信息</h4>
     </div>
     
     <form #recordForm="ngForm">
@@ -46,7 +46,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
         <p *ngIf="!record.items || record.items.length==0">您还没有记录服务项呢，现在录入一项吧？</p>
         <tr *ngFor="let recordItem of record.items">
             <td>{{recordItem.title}}</td>
-            <td>{{recordItem.technicianId}}</td>
+            <td>{{recordItem.technician.fullName}}</td>
             <td>{{recordItem.productType}}</td>
             <td>{{recordItem.happenedFrom}} ~ {{recordItem.happenedTo}}</td>
            

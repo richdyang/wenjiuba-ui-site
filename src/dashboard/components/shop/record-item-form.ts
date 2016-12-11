@@ -20,14 +20,16 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
                 <input type="text" [(ngModel)]="recordItem.title" name="title" class="form-control" required minlength="2">
             </p-form-field>
             <p-form-field label="产品 *">
-                <select [(ngModel)]="recordItem.product.id" name="product" class="form-control">
-                    <option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}</option>
-                </select>
+                <p-select [(ngModel)]="recordItem.product.id" name="productId" [items]="products" textField="name" placeholder="请选择产品.." [allowClear]="true" [disabled]="recordItem.id"></p-select>
+                <!--<select  class="form-control">-->
+                    <!--<option *ngFor="let product of products" [ngValue]="product.id">{{product.name}}</option>-->
+                <!--</select>-->
             </p-form-field>
             <p-form-field label="技师 *">
-                <select [(ngModel)]="recordItem.technician.id" name="technicianId" class="form-control">
-                    <option *ngFor="let technician of technicians" [ngValue]="technician.id">{{technician.fullName}}</option>
-                </select>
+                <p-select [(ngModel)]="recordItem.technician.id" name="technicianId" [items]="technicians" placeholder="请选择技师.." [allowClear]="true"></p-select>
+                <!--<select [(ngModel)]="recordItem.technician.id" name="technicianId" class="form-control">-->
+                    <!--<option *ngFor="let technician of technicians" [ngValue]="technician.id">{{technician.fullName}}</option>-->
+                <!--</select>-->
             </p-form-field>
             <p-form-field label="时间 *">
                 <input type="text" [(ngModel)]="recordItem.happenedFrom" name="happenedFrom" class="form-control">
@@ -91,7 +93,8 @@ export class RecordItemFormComponent implements OnInit {
     @Input() recordItem:any = {product:{},technician:{}};
 
     ngOnInit() {
-
+        this.products = this.products.map(product => ({id: product.id, 'text': product.name}));
+        this.technicians = this.technicians.map(technician => ({id: technician.id, 'text': technician.fullName}))
     }
 
     private onSubmit() {

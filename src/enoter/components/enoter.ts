@@ -22,7 +22,7 @@ import {ApiService} from "../../shared/services/api";
                   您可以选择不同套餐: 机器人判读或者专家辩证噢 -:)
                 </p>
                 <div class="text-center">
-                  <a class="btn btn-danger btn-lg" uiSref="enoter.reports-new">开始一个判读</a>
+                  <a class="btn btn-danger btn-lg" uiSref="enoter.reports.new">开始一个判读</a>
                 </div>
         
               </div>

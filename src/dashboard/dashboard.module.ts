@@ -24,6 +24,8 @@ import {RecordFormComponent} from "./components/shop/record-form";
 import {RecordItemFormComponent} from "./components/shop/record-item-form";
 import {EnoterModule} from "../enoter/enoter.module";
 import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-form";
+import {ExpertFormComponent} from "./components/expert/expert-form";
+import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
 
 @NgModule({
     imports     : [
@@ -39,16 +41,18 @@ import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-
         ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
         CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
         RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
+        ExpertFormComponent, ExpertEnoterReportListComponent,
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [
-        DashboardComponent,
-        ShopOverviewComponent, ShopNewComponent,
-        StoreListComponent, StoreFormComponent,
-        EmployeeListComponent, EmployeeFormComponent,
-        ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
-        CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
-        RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
+        // DashboardComponent,
+        // ShopOverviewComponent, ShopNewComponent,
+        // StoreListComponent, StoreFormComponent,
+        // EmployeeListComponent, EmployeeFormComponent,
+        // ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
+        // CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
+        // RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
+        // ExpertFormComponent, ExpertEnoterReportListComponent,
     ]  // make some declarations public
 })
 export class DashboardModule {

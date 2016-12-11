@@ -7,13 +7,7 @@ import {HttpModule} from "@angular/http";
 import {BaseComponent} from "./components/base";
 import {SidenavComponent} from "./components/sidenav";
 import {QandaModule} from "../qanda/qanda.module";
-import {ApiService} from "../shared/services/api";
-import {SessionService} from "../shared/services/session";
-import {AuthService} from "../shared/services/auth";
-import {LoginModalService} from "../shared/services/ui/login-modal";
-import {FlashService} from "../shared/services/ui/flash";
 import {UIRouterModule, RootModule, UIRouter, Transition, StateDeclaration} from "ui-router-ng2";
-import {UIRouterConfig} from "../shared/services/uiRouterConfig";
 import {PeekPanel} from "./components/peekPanel";
 import {PeekAnchor} from "./components/peekAnchor";
 import {PeekService} from "../shared/services/peek";
@@ -27,7 +21,7 @@ import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {DashboardModule} from "../dashboard/dashboard.module";
 import {EnoterModule} from "../enoter/enoter.module";
-import {PaymentComponent} from "./components/payment";
+import {PaymentComponent} from "../shared/components/payment";
 
 @NgModule({
     imports: [
@@ -42,7 +36,7 @@ import {PaymentComponent} from "./components/payment";
     ],
     declarations: [
         AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
-        PeekAnchor, PeekPanel, PaymentComponent
+        PeekAnchor, PeekPanel
     ],
     providers: [
         // {provide: LocationStrategy, useClass: PathLocationStrategy},

@@ -5,6 +5,10 @@ import {ApiService} from "../../shared/services/api";
 @Component({
     selector: 'case-form',
     template: `
+    <div class="page-header">
+        <h4>案例</h4>
+    </div>
+    
     <form #caseForm="ngForm">
         <p-form-field label="案例内容 *">
             <p-editor [(ngModel)]="case.content" name="content" required mintextlength="20" [uploadHandler]="api.uploadHandler" >
@@ -12,7 +16,6 @@ import {ApiService} from "../../shared/services/api";
         </p-form-field>
 
         <button [disabled]="!caseForm.valid" class="btn btn-primary" (click)="onSave()">保存</button>
-        <button class="btn btn-default" noBootstrap (click)="onCancel()">取消</button>
     </form>
     `
 })
