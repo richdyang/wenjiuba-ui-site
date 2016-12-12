@@ -40,7 +40,7 @@ export class StoreFormComponent {
     {
       token: 'store',
       deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shops/default/stores/${transition.params().id}`)
+      resolveFn: (api, transition) => api.get(`/shop/stores/${transition.params().id}`)
     }
   ]
 
@@ -49,7 +49,7 @@ export class StoreFormComponent {
 
 
   private onSubmit() {
-    this.api.save('/shops/default/stores', this.store);
+    this.api.save('/shop/stores', this.store);
   }
 
 }

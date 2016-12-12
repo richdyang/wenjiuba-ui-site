@@ -88,13 +88,13 @@ export class CustomerFormComponent {
     {
       token: 'customer',
       deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shops/default/customers/${transition.params().id}`)
+      resolveFn: (api, transition) => api.get(`/shop/customers/${transition.params().id}`)
     },
     // for new only
     {
       token: 'stores',
       deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shops/default/stores`)
+      resolveFn: (api, transition) => api.get(`/shop/stores`)
     }
   ]
 
@@ -104,7 +104,7 @@ export class CustomerFormComponent {
 
 
   private onSubmit() {
-    this.api.save('/shops/default/customers', this.customer);
+    this.api.save('/shop/customers', this.customer);
   }
 
 }

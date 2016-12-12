@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ApiService} from "../../shared/services/api";
 import {Transition} from "ui-router-ng2/ng2";
+import {DictService} from "../../shared/services/dict";
 
 @Component({
     selector: 'enoter-report-list',
@@ -14,7 +15,8 @@ import {Transition} from "ui-router-ng2/ng2";
         <th>评估人</th>
         <th>判读套餐</th>
         <th>支付状态</th>
-        <th>判读状态</th>
+        <th>机器人判读状态</th>
+        <th>专家判读状态</th>
         <th>日期</th>
         <th></th>
       </tr>
@@ -22,15 +24,20 @@ import {Transition} from "ui-router-ng2/ng2";
       <tbody>
       <tr *ngFor="let report of reports">
         <td>{{report.fullName}}</td>
-        <td>{{report.requestInd === 'E' ? '专家判读' : '机器人判读'}}</td>
-        <td>{{report.paymentInd === 'Y' ? '已付款' : '等待付款'}}</td>
-        <td>{{report.reviewInd === 'F' ? '报告已出' : report.reviewInd === 'O' ? '正在判读' : '没有开始' }}</td>
+        <td>{{dict.display('enoter.requestPackages', report.requestPackageInd)}}</td>
+        <td>{{dict.display('enoter.payments', report.paymentInd)}}</td>
+        <td>{{dict.display('enoter.reviews', report.robotReviewInd)}}</td>
+        <td>
+        {{dict.display('enoter.reviews', report.expert1ReviewInd)}}
+        /
+        {{dict.display('enoter.reviews', report.expert2ReviewInd)}}
+        </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <a class="btn btn-default btn-circle-micro" uiSref="payment" [uiParams]="{id: report.id}" *ngIf="report.publishInd !== 'Y'">
+            <a class="btn btn-default btn-circle-micro" uiSref="payment" [uiParams]="{id: report.id}" *ngIf="report.paymentInd !== 'Y'">
                 <i class="fa fa-paypal"></i>
             </a>
-            <a class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="report.publishInd !== 'Y'">
+            <a class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="canViewReport(report)">
                 <i class="fa fa-eye"></i>
             </a> 
         </td>
@@ -51,11 +58,19 @@ export class EnoterReportListComponent {
         },
     ]
 
-    constructor(private apiService:ApiService) {}
+    constructor(private apiService:ApiService, private dict:DictService) {}
 
     //resolve
+
     @Input() reports: any[] = []
 
-
+    private canViewReport(report:any) {
+        if(report.requestPackageInd === 'R') {
+            return report.robotReviewInd === 'F';
+        }
+        if(report.requestPackageInd === 'E') {
+            return report.expert1ReviewInd === 'F' && report.expert2ReviewInd === 'F';
+        }
+    }
 
 }

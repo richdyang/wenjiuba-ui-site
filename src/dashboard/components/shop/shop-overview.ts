@@ -15,10 +15,16 @@ export class ShopOverviewComponent {
     {
       token: 'shop',
       deps: [ApiService],
-      resolveFn: (api) => api.get('/shops/default')
-    }
+      resolveFn: (api) => api.get('/shop')
+    },
+      {
+          token: 'shopAccount',
+          deps: [ApiService],
+          resolveFn: (api) => api.get('/shop/account')
+      }
   ]
 
   @Input() shop;
+    @Input() shopAccount;
 
 }

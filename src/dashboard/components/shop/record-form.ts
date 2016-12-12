@@ -70,12 +70,12 @@ export class RecordFormComponent {
         {
             token: 'customers',
             deps: [ApiService, Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/customers`)
+            resolveFn: (api, transition) => api.get(`/shop/customers`)
         },
         {
             token: 'stores',
             deps: [ApiService, Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/stores`)
+            resolveFn: (api, transition) => api.get(`/shop/stores`)
         }
     ]
 
@@ -88,7 +88,7 @@ export class RecordFormComponent {
         {
             token: 'record',
             deps: [ApiService, Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/records/${transition.params().recordId}`)
+            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}`)
         },
     ]
     // models
@@ -100,7 +100,7 @@ export class RecordFormComponent {
     }
 
     private onSubmit() {
-        this.api.save('/shops/default/records', this.record).then(record => {
+        this.api.save('/shop/records', this.record).then(record => {
             this.router.stateService.go('shop-records.record', {recordId: record.id});
         });
     }

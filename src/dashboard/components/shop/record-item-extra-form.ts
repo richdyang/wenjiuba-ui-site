@@ -18,7 +18,7 @@ export class RecordItemExtraFormComponent {
         {
             token: 'recordItem',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
+            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
         },
         {
             token: 'package',
@@ -37,7 +37,7 @@ export class RecordItemExtraFormComponent {
         {
             token: 'extra',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/records/${transition.params().recordId}/items/${transition.params().recordItemId}/extra`)
+            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}/extra`)
         },
     ]
 
@@ -86,7 +86,7 @@ export class RecordItemExtraFormComponent {
 
     private onSubmit() {
         let params:any = this.router.stateService.params
-        this.api.post(`/shops/default/records/${params.recordId}/items/${params.recordItemId}/extra`, this.extra);
+        this.api.post(`/shop/records/${params.recordId}/items/${params.recordItemId}/extra`, this.extra);
     }
 
 }

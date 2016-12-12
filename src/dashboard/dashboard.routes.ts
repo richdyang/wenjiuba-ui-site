@@ -17,6 +17,7 @@ import {RecordItemFormComponent} from "./components/shop/record-item-form";
 import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-form";
 import {ExpertFormComponent} from "./components/expert/expert-form";
 import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
+import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
 
 export const states:any[] = [
     {
@@ -310,6 +311,16 @@ export const states:any[] = [
         views:
         {
             'expert-enoter-reports@base': {component: ExpertEnoterReportListComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'expert.enoter-reports.report-review',
+        url:  '/{reportId:int}/review',
+        resolve: ExpertEnoterReportFormComponent.resolve,
+        views:
+        {
+            'expert-enoter-reports-report-review@base': {component: ExpertEnoterReportFormComponent}
         },
         peek: true
     },

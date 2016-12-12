@@ -61,7 +61,7 @@ export class ProductPackageFormComponent {
         {
             token: 'productPackage',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/products/packages/${transition.params().id}`)
+            resolveFn: (api, transition) => api.get(`/shop/products/packages/${transition.params().id}`)
         }
         // for new only
     ]
@@ -84,7 +84,7 @@ export class ProductPackageFormComponent {
     }
 
     private onSubmit() {
-        this.api.save('/shops/default/products/packages', this.productPackage);
+        this.api.save('/shop/products/packages', this.productPackage);
     }
 
 }

@@ -43,17 +43,17 @@ export class DashboardComponent {
         {
             token: 'shop',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/shops/default')
+            resolveFn: (api) => api.get('/shop')
         },
         {
             token: 'expert',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/experts/default')
+            resolveFn: (api) => api.get('/expert')
         },
         {
             token: 'expertInvitation',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/experts/default/invitation')
+            resolveFn: (api) => api.get('/expert/invitation')
         }
     ]
 

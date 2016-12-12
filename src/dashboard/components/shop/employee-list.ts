@@ -8,13 +8,13 @@ import {DictService} from "../../../shared/services/dict";
   <div class="page-header">
       <h4>员工管理</h4>
       <div class="pull-right">
-        <a href uiSref="shop-outline" class="btn btn-default btn-circle"><i class="fa fa-home"></i></a>
-        <a href uiSref="shop-stores" class="btn btn-default btn-circle"><i class="fa fa-building"></i></a>
-        <a href uiSref="shop-employees" class="btn btn-info btn-circle"><i class="fa fa-user"></i></a>
-        <a href uiSref="shop-products" class="btn btn-default btn-circle"><i class="fa fa-bed"></i></a>
-        <a href uiSref="shop-customers" class="btn btn-default btn-circle"><i class="fa fa-female"></i></a>
-        <a href uiSref="shop-records" class="btn btn-default btn-circle"><i class="fa fa-archive"></i></a>
-        <a href uiSref="shop-records" class="btn btn-default btn-circle"><i class="fa fa-id-card"></i></a>
+          <a href uiSref="shop-outline" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></a>
+          <a href uiSref="shop-stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></a>
+          <a href uiSref="shop-employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></a>
+          <a href uiSref="shop-products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></a>
+          <a href uiSref="shop-customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></a>
+          <a href uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></a>
+          <a href uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></a>
       </div>
   </div>
 
@@ -56,7 +56,7 @@ export class EmployeeListComponent {
     {
       token: 'employees',
       deps: [ApiService],
-      resolveFn: (api) => api.get('/shops/default/employees')
+      resolveFn: (api) => api.get('/shop/employees')
     }
   ]
 

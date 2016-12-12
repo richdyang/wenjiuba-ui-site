@@ -21,7 +21,7 @@ export class CustomerAccountComponent {
       {
           token: 'account',
           deps: [ApiService,Transition],
-          resolveFn: (api, transition) => api.get(`/shops/default/customers/${transition.params().id}/account`)
+          resolveFn: (api, transition) => api.get(`/shop/customers/${transition.params().id}/account`)
       },
   ]
 

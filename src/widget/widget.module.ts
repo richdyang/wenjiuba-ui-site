@@ -15,6 +15,7 @@ import {GrowlModule} from "./growl/growl";
 import {CalendarModule} from "./calendar/calendar";
 import {PickListModule} from "./picklist/picklist";
 import {SelectModule} from "./select/select";
+import {ChartsModule} from "./charts/charts";
 
 @NgModule({
   imports     : [
@@ -22,14 +23,14 @@ import {SelectModule} from "./select/select";
     MomentModule,  // 3rd-party
     BlockUIModule, InplaceModule, SelectButtonModule, GrowlModule, PickListModule,
     EditorModule, FileInputModule, FormFieldModule, OffcanvasModule, TagInputModule,
-      TimelineModule, WizardModule, CalendarModule, SelectModule
+      TimelineModule, WizardModule, CalendarModule, SelectModule, ChartsModule
   ],
   declarations: [], // all private by default
   providers   : [], // services which are public globally
   exports     : [
     BlockUIModule, InplaceModule, SelectButtonModule, GrowlModule, PickListModule,
     EditorModule, FileInputModule, FormFieldModule, OffcanvasModule, TagInputModule,
-      TimelineModule, WizardModule, CalendarModule, SelectModule
+      TimelineModule, WizardModule, CalendarModule, SelectModule, ChartsModule
   ]  // make some declarations public
 })
 export class WidgetModule {

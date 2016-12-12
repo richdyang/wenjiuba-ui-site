@@ -21,9 +21,19 @@ export class DictService {
             'M': '行经',
             'A': '闭经'
         },
-        "enoter.requests": {
+        "enoter.requestPackages": {
             'R': '机器人判读',
             'E': '专家判读',
+        },
+        "enoter.reviews": {
+            'P': '未开始',
+            'I': '进行中',
+            'F': '已完成'
+        },
+        "enoter.payments": {
+            'Y': '已付款',
+            'N': '未付款',
+            'E': '异常'
         },
         "product.types": {
             'ENOTER': 'e络通',

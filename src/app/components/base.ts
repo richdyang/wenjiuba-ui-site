@@ -17,43 +17,43 @@ import {SessionService} from "../../shared/services/session";
               </li>
               <li uiSrefActive="active">
                   <a href uiSref="i" *ngIf="session?.logined && session?.currentUser">
-                      <i class="fa fa-user"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-profile"></i>&nbsp;&nbsp;
                       {{session.currentUser.realName || session.currentUser.displayName}}
                   </a>
               </li>
               <li uiSrefActive="active">
                   <a href uiSref="stream">
-                      <i class="fa fa-steam"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-stream"></i>&nbsp;&nbsp;
                       我的动态
                   </a>
               </li>
               <li uiSrefActive="active">
                   <a href uiSref="questions" uiSrefActive="active">
-                      <i class="fa fa-comments"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-qanda"></i>&nbsp;&nbsp;
                       有问灸答
                   </a>
               </li>
               <li uiSrefActive="active">
                   <a href uiSref="cases" uiSrefActive="active">
-                      <i class="fa fa-cog"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-case"></i>&nbsp;&nbsp;
                       案例分享
                   </a>
               </li>
               <li uiSrefActive="active">
                   <a href uiSref="enoter">
-                      <i class="fa fa-rocket"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-enoter"></i>&nbsp;&nbsp;
                       灸灸判读
                   </a>
               </li>
               <li uiSrefActive="active">
                   <a href>
-                      <i class="fa fa-venus"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-event"></i>&nbsp;&nbsp;
                       线下活动
                   </a>
               </li>
               <li uiSrefActive="active">
                   <a href>
-                      <i class="fa fa-bus"></i>&nbsp;&nbsp;
+                      <i class="wj-icon wj-interview"></i>&nbsp;&nbsp;
                       在线访谈
                   </a>
               </li>

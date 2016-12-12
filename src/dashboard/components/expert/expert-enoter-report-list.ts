@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Transition} from "ui-router-ng2/ng2";
 import {ApiService} from "../../../shared/services/api";
+import {DictService} from "../../../shared/services/dict";
 
 @Component({
     selector: 'expert-enoter-report-list',
@@ -22,12 +23,12 @@ import {ApiService} from "../../../shared/services/api";
       <tbody>
       <tr *ngFor="let report of reports">
         <td>{{report.fullName}}</td>
-        <td>{{report.requestInd === 'E' ? '专家判读' : '机器人判读'}}</td>
-        <td>{{report.paymentInd === 'Y' ? '已付款' : '等待付款'}}</td>
-        <td>{{report.reviewInd === 'F' ? '报告已出' : report.reviewInd === 'O' ? '正在判读' : '没有开始' }}</td>
+        <td>{{dict.display('enoter.requestPackages', report.requestPackageInd)}}</td>
+        <td>{{dict.display('enoter.payments', report.paymentInd)}}</td>
+        <td>{{dict.display('enoter.reviews', reviewInd(report))}}</td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <a class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.enoter-report.edit" [uiParams]="{id: report.id}" *ngIf="report.publishInd !== 'Y'">
+            <a class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report-review" [uiParams]="{reportId: report.id}" *ngIf="report.publishInd !== 'Y'">
                 <i class="fa fa-eye"></i>
             </a> 
         </td>
@@ -44,15 +45,22 @@ export class ExpertEnoterReportListComponent {
         {
             token: 'reports',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/enoter/reports`)
+            resolveFn: (api, transition) => api.get(`/expert/enoterReports`)
         },
     ]
 
-    constructor(private api:ApiService) {}
+    constructor(private api:ApiService, private dict:DictService) {}
 
     //resolve
+    @Input() expert:any; // from parent route
     @Input() reports: any[] = []
 
-
-
+    private reviewInd(report):string {
+        if(this.expert.id === report.expert1) {
+            return report.expert1ReviewInd;
+        }
+        if(this.expert.id === report.expert2) {
+            return report.expert2ReviewInd;
+        }
+    }
 }

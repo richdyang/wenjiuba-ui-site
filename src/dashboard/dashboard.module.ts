@@ -26,6 +26,7 @@ import {EnoterModule} from "../enoter/enoter.module";
 import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-form";
 import {ExpertFormComponent} from "./components/expert/expert-form";
 import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
+import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
 
 @NgModule({
     imports     : [
@@ -41,7 +42,7 @@ import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter
         ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
         CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
         RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
-        ExpertFormComponent, ExpertEnoterReportListComponent,
+        ExpertFormComponent, ExpertEnoterReportListComponent, ExpertEnoterReportFormComponent
     ], // all private by default
     providers   : [], // services which are public globally
     exports     : [

@@ -54,11 +54,18 @@
         我的灸馆
     </div>
     <div class="panel-body">
-        <div class="row" *ngIf="shop">
+        <div class="row" *ngIf="shop && shop.verificationInd === 'Y'">
             <div class="col-xs-6 col-md-4">
                 <a uiSref="shop-outline" class="thumbnail">
                     <img src="{{shop.brand}}" alt="店务管理">
                 </a>
+            </div>
+        </div>
+        <div class="panel-body" *ngIf="shop.verificationInd === 'N'">
+            <div class="row" >
+                <div class="col-xs-6 col-md-4">
+                    申请已经提交，正在审核中
+                </div>
             </div>
         </div>
 
@@ -90,9 +97,24 @@
         </div>
     </div>
     <div class="panel-body" *ngIf="expert.verificationInd === 'Y'">
-        <div class="row" >
-            <div class="col-xs-6 col-md-4">
-                <a class="btn btn-link" uiSref="expert.enoter-reports">判读报告</a>
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-sm-4">
+                <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
+                    <p>等待判读</p>
+                    <p class="badge">0</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
+                    <p>等待发布</p>
+                    <p class="badge">0</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
+                    <p><a uiSref="expert.enoter-reports">全部报告</a></p>
+                    <p class="badge">0</p>
+                </div>
             </div>
         </div>
     </div>
