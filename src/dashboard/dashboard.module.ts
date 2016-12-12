@@ -27,6 +27,7 @@ import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-
 import {ExpertFormComponent} from "./components/expert/expert-form";
 import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
 import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
+import {RecordDetailComponent} from "./components/shop/record-detail";
 
 @NgModule({
     imports     : [
@@ -41,20 +42,11 @@ import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter
         EmployeeListComponent, EmployeeFormComponent,
         ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
         CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
-        RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
+        RecordListComponent, RecordDetailComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
         ExpertFormComponent, ExpertEnoterReportListComponent, ExpertEnoterReportFormComponent
     ], // all private by default
     providers   : [], // services which are public globally
-    exports     : [
-        // DashboardComponent,
-        // ShopOverviewComponent, ShopNewComponent,
-        // StoreListComponent, StoreFormComponent,
-        // EmployeeListComponent, EmployeeFormComponent,
-        // ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
-        // CustomerListComponent, CustomerFormComponent, CustomerAccountComponent,
-        // RecordListComponent, RecordFormComponent, RecordItemFormComponent, RecordItemExtraFormComponent,
-        // ExpertFormComponent, ExpertEnoterReportListComponent,
-    ]  // make some declarations public
+    exports     : []  // make some declarations public
 })
 export class DashboardModule {
 

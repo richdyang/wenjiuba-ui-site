@@ -18,6 +18,7 @@ import {RecordItemExtraFormComponent} from "./components/shop/record-item-extra-
 import {ExpertFormComponent} from "./components/expert/expert-form";
 import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
 import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
+import {RecordDetailComponent} from "./components/shop/record-detail";
 
 export const states:any[] = [
     {
@@ -248,10 +249,10 @@ export const states:any[] = [
     {
         name: 'shop-records.record',
         url:  '/{recordId:int}',
-        resolve: RecordFormComponent.resolve_edit,
+        resolve: RecordDetailComponent.resolve,
         views:
         {
-            'shop-records-record@base': {component: RecordFormComponent}
+            'shop-records-record@base': {component: RecordDetailComponent}
         },
         peek: true
     },

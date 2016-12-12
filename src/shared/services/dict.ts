@@ -58,6 +58,7 @@ export class DictService {
     }
 
     public display(dictKey, value):string {
+        if(!this.map.hasOwnProperty(dictKey)) return null;
         return this.map[dictKey][value];
     }
 }
