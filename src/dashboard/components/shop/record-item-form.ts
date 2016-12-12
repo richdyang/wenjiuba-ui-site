@@ -64,12 +64,12 @@ export class RecordItemFormComponent implements OnInit {
         {
             token: 'products',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/products`)
+            resolveFn: (api, transition) => api.get(`/shop/products`)
         },
         {
             token: 'technicians',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/employees`)
+            resolveFn: (api, transition) => api.get(`/shop/employees`)
         },
     ]
 
@@ -82,7 +82,7 @@ export class RecordItemFormComponent implements OnInit {
         {
             token: 'recordItem',
             deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shops/default/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
+            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
         },
     ]
 
@@ -98,7 +98,7 @@ export class RecordItemFormComponent implements OnInit {
     }
 
     private onSubmit() {
-        this.api.save(`/shops/default/records/${this.record.id}/items`, this.recordItem).then(recordItem => {
+        this.api.save(`/shop/records/${this.record.id}/items`, this.recordItem).then(recordItem => {
             this.router.stateService.go('shop-records.record.extra', {recordId: this.record.id, recordItemId: this.recordItem.id})
         });
     }

@@ -18,46 +18,21 @@ export class StreamListComponent {
 
     constructor(public session:SessionService, public apiService:ApiService, private router: UIRouter) {
         this.apiService.get('/me/stream').then(streamEvents => {
-            this.streamEvents = streamEvents
-            this.streamEvents.map(streamEvent => {
+            this.streamEvents = streamEvents.map(streamEvent => {
                 if(streamEvent.type == 'answer') {
                     streamEvent.title = streamEvent.questionTitle
                     streamEvent.uiSref = 'questions.detail'
                     streamEvent.uiParams = {id: streamEvent.questionId}
-                    streamEvent.iconClasses = 'fa fa-quote-left'
+                    streamEvent.iconClasses = 'wj-icon wj-question'
                 }
                 if(streamEvent.type == 'question') {
                     streamEvent.uiSref = 'questions.detail'
-                    streamEvent.uiParams = {id: streamEvent.questionId}
+                    streamEvent.uiParams = {id: streamEvent.id}
                     streamEvent.link = `/questions/${streamEvent.id}`
-                    streamEvent.iconClasses = 'fa fa-question'
+                    streamEvent.iconClasses = 'wj-icon wj-answer'
                 }
+                return streamEvent;
             })
-          this.streamEvents.push({
-            title: 'xxxxxxxxx',
-            content: 'xfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdggxfdfdgdgdgdgdgg',
-            iconClasses: 'fa fa-car'
-          })
-          this.streamEvents.push({
-            title: 'xxxxxxxxx',
-            content: 'xfdfdgdgdgdgdgg',
-            iconClasses: 'fa fa-car'
-          })
-          this.streamEvents.push({
-            title: 'xxxxxxxxx',
-            content: 'xfdfdgdgdgdgdgg',
-            iconClasses: 'fa fa-car'
-          })
-          this.streamEvents.push({
-            title: 'xxxxxxxxx',
-            content: 'xfdfdgdgdgdgdgg',
-            iconClasses: 'fa fa-car'
-          })
-          this.streamEvents.push({
-            title: 'xxxxxxxxx',
-            content: 'xfdfdgdgdgdgdgg',
-            iconClasses: 'fa fa-car'
-          })
         });
     }
 }

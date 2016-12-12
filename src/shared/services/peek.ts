@@ -7,83 +7,88 @@ import {PeekPanel} from "../../app/components/peekpanel";
 @Injectable()
 export class PeekService {
 
-    constructor(private router: UIRouter) {
-      this.router.transitionService.onSuccess({/*from: (state) => state.name != '', to: (state) => state['peek']*/}, (transition:Transition) => {
-        let fromState:StateDeclaration = transition.from()
-        let toState:StateDeclaration = transition.to()
+    constructor(private router:UIRouter) {
+        this.router.transitionService.onSuccess({/*from: (state) => state.name != '', to: (state) => state['peek']*/}, (transition:Transition) => {
+            let fromState:StateDeclaration = transition.from()
+            let toState:StateDeclaration = transition.to()
 
-        let baseState;
+            let baseState;
 
-        // if(fromState.name == '') { // open directly from browser address bar
-          let options = transition.options()
-          options.location = true
-          options.source = 'sref'
-          let params = transition.params('to')
+            // if(fromState.name == '') { // open directly from browser address bar
+            let options = transition.options()
+            options.location = true
+            options.source = 'sref'
+            let params = transition.params('to')
 
-          let stack = []
-          let state = transition.$to()
-          while(state.name !== '') {
-            if(state['peek']) {
-              baseState = {
-                name: state.parent.name,
-                params: params,
-                options: options
-              }
-              stack.unshift({state: state.name, baseState: baseState})
+            let stack = []
+            let state = transition.$to()
+            while (state.name !== '') {
+                if (state['peek'] && !state.abstract) {
+                    let parent = state.parent
+                    while (parent.abstract) {
+                        parent = parent.parent
+                    }
+
+                    baseState = {
+                        name: parent.name,
+                        params: params,
+                        options: options
+                    }
+                    stack.unshift({state: state.name, baseState: baseState})
+                }
+                state = state.parent
             }
-            state = state.parent
-          }
 
-          let views = stack.map(item => item.state.replace(/\./g, '-'))
-          let toRemoves = []
-          for(let view in this.activePeeks) {
-              if(!views.includes(view)) {
-                  toRemoves.push(view)
-              }
-          }
-          for(let toRemove of toRemoves) {
-              this.removePeek(toRemove);
-          }
+            let views = stack.map(item => item.state.replace(/\./g, '-'))
+            let toRemoves = []
+            for (let view in this.activePeeks) {
+                if (!views.includes(view)) {
+                    toRemoves.push(view)
+                }
+            }
+            for (let toRemove of toRemoves) {
+                this.removePeek(toRemove);
+            }
 
-          for(let item of stack) {
-            this.preparePeek.next({
-              state: item.state,
-              baseState: item.baseState
-            });
-          }
+            for (let item of stack) {
+                this.preparePeek.next({
+                    state: item.state,
+                    baseState: item.baseState
+                });
+            }
 
-          return;
-        // }
-        // if(transition.options().custom.closepeek === true) {
-        //   delete transition.options().custom.closepeek
-        //   let options = transition.options()
-        //   options.location = true
-        //   options.source = 'sref'
-        //   baseState = {
-        //     name: transition.$to().parent.name,
-        //     params: transition.params('to'),
-        //     options: options
-        //   }
-        // } else {
-        //   baseState = {
-        //     name: fromState.name,
-        //     params: transition.params('from'),
-        //     options: transition.options()
-        //   }
-        // }
-        //
-        // console.log('openPeek peek from sref link')
-        // this.preparePeek.next({
-        //   state: toState.name,
-        //   baseState: baseState
-        // });
-      })
+            return;
+            // }
+            // if(transition.options().custom.closepeek === true) {
+            //   delete transition.options().custom.closepeek
+            //   let options = transition.options()
+            //   options.location = true
+            //   options.source = 'sref'
+            //   baseState = {
+            //     name: transition.$to().parent.name,
+            //     params: transition.params('to'),
+            //     options: options
+            //   }
+            // } else {
+            //   baseState = {
+            //     name: fromState.name,
+            //     params: transition.params('from'),
+            //     options: transition.options()
+            //   }
+            // }
+            //
+            // console.log('openPeek peek from sref link')
+            // this.preparePeek.next({
+            //   state: toState.name,
+            //   baseState: baseState
+            // });
+        })
 
     }
 
-    preparePeek: Subject<any> = new Subject()
+    preparePeek:Subject<any> = new Subject()
 
-    activePeeks: { [id: string] : ComponentRef<PeekPanel> } = {}
+    activePeeks:{ [id:string]:ComponentRef<PeekPanel> } = {}
 
     get level():number {
         return Object.keys(this.activePeeks).length;

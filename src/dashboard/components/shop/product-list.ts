@@ -15,12 +15,12 @@ export class ProductListComponent {
         {
             token: 'products',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/shops/default/products')
+            resolveFn: (api) => api.get('/shop/products')
         },
         {
             token: 'productPackages',
             deps: [ApiService],
-            resolveFn: (api) => api.get('/shops/default/products/packages')
+            resolveFn: (api) => api.get('/shop/products/packages')
         },
     ]
 

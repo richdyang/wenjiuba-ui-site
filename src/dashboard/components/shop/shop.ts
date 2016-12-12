@@ -16,7 +16,7 @@ export class ShopComponent {
     {
       token: 'shop',
       deps: [ApiService],
-      resolveFn: (api) => api.get('/shops/default')
+      resolveFn: (api) => api.get('/shop')
     }
   ]
 

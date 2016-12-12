@@ -77,13 +77,13 @@ export class EmployeeFormComponent {
     {
       token: 'employee',
       deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shops/default/employees/${transition.params().id}`)
+      resolveFn: (api, transition) => api.get(`/shop/employees/${transition.params().id}`)
     },
     // for new only
     {
       token: 'stores',
       deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shops/default/stores`)
+      resolveFn: (api, transition) => api.get(`/shop/stores`)
     }
   ]
 
@@ -93,7 +93,7 @@ export class EmployeeFormComponent {
 
 
   private onSubmit() {
-    this.api.save('/shops/default/employees', this.employee);
+    this.api.save('/shop/employees', this.employee);
   }
 
 }
