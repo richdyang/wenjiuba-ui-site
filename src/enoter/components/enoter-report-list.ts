@@ -34,12 +34,12 @@ import {DictService} from "../../shared/services/dict";
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <a class="btn btn-default btn-circle-micro" uiSref="payment" [uiParams]="{id: report.id}" *ngIf="report.paymentInd !== 'Y'">
-                <i class="fa fa-paypal"></i>
-            </a>
-            <a class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="canViewReport(report)">
-                <i class="fa fa-eye"></i>
-            </a> 
+            <button class="btn btn-default btn-circle-micro" uiSref="payment" [uiParams]="{id: report.id}" *ngIf="report.paymentInd !== 'Y'">
+                <i class="wj-icon wj-alipay"></i>
+            </button>
+            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="canViewReport(report)">
+                <i class="wj-icon wj-view fa"></i>
+            </button> 
         </td>
       </tr>
       </tbody>

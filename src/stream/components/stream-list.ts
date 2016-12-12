@@ -23,7 +23,7 @@ export class StreamListComponent {
                     streamEvent.title = streamEvent.questionTitle
                     streamEvent.uiSref = 'questions.detail'
                     streamEvent.uiParams = {id: streamEvent.questionId}
-                    streamEvent.iconClasses = 'wj-icon wj-question'
+                    streamEvent.iconClasses = 'wj-icon wj-qanda'
                 }
                 if(streamEvent.type == 'question') {
                     streamEvent.uiSref = 'questions.detail'

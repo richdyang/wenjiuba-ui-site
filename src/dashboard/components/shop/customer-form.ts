@@ -4,7 +4,7 @@ import {Transition} from "ui-router-ng2/ng2";
 import {DictService} from "../../../shared/services/dict";
 
 @Component({
-  selector: 'customer-form',
+  selector: 'shop-customer-form',
   template: `
   <div class="page-header">
     <h4>客户信息</h4>

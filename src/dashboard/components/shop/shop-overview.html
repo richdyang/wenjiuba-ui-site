@@ -1,14 +1,14 @@
 <div class="page-header">
-  <h4>店务管理</h4>
-  <div class="pull-right">
-      <a href uiSref="shop-outline" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></a>
-      <a href uiSref="shop-stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></a>
-      <a href uiSref="shop-employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></a>
-      <a href uiSref="shop-products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></a>
-      <a href uiSref="shop-customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></a>
-      <a href uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></a>
-      <a href uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></a>
-  </div>
+    <h4>店务管理</h4>
+    <div class="pull-right">
+        <button uiSref="shop-outline" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></button>
+        <button uiSref="shop-stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></button>
+        <button uiSref="shop-employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></button>
+        <button uiSref="shop-products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></button>
+        <button uiSref="shop-customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></button>
+        <button uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></button>
+        <button uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></button>
+    </div>
 </div>
 
 <div class="row">
@@ -23,7 +23,7 @@
             审核中..
           </button>
           <button uiSref="shop.edit" class="btn btn-default btn-circle-sm" title="修改" *ngIf="shop.verificationInd==='Y'">
-            <i class="fa fa-pencil"></i>
+            <i class="wj-icon wj-edit"></i>
           </button>
         </p>
       </div>
@@ -35,8 +35,8 @@
     <div class="col-xs-12 col-md-12">
         <div class="well">
 
-                <i class="fa fa-money"></i> ¥{{shopAccount.balance}}
-                <p class="pull-right"><a class="btn btn-danger">充值</a></p>
+                <i class="wj-icon wj-wallet"></i> ¥{{shopAccount.balance}}
+                <p class="pull-right"><a class="btn btn-danger btn-outline">充值</a></p>
         </div>
     </div>
 </div>

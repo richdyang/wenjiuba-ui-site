@@ -136,7 +136,7 @@ const NG2SELECT_CONTROL_VALUE_ACCESSOR: any = {
               [innerHTML]="sanitize(active[0].text)"></span>
         <i class="dropdown-toggle pull-right"></i>
         <i class="caret pull-right"></i>
-        <a *ngIf="allowClear && active.length>0" class="btn btn-xs btn-link pull-right" style="margin-right: 10px; padding: 0;" (click)="remove(activeOption)">
+        <a *ngIf="allowClear && active.length>0" class="btn btn-link pull-right" style="margin-right: 10px; padding: 0;" (click)="remove(activeOption)">
            <i class="glyphicon glyphicon-remove"></i>
         </a>
       </span>

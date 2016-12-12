@@ -29,7 +29,7 @@ import {DictService} from "../../../shared/services/dict";
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
             <a class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report-review" [uiParams]="{reportId: report.id}" *ngIf="report.publishInd !== 'Y'">
-                <i class="fa fa-eye"></i>
+                <i class="wj-icon wj-view"></i>
             </a> 
         </td>
       </tr>

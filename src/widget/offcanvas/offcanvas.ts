@@ -180,28 +180,28 @@ export class CloseOffcanvas {
      }
      
      .sidebar--2 {
-        left: 300px;
+        left: 250px;
         z-index: 2001;
      }
      
      .closer--2 {
-        left: 284px;
+        left: 234px;
         z-index: 2002;
      }
      
      .overlay--3 {
-        padding-left: 300px;
+        padding-left: 250px;
         background-clip: content-box;
         z-index: 3000;
      }
      
      .sidebar--3 {
-        left: 400px;
+        left: 300px;
         z-index: 3001;
      }
      
      .closer--3 {
-        left: 384px;
+        left: 284px;
         z-index: 3002;
      }
      

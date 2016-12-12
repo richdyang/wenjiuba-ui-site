@@ -28,36 +28,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
         
         <button class="btn btn-primary" [disabled]="!recordForm.valid" (click)="onSubmit()">保存</button>
     </form>
-        
-    <table class="table table-striped table-hover">
-        <caption class="text-right">
-            <a href uiSref="shop-records.record.new-item" class="btn btn-primary btn-circle-sm"><i class="fa fa-plus"></i></a>
-        </caption>
-        <thead>
-        <tr>
-            <th>名称</th>
-            <th>技师</th>
-            <th>类型</th>
-            <th>时间段</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <p *ngIf="!record.items || record.items.length==0">您还没有记录服务项呢，现在录入一项吧？</p>
-        <tr *ngFor="let recordItem of record.items">
-            <td>{{recordItem.title}}</td>
-            <td>{{recordItem.technician.fullName}}</td>
-            <td>{{recordItem.productType}}</td>
-            <td>{{recordItem.happenedFrom}} ~ {{recordItem.happenedTo}}</td>
-           
-            <td class="text-right">
-                <button uiSref="shop-records.record.item" [uiParams]="{recordItemId: recordItem.id}" class="btn btn-default btn-circle-sm" title="修改">
-                    <i class="fa fa-pencil"></i>
-                </button>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+
     `,
     styles: [],
     providers: [],

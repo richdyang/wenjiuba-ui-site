@@ -15,7 +15,7 @@ export class HighlightPipe implements PipeTransform {
         // Replace tags with token
         let tmpValue = value.replace( tagRE, '$!$');
         // Replace search words
-        value = tmpValue.replace(new RegExp(escapeRegexp(query), 'gi'), '<strong>$&</strong>');
+        value = tmpValue.replace(new RegExp(escapeRegexp(query), 'gi'), '<strong style="background: yellow; color: #000;">$&</strong>');
         // Reinsert HTML
         for (let i = 0; value.indexOf('$!$') > -1; i++) {
           value = value.replace('$!$', tagList[i]);
