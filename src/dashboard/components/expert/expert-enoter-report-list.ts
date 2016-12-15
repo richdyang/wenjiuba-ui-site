@@ -28,9 +28,9 @@ import {DictService} from "../../../shared/services/dict";
         <td>{{dict.display('enoter.reviews', reviewInd(report))}}</td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <a class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report-review" [uiParams]="{reportId: report.id}" *ngIf="report.publishInd !== 'Y'">
+            <button class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report.review" [uiParams]="{reportId: report.id}" *ngIf="report.publishInd !== 'Y'">
                 <i class="wj-icon wj-view"></i>
-            </a> 
+            </button> 
         </td>
       </tr>
       </tbody>
@@ -40,14 +40,6 @@ import {DictService} from "../../../shared/services/dict";
     styles: [],
 })
 export class ExpertEnoterReportListComponent {
-
-    static resolve = [
-        {
-            token: 'reports',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/expert/enoterReports`)
-        },
-    ]
 
     constructor(private api:ApiService, private dict:DictService) {}
 

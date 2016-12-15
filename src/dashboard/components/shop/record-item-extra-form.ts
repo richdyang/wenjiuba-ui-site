@@ -14,33 +14,6 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
 export class RecordItemExtraFormComponent {
     constructor(private api:ApiService, private dict:DictService, private router: UIRouter) {}
 
-    private static resolve_shared = [
-        {
-            token: 'recordItem',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
-        },
-        {
-            token: 'package',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/enoter/packages/default`)
-        },
-        // for new only
-    ]
-
-    static resolve_new = [
-        ...RecordItemExtraFormComponent.resolve_shared,
-    ]
-
-    static resolve_edit = [
-        ...RecordItemExtraFormComponent.resolve_shared,
-        {
-            token: 'extra',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}/extra`)
-        },
-    ]
-
     // models
     @Input() package:any = {}
     @Input() record:any = {} // from parent route

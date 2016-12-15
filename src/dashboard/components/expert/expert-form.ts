@@ -14,12 +14,7 @@ export class ExpertFormComponent implements OnInit {
 
 
     ngOnInit():void {
-
     }
-
-    static resolve = [
-
-    ]
 
     invitationCode: string;
     // @Input()

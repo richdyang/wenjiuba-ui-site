@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ApiService} from "../../shared/services/api";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "ui-router-ng2/ng2";
 import {DictService} from "../../shared/services/dict";
 
 @Component({
@@ -34,7 +34,7 @@ import {DictService} from "../../shared/services/dict";
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <button class="btn btn-default btn-circle-micro" uiSref="payment" [uiParams]="{id: report.id}" *ngIf="report.paymentInd !== 'Y'">
+            <button class="btn btn-default btn-circle-micro" *ngIf="report.paymentInd !== 'Y'" (click)="pay(report)">
                 <i class="wj-icon wj-alipay"></i>
             </button>
             <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="canViewReport(report)">
@@ -58,7 +58,7 @@ export class EnoterReportListComponent {
         },
     ]
 
-    constructor(private apiService:ApiService, private dict:DictService) {}
+    constructor(private api:ApiService, private dict:DictService, private router:UIRouter) {}
 
     //resolve
 
@@ -71,6 +71,13 @@ export class EnoterReportListComponent {
         if(report.requestPackageInd === 'E') {
             return report.expert1ReviewInd === 'F' && report.expert2ReviewInd === 'F';
         }
+    }
+
+    private pay(report) {
+        if(report.paymentInd !== 'N') return;
+        this.api.post(`/enoter/reports/${report.id}/payment`).then(alipayTrade => {
+            this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: alipayTrade});
+        })
     }
 
 }

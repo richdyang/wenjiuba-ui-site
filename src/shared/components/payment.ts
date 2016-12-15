@@ -26,7 +26,6 @@ export class PaymentComponent {
     ]
 
     constructor(public apiService: ApiService, private session:SessionService, private router: UIRouter) {}
-
 }
 
 export interface AlipayTrade {

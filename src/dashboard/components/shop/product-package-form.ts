@@ -57,15 +57,6 @@ import {Transition} from "ui-router-ng2/ng2";
 export class ProductPackageFormComponent {
     constructor(private api:ApiService, private dict:DictService) {}
 
-    static resolve = [
-        {
-            token: 'productPackage',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shop/products/packages/${transition.params().id}`)
-        }
-        // for new only
-    ]
-
     // models
     @Input() products:any[]; // get from parent route
     @Input() productPackage:any= {products:[]};

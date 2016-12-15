@@ -84,13 +84,7 @@ export class CustomerFormComponent {
 
   private today:Date = new Date();
 
-  static resolve = [
-    {
-      token: 'customer',
-      deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shop/customers/${transition.params().id}`)
-    },
-    // for new only
+  static resolve_select = [
     {
       token: 'stores',
       deps: [ApiService,Transition],

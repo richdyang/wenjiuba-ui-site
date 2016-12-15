@@ -19,274 +19,412 @@ import {ExpertFormComponent} from "./components/expert/expert-form";
 import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
 import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
 import {RecordDetailComponent} from "./components/shop/record-detail";
+import {ApiService} from "../shared/services/api";
+import {Transition} from "ui-router-ng2/ng2";
+import {ShopFormComponent} from "./components/shop/shop-form";
+import {PaymentComponent} from "../shared/components/payment";
 
-export const states:any[] = [
+export const states: any[] = [
     {
         name: 'i',
-        url:  '/i',
+        url: '/i',
         component: DashboardComponent,
         resolve: DashboardComponent.resolve,
         parent: 'base'
     },
     {
-        name: 'shop-outline',
-        url:  '/shop',
-        resolve: ShopOverviewComponent.resolve,
-        views:
-        {
-            'shop-outline@base': {component: ShopOverviewComponent}
-        },
+        name: 'shop',
+        url: '/shop',
+        abstract: true,
         parent: 'i',
-        peek: true,
+        resolve: [
+            {
+                token: 'shop',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop')
+            }
+        ]
     },
     {
-      name: 'shop-new',
-      url:  '/shop/new',
-      views:
-      {
-        'shop-new@base': {component: ShopNewComponent}
-      },
-      parent: 'i',
-      peek: true
+        name: 'shop.overview',
+        url: '/overview',
+        views: {
+            'shop-overview@base': {component: ShopOverviewComponent}
+        },
+        peek: true,
+        resolve: [
+            {
+                token: 'shopAccount',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/account')
+            }
+        ],
+    },
+    {
+        name: 'shop.new',
+        url: '/new',
+        views: {
+            'shop-new@base': {component: ShopNewComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'shop.overview.edit',
+        url: '/edit',
+        views: {
+            'shop-overview-edit@base': {component: ShopFormComponent}
+        },
+        peek: true
+    },
+    {
+        name: 'shop.overview.payment',
+        url: '/payment',
+        views: {
+            'shop-overview-payment@base': {component: PaymentComponent}
+        },
+        params: {
+            alipayTrade: { }
+        },
+        peek: true,
+        resolve: PaymentComponent.resolve
     },
     // --------shop stores -------------------
     {
-      name: 'shop-stores',
-      url:  '/shop/stores',
-      resolve: StoreListComponent.resolve,
-      views:
-      {
-        'shop-stores@base': {component: StoreListComponent}
-      },
-      parent: 'i',
-      peek: true
+        name: 'shop.stores',
+        url: '/stores',
+        views: {
+            'shop-stores@base': {component: StoreListComponent}
+        },
+        peek: true,
+        resolve: [
+            {
+                token: 'stores',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/stores')
+            }
+        ]
     },
     {
-      name: 'shop-stores.new',
-      url:  '/new',
-      views:
-      {
-        'shop-stores-new@base': {component: StoreFormComponent}
-      },
-      peek: true
+        name: 'shop.stores.new',
+        url: '/new',
+        views: {
+            'shop-stores-new@base': {component: StoreFormComponent}
+        },
+        peek: true
     },
     {
-      name: 'shop-stores.edit',
-      url:  '/:id/edit',
-      params: {
-        id: {type: "int"}
-      },
-      resolve: StoreFormComponent.resolve,
-      views:
-      {
-        'shop-stores-edit@base': {component: StoreFormComponent}
-      },
-      peek: true
+        name: 'shop.stores.store',
+        url: '/{storeId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'store',
+                deps: [ApiService, Transition],
+                resolveFn: (api, transition) => api.get(`/shop/stores/${transition.params().storeId}`)
+            }
+        ]
+    },
+    {
+        name: 'shop.stores.store.edit',
+        url: '/edit',
+        views: {
+            'shop-stores-store-edit@base': {component: StoreFormComponent}
+        },
+        peek: true
     },
     // -------------shop employees ------------
     {
-      name: 'shop-employees',
-      url:  '/shop/employees',
-      resolve: EmployeeListComponent.resolve,
-      views:
-      {
-        'shop-employees@base': {component: EmployeeListComponent}
-      },
-      parent: 'i',
-      peek: true
+        name: 'shop.employees',
+        url: '/employees',
+        views: {
+            'shop-employees@base': {component: EmployeeListComponent}
+        },
+        peek: true,
+        resolve: [
+            {
+                token: 'employees',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/employees')
+            }
+        ]
     },
     {
-      name: 'shop-employees.new',
-      url:  '/new',
-      views:
-      {
-        'shop-employees-new@base': {component: EmployeeFormComponent}
-      },
-      resolve: EmployeeFormComponent.resolve.slice(1),
-      peek: true
+        name: 'shop.employees.new',
+        url: '/new',
+        views: {
+            'shop-employees-new@base': {component: EmployeeFormComponent}
+        },
+        peek: true,
+        resolve: EmployeeFormComponent.resolve_select
     },
     {
-      name: 'shop-employees.edit',
-      url:  '/:id/edit',
-      params: {
-        id: {type: "int"}
-      },
-      resolve: EmployeeFormComponent.resolve,
-      views:
-      {
-        'shop-employees-edit@base': {component: EmployeeFormComponent}
-      },
-      peek: true
+        name: 'shop.employees.employee',
+        url: '/{employeeId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'employee',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/employees/${transition.params().employeeId}`)
+            }
+        ]
+    },
+    {
+        name: 'shop.employees.employee.edit',
+        url: '/edit',
+        views: {
+            'shop-employees-employee-edit@base': {component: EmployeeFormComponent}
+        },
+        peek: true,
+        resolve: EmployeeFormComponent.resolve_select
     },
     // -------------shop products ------------
     {
-        name: 'shop-products',
-        url:  '/shop/products',
-        resolve: ProductListComponent.resolve,
-        views:
-        {
+        name: 'shop.products',
+        url: '/products',
+        views: {
             'shop-products@base': {component: ProductListComponent}
         },
-        parent: 'i',
-        peek: true
+        peek: true,
+        resolve: [
+            {
+                token: 'products',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/products')
+            },
+            {
+                token: 'productPackages',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/products/packages')
+            }
+        ]
     },
     {
-        name: 'shop-products.new',
-        url:  '/new',
-        views:
-        {
+        name: 'shop.products.new',
+        url: '/new',
+        views: {
             'shop-products-new@base': {component: ProductFormComponent}
         },
-        // resolve: ProductFormComponent.resolve.slice(1),
         peek: true
     },
     {
-        name: 'shop-products.edit',
-        url:  '/:id/edit',
-        params: {
-            id: {type: "int"}
-        },
-        resolve: ProductFormComponent.resolve,
-        views:
-        {
-            'shop-products-edit@base': {component: ProductFormComponent}
+        name: 'shop.products.product',
+        url: '/{productId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'product',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/products/${transition.params().productId}`)
+            },
+        ]
+    },
+    {
+        name: 'shop.products.product.edit',
+        url: '/edit',
+        views: {
+            'shop-products-product-edit@base': {component: ProductFormComponent}
         },
         peek: true
     },
     {
-        name: 'shop-products.new-package',
-        url:  '/packages/new',
-        views:
-        {
-            'shop-products-new-package@base': {component: ProductPackageFormComponent}
+        name: 'shop.products.packages',
+        url: '/packages',
+        abstract: true
+    },
+    {
+        name: 'shop-products.packages.new',
+        url: '/new',
+        views: {
+            'shop-products-packages-new@base': {component: ProductPackageFormComponent}
         },
-        // resolve: ProductPackageFormComponent.resolve.slice(1),
         peek: true
     },
     {
-        name: 'shop-products.edit-package',
-        url:  '/packages/:id/edit',
-        params: {
-            id: {type: "int"}
-        },
-        resolve: ProductPackageFormComponent.resolve,
-        views:
-        {
-            'shop-products-edit-package@base': {component: ProductPackageFormComponent}
+        name: 'shop.products.packages.package',
+        url: '/{productPackageId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'productPackage',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/products/packages/${transition.params().productPackageId}`)
+            }
+        ]
+    },
+    {
+        name: 'shop.products.packages.package.edit',
+        url: '/edit',
+        views: {
+            'shop-products-packages-package-edit@base': {component: ProductPackageFormComponent}
         },
         peek: true
     },
     // -------------shop customers ------------
     {
-        name: 'shop-customers',
-        url:  '/shop/customers',
-        resolve: CustomerListComponent.resolve,
-        views:
-        {
+        name: 'shop.customers',
+        url: '/customers',
+        views: {
             'shop-customers@base': {component: CustomerListComponent}
         },
-        parent: 'i',
-        peek: true
+        peek: true,
+        resolve: [
+            {
+                token: 'customers',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/customers')
+            }
+        ]
     },
     {
-        name: 'shop-customers.new',
-        url:  '/new',
-        views:
-        {
+        name: 'shop.customers.new',
+        url: '/new',
+        views: {
             'shop-customers-new@base': {component: CustomerFormComponent}
         },
-        resolve: EmployeeFormComponent.resolve.slice(1),
-        peek: true
+        peek: true,
+        resolve: CustomerFormComponent.resolve_select
     },
     {
-        name: 'shop-customers.edit',
-        url:  '/:id/edit',
-        params: {
-            id: {type: "int"}
-        },
-        resolve: CustomerFormComponent.resolve,
-        views:
-        {
-            'shop-customers-edit@base': {component: CustomerFormComponent}
-        },
-        peek: true
+        name: 'shop.customers.customer',
+        url: '/{customerId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'customer',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/customers/${transition.params().customerId}`)
+            }
+        ]
     },
     {
-        name: 'shop-customers.account',
-        url:  '/:id/account',
-        params: {
-            id: {type: "int"}
+        name: 'shop.customers.customer.edit',
+        url: '/edit',
+        views: {
+            'shop-customers-customer-edit@base': {component: CustomerFormComponent}
         },
-        resolve: CustomerAccountComponent.resolve,
-        views:
-        {
-            'shop-customers-account@base': {component: CustomerAccountComponent}
+        peek: true,
+        resolve: CustomerFormComponent.resolve_select
+    },
+    {
+        name: 'shop.customers.customer.account',
+        url: '/account',
+        views: {
+            'shop-customers-customer-account@base': {component: CustomerAccountComponent}
         },
-        peek: true
+        peek: true,
+        resolve: [
+            {
+                token: 'account',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/customers/${transition.params().customerId}/account`)
+            }
+        ]
     },
     // -------------shop records ------------
     {
-        name: 'shop-records',
-        url:  '/shop/records',
-        resolve: RecordListComponent.resolve,
-        views:
-        {
+        name: 'shop.records',
+        url: '/records',
+        views: {
             'shop-records@base': {component: RecordListComponent}
         },
-        parent: 'i',
-        peek: true
+        peek: true,
+        resolve: [
+            {
+                token: 'records',
+                deps: [ApiService],
+                resolveFn: (api) => api.get('/shop/records')
+            }
+        ]
     },
     {
-        name: 'shop-records.new',
-        url:  '/new',
-        views:
-        {
+        name: 'shop.records.new',
+        url: '/new',
+        views: {
             'shop-records-new@base': {component: RecordFormComponent}
         },
-        resolve: RecordFormComponent.resolve_new,
-        peek: true
+        peek: true,
+        resolve: RecordFormComponent.resolve_select
     },
     {
-        name: 'shop-records.record',
-        url:  '/{recordId:int}',
-        resolve: RecordDetailComponent.resolve,
-        views:
-        {
+        name: 'shop.records.record',
+        url: '/{recordId:int}',
+        views: {
             'shop-records-record@base': {component: RecordDetailComponent}
         },
+        peek: true,
+        resolve: [
+            {
+                token: 'record',
+                deps: [ApiService, Transition],
+                resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}`)
+            }
+        ]
+    },
+    {
+        name: 'shop.records.record.edit',
+        url: '/edit',
+        views: {
+            'shop-records-record-edit@base': {component: RecordFormComponent}
+        },
+        peek: true,
+        resolve: RecordFormComponent.resolve_select
+    },
+    {
+        name: 'shop.records.record.items',
+        url: '/items',
+        abstract: true
+    },
+    {
+        name: 'shop.records.record.items.new',
+        url: '/new',
+        params: {},
+        views: {
+            'shop-records-record-items-new@base': {component: RecordItemFormComponent}
+        },
+        peek: true,
+        resolve: RecordItemFormComponent.resolve_select,
+    },
+    {
+        name: 'shop.records.record.items.item',
+        url: '/{recordItemId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'recordItem',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
+            }
+        ]
+    },
+    {
+        name: 'shop.records.record.items.item.edit',
+        url: '/edit',
+        resolve: RecordItemFormComponent.resolve_select,
+        views: {
+            'shop-records-record-items-item-edit@base': {component: RecordItemFormComponent}
+        },
         peek: true
     },
     {
-        name: 'shop-records.record.new-item',
-        url:  '/items/new',
-        params: {
+        name: 'shop.records.record.items.item.extra',
+        url: '/extra',
+        views: {
+            'shop-records-record-items-item-extra@base': {component: RecordItemExtraFormComponent}
         },
-        views:
-        {
-            'shop-records-record-new-item@base': {component: RecordItemFormComponent}
-        },
-        resolve: RecordItemFormComponent.resolve_new,
-        peek: true
-    },
-    {
-        name: 'shop-records.record.item',
-        url:  '/items/{recordItemId:int}',
-        resolve: RecordItemFormComponent.resolve_edit,
-        views:
-        {
-            'shop-records-record-item@base': {component: RecordItemFormComponent}
-        },
-        peek: true
-    },
-    {
-        name: 'shop-records.record.extra',
-        url:  '/items/{recordItemId:int}/extra',
-        resolve: RecordItemExtraFormComponent.resolve_edit,
-        views:
-        {
-            'shop-records-record-extra@base': {component: RecordItemExtraFormComponent}
-        },
-        peek: true
+        peek: true,
+        resolve: [
+            {
+                token: 'package',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/enoter/packages/default`)
+            },
+            {
+                token: 'extra',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}/extra`)
+            }
+        ]
     },
     // -------------shop records ------------
     {
@@ -297,30 +435,43 @@ export const states:any[] = [
     },
     {
         name: 'expert.new',
-        url:  '/new',
-        resolve: RecordListComponent.resolve,
-        views:
-        {
+        url: '/new',
+        views: {
             'expert-new@base': {component: ExpertFormComponent}
         },
         peek: true
     },
     {
         name: 'expert.enoter-reports',
-        url:  '/enoter-reports',
-        resolve: ExpertEnoterReportListComponent.resolve,
-        views:
-        {
+        url: '/enoter-reports',
+        views: {
             'expert-enoter-reports@base': {component: ExpertEnoterReportListComponent}
         },
-        peek: true
+        peek: true,
+        resolve: [
+            {
+                token: 'reports',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/expert/enoterReports`)
+            }
+        ]
     },
     {
-        name: 'expert.enoter-reports.report-review',
-        url:  '/{reportId:int}/review',
-        resolve: ExpertEnoterReportFormComponent.resolve,
-        views:
-        {
+        name: 'expert.enoter-reports.report',
+        url: '/{reportId:int}',
+        abstract: true,
+        resolve: [
+            {
+                token: 'report',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/expert/enoterReports/${transition.params().reportId}`)
+            }
+        ]
+    },
+    {
+        name: 'expert.enoter-reports.report.review',
+        url: '/review',
+        views: {
             'expert-enoter-reports-report-review@base': {component: ExpertEnoterReportFormComponent}
         },
         peek: true

@@ -23,13 +23,13 @@ export class StreamListComponent {
                     streamEvent.title = streamEvent.questionTitle
                     streamEvent.uiSref = 'questions.detail'
                     streamEvent.uiParams = {id: streamEvent.questionId}
-                    streamEvent.iconClasses = 'wj-icon wj-qanda'
+                    streamEvent.iconClasses = 'wj-icon wj-answer'
                 }
                 if(streamEvent.type == 'question') {
                     streamEvent.uiSref = 'questions.detail'
                     streamEvent.uiParams = {id: streamEvent.id}
                     streamEvent.link = `/questions/${streamEvent.id}`
-                    streamEvent.iconClasses = 'wj-icon wj-answer'
+                    streamEvent.iconClasses = 'wj-icon wj-qanda'
                 }
                 return streamEvent;
             })

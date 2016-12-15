@@ -35,15 +35,6 @@ import {Transition} from "ui-router-ng2/ng2";
 export class ProductFormComponent {
     constructor(private api:ApiService, private dict:DictService) {}
 
-    static resolve = [
-        {
-            token: 'product',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shop/products/${transition.params().id}`)
-        },
-        // for new only
-    ]
-
     // models
     @Input() product:any= {};
 

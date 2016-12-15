@@ -10,8 +10,8 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
     <div class="page-header">
         <h4>灸例单项信息</h4>
         <div class="pull-right" *ngIf="recordItem.id">
-            <a href uiSref="shop-records.record.item" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-primary btn-circle btn-circle-sm"><i class="fa fa-book"></i></a>
-            <a href uiSref="shop-records.record.extra" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-default btn-circle btn-circle-sm"><i class="fa fa-ellipsis-h"></i></a>
+            <a href uiSref="shop.records.record.items.item.edit" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-primary btn-circle btn-circle-sm"><i class="fa fa-book"></i></a>
+            <a href uiSref="shop.records.record.items.item.extra" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-default btn-circle btn-circle-sm"><i class="fa fa-ellipsis-h"></i></a>
         </div>
     </div>
     <form #recordItemForm="ngForm">
@@ -60,7 +60,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
 export class RecordItemFormComponent implements OnInit {
     constructor(private api:ApiService, private dict:DictService, private router:UIRouter) {}
 
-    private static resolve_shared = [
+    static resolve_select = [
         {
             token: 'products',
             deps: [ApiService,Transition],
@@ -70,19 +70,6 @@ export class RecordItemFormComponent implements OnInit {
             token: 'technicians',
             deps: [ApiService,Transition],
             resolveFn: (api, transition) => api.get(`/shop/employees`)
-        },
-    ]
-
-    static resolve_new = [
-        ...RecordItemFormComponent.resolve_shared
-    ]
-
-    static resolve_edit = [
-        ...RecordItemFormComponent.resolve_shared,
-        {
-            token: 'recordItem',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}/items/${transition.params().recordItemId}`)
         },
     ]
 
@@ -99,7 +86,7 @@ export class RecordItemFormComponent implements OnInit {
 
     private onSubmit() {
         this.api.save(`/shop/records/${this.record.id}/items`, this.recordItem).then(recordItem => {
-            this.router.stateService.go('shop-records.record.extra', {recordId: this.record.id, recordItemId: this.recordItem.id})
+            this.router.stateService.go('shop-records.record.items.item.extra', {recordId: this.record.id, recordItemId: this.recordItem.id})
         });
     }
 

@@ -17,14 +17,6 @@ export class CustomerAccountComponent {
 
   private today:Date = new Date();
 
-  static resolve = [
-      {
-          token: 'account',
-          deps: [ApiService,Transition],
-          resolveFn: (api, transition) => api.get(`/shop/customers/${transition.params().id}/account`)
-      },
-  ]
-
   // models
   @Input() account:any = {}
 

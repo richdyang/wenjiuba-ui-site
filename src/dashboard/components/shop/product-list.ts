@@ -11,19 +11,6 @@ import {DictService} from "../../../shared/services/dict";
 export class ProductListComponent {
     constructor(private api: ApiService, private dict: DictService) {}
 
-    static resolve = [
-        {
-            token: 'products',
-            deps: [ApiService],
-            resolveFn: (api) => api.get('/shop/products')
-        },
-        {
-            token: 'productPackages',
-            deps: [ApiService],
-            resolveFn: (api) => api.get('/shop/products/packages')
-        },
-    ]
-
     @Input() products;
     @Input() productPackages;
 }

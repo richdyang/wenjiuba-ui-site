@@ -42,7 +42,7 @@ export class ApiService {
     return this.request(url, RequestMethod.Get);
   }
 
-  post(url:string, data, successMsg?):Promise<any> {
+  post(url:string, data?, successMsg?):Promise<any> {
     return this.request(url, RequestMethod.Post, data, successMsg);
   }
 

@@ -14,8 +14,7 @@ import {DictService} from "../../../shared/services/dict";
     providers: [],
 })
 export class ShopNewComponent {
-    constructor(private api:ApiService, private dict:DictService) {
-    }
+    constructor(private api:ApiService, private dict:DictService) {}
 
     // ui control
     private steps:MenuItem[];

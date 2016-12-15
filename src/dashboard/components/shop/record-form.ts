@@ -37,7 +37,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
 export class RecordFormComponent {
     constructor(private api:ApiService, private dict:DictService, private router:UIRouter) {}
 
-    private static resolve_shared = [
+    public static resolve_select = [
         {
             token: 'customers',
             deps: [ApiService, Transition],
@@ -50,19 +50,8 @@ export class RecordFormComponent {
         }
     ]
 
-    static resolve_new = [
-        ...RecordFormComponent.resolve_shared,
-    ]
-
-    static resolve_edit = [
-        ...RecordFormComponent.resolve_shared,
-        {
-            token: 'record',
-            deps: [ApiService, Transition],
-            resolveFn: (api, transition) => api.get(`/shop/records/${transition.params().recordId}`)
-        },
-    ]
     // models
+    @Input() records:any[];
     @Input() record:any = {customer:{},store:{}};
     @Input() customers:any[] = [];
     @Input() stores:any[] = [];
