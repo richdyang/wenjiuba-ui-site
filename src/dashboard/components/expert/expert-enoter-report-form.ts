@@ -95,14 +95,6 @@ import {ApiService} from "../../../shared/services/api";
 })
 export class ExpertEnoterReportFormComponent implements OnInit {
 
-    static resolve = [
-        {
-            token: 'report',
-            deps: [ApiService,Transition],
-            resolveFn: (api, transition) => api.get(`/expert/enoterReports/${transition.params().reportId}`)
-        },
-    ]
-
     constructor(private api:ApiService, private router:UIRouter) {}
 
     //resolve

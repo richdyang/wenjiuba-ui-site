@@ -7,23 +7,26 @@ import {ApiService} from "../../../shared/services/api";
     <div class="page-header">
       <h4>门店管理</h4>
       <div class="pull-right">
-          <button uiSref="shop-outline" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></button>
-          <button uiSref="shop-stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></button>
-          <button uiSref="shop-employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></button>
-          <button uiSref="shop-products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></button>
-          <button uiSref="shop-customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></button>
-          <button uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></button>
-          <button uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></button>
+          <button uiSref="shop.overview" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></button>
+          <button uiSref="shop.stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></button>
+          <button uiSref="shop.employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></button>
+          <button uiSref="shop.products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></button>
+          <button uiSref="shop.customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></button>
+          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></button>
+          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></button>
       </div>
     </div>
   
     <div class="row">
         <div class="col-xs-12 col-md-12 text-right" style="padding: 8px 23px">
-            <button uiSref="shop-stores.new" class="btn btn-primary btn-circle-sm"><i class="wj-icon wj-add"></i></button>
+            <button uiSref="shop.stores.new" class="btn btn-primary btn-circle-micro"><i class="wj-icon wj-add"></i></button>
         </div>
     
-        <div class="col-xs-12 col-md-12">
-          <p *ngIf="!stores || stores.length==0">您还没有任何一家门店呢，现在开办一家吧？</p>
+        <div class="col-xs-12 col-md-12" *ngIf="!stores.length">
+          <p>
+             <i class="wj-icon wj-empty3 fa-4x"></i> 
+          </p>
+          <p>还没有一家门店？</p>
         </div>
         
         <div class="col-xs-12 col-md-12" *ngFor="let store of stores">
@@ -42,7 +45,7 @@ import {ApiService} from "../../../shared/services/api";
                 <i class="fa fa-user"></i> 联系人：{{store.contact}}
               </p>
               <p class="text-right">
-                <button class="btn btn-default" uiSref="shop-stores.edit" [uiParams]="{id: store.id}" role="button">
+                <button class="btn btn-default" uiSref="shop.stores.store.edit" [uiParams]="{storeId: store.id}" role="button">
                   修改门店信息
                 </button>
               </p>
@@ -56,16 +59,7 @@ import {ApiService} from "../../../shared/services/api";
     providers: []
 })
 export class StoreListComponent {
-    constructor(private api:ApiService) {
-    }
-
-    static resolve = [
-        {
-            token: 'stores',
-            deps: [ApiService],
-            resolveFn: (api) => api.get('/shop/stores')
-        }
-    ]
+    constructor(private api:ApiService) {}
 
     @Input() stores:any[];
 

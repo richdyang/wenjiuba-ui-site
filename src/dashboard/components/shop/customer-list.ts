@@ -8,19 +8,19 @@ import {DictService} from "../../../shared/services/dict";
   <div class="page-header">
       <h4>客户管理</h4>
       <div class="pull-right">
-          <button uiSref="shop-outline" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></button>
-          <button uiSref="shop-stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></button>
-          <button uiSref="shop-employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></button>
-          <button uiSref="shop-products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></button>
-          <button uiSref="shop-customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></button>
-          <button uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></button>
-          <button uiSref="shop-records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></button>
+          <button uiSref="shop.overview" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></button>
+          <button uiSref="shop.stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></button>
+          <button uiSref="shop.employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></button>
+          <button uiSref="shop.products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></button>
+          <button uiSref="shop.customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></button>
+          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></button>
+          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></button>
       </div>
   </div>
 
     <table class="table table-striped table-hover">
       <caption class="text-right">
-        <button uiSref="shop-customers.new" class="btn btn-primary btn-circle-sm"><i class="wj-icon wj-add"></i></button>
+        <button uiSref="shop.customers.new" class="btn btn-primary btn-circle-micro"><i class="wj-icon wj-add"></i></button>
       </caption>
       <thead>
         <tr>
@@ -38,13 +38,22 @@ import {DictService} from "../../../shared/services/dict";
           <td>{{customer.mobile}}</td>
           <td>{{customer.address}}</td>
           <td class="text-right">
-            <button uiSref="shop-customers.edit" [uiParams]="{id: customer.id}" class="btn btn-default btn-circle-sm" title="修改">
+            <button uiSref="shop.customers.customer.edit" [uiParams]="{customerId: customer.id}" class="btn btn-default btn-circle-micro" title="修改">
               <i class="wj-icon wj-edit"></i>
             </button>
-            <button uiSref="shop-customers.account" [uiParams]="{id: customer.id}" class="btn btn-default btn-circle-sm" title="修改">
+            <button uiSref="shop.customers.customer.account" [uiParams]="{customerId: customer.id}" class="btn btn-default btn-circle-micro" title="修改">
               <i class="wj-icon wj-wallet"></i>
             </button>
           </td>
+        </tr>
+        
+        <tr *ngIf="!customers.length">
+            <td colspan="5" class="text-center">
+            <p>
+                <i class="wj-icon wj-empty3 fa-4x"></i> 
+            </p>
+            <p>还没有一位客户？</p>
+            </td>
         </tr>
       </tbody>
     </table>

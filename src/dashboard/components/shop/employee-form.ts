@@ -44,7 +44,7 @@ import {DictService} from "../../../shared/services/dict";
       <p-selectButton [options]="dict.options('genders')" [(ngModel)]="employee.gender" name="gender" required></p-selectButton>
     </p-form-field>
     <p-form-field label="出生日期 *">
-      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required pattern="[1-9][0-9]{3}-[0-1][0-9]-[0-3][0-9]"></p-calendar>
+      <p-calendar [(ngModel)]="employee.birthday" name="birthday" [maxDate]="today" required></p-calendar>
       <!--<input type="text" [(ngModel)]="employee.birthday" name="birthday" class="form-control" required placeholder="格式如: 1980-01-01">-->
     </p-form-field>
     <p-form-field label="实操技师? * " help="实操技师可以对客户进行养生服务">
@@ -73,13 +73,7 @@ export class EmployeeFormComponent {
 
   private today:Date = new Date();
 
-  static resolve = [
-    {
-      token: 'employee',
-      deps: [ApiService,Transition],
-      resolveFn: (api, transition) => api.get(`/shop/employees/${transition.params().id}`)
-    },
-    // for new only
+  static resolve_select = [
     {
       token: 'stores',
       deps: [ApiService,Transition],

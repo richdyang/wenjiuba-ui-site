@@ -58,7 +58,10 @@ export class DictService {
     }
 
     public display(dictKey, value):string {
-        if(!this.map.hasOwnProperty(dictKey)) return null;
+        if(!this.map.hasOwnProperty(dictKey)) {
+            console.warn(`dict has not property ${dictKey}`)
+            return null;
+        }
         return this.map[dictKey][value];
     }
 }

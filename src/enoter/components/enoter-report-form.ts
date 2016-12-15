@@ -12,12 +12,6 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
 })
 export class EnoterReportFormComponent implements OnInit {
     @Input() pageHeader = 'e络通信息';
-    @Input() paymentHandler = function(report) {
-        this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: report.alipayTrade})
-    }
-
-
-
 
     static resolve = [
         {
@@ -74,7 +68,9 @@ export class EnoterReportFormComponent implements OnInit {
     submit() {
         this.apiService.post('/enoter/reports', this.report).then((report) => {
             if(report.paymentInd === 'N') {
-                this.paymentHandler(report);
+                this.apiService.post(`/enoter/reports/${report.id}/payment`, {}).then(alipayTrade => {
+                    this.router.stateService.go('enoter.reports.report.payment', {alipayTrade: report.alipayTrade});
+                })
             }
         })
     }

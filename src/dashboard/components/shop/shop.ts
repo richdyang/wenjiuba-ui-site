@@ -12,14 +12,6 @@ export class ShopComponent {
 
   constructor(private api:ApiService) {}
 
-  static resolve = [
-    {
-      token: 'shop',
-      deps: [ApiService],
-      resolveFn: (api) => api.get('/shop')
-    }
-  ]
-
   @Input() shop;
 
 }

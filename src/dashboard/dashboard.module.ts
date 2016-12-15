@@ -28,6 +28,7 @@ import {ExpertFormComponent} from "./components/expert/expert-form";
 import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter-report-list";
 import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
 import {RecordDetailComponent} from "./components/shop/record-detail";
+import {ShopFormComponent} from "./components/shop/shop-form";
 
 @NgModule({
     imports     : [
@@ -37,7 +38,7 @@ import {RecordDetailComponent} from "./components/shop/record-detail";
     ],
     declarations: [
         DashboardComponent,
-        ShopOverviewComponent, ShopNewComponent,
+        ShopOverviewComponent, ShopNewComponent, ShopFormComponent,
         StoreListComponent, StoreFormComponent,
         EmployeeListComponent, EmployeeFormComponent,
         ProductListComponent, ProductFormComponent, ProductPackageFormComponent,
