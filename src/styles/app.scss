@@ -17,10 +17,6 @@ $fa-font-path: "~font-awesome/fonts";
   overflow: hidden;
 }
 
-.active {
-  background: #444444;
-}
-
 img {
   max-width: 400px;
 }
@@ -199,54 +195,6 @@ p-editor.ng-valid {
 
 a:focus {
   outline: none;
-}
-
-  /* ng-cloak */
-[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-start{clip:rect(0,auto,auto,0);-ms-zoom:1.0001;}.ng-animate-active{clip:rect(-1px,auto,auto,0);-ms-zoom:1;}
-
-
-
-trix-toolbar {
-  .button_groups {
-    border-color: #d6d6d6 #d6d6d6 transparent;
-    border-image: none;
-    border-radius: 2px 2px 0 0;
-    border-style: solid;
-    border-width: 1px;
-    padding-left: 5px;
-  }
-
-  .button_group {
-    //border-color: #d6d6d6;
-    //border-radius: 2px;
-    border: none;
-    //box-shadow: none;
-    margin-bottom: 0;
-    margin-right: 2px;
-    margin-top: 5px;
-    margin-bottom: -2px;
-
-    button {
-      border: none !important;
-      cursor: pointer;
-      opacity: 0.75;
-      transition: opacity 0.2s ease 0s;
-    }
-
-    button.active, button.active:hover {
-      background-color: rgba(0, 0, 0, 0.03);
-      border: $gray solid 1px;
-      opacity: 1;
-    }
-  }
-}
-
-trix-editor {
-  //border-color: #d6d6d6;
-  border-radius: 0 0 $border-radius-base $border-radius-base !important;
-  //word-wrap: break-word;
-  //color: #333;
-  min-height: 10em;
 }
 
 //---------------site-----------------

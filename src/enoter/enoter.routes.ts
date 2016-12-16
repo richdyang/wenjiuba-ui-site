@@ -2,6 +2,9 @@ import {EnoterComponent} from "./components/enoter";
 import {EnoterReportFormComponent} from "./components/enoter-report-form";
 import {EnoterReportListComponent} from "./components/enoter-report-list";
 import {PaymentComponent} from "../shared/components/payment";
+import {EnoterReportDetailComponent} from "./components/enoter-report-detail";
+import {ApiService} from "../shared/services/api";
+import {Transition} from "ui-router-ng2";
 
 export const states:any[] = [
     {
@@ -35,6 +38,22 @@ export const states:any[] = [
         name: 'enoter.reports.report',
         url:  '/{reportId:int}',
         abstract: true,
+    },
+    {
+        name: 'enoter.reports.report.detail',
+        url:  '',
+        views:
+        {
+            'enoter-reports-report-detail@base': {component: EnoterReportDetailComponent}
+        },
+        peek: true,
+        resolve: [
+            {
+                token: 'report',
+                deps: [ApiService,Transition],
+                resolveFn: (api, transition) => api.get(`/enoter/reports/${transition.params().reportId}`)
+            },
+        ]
     },
     {
         name: 'enoter.reports.report.payment',

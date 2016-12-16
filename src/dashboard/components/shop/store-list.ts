@@ -45,8 +45,8 @@ import {ApiService} from "../../../shared/services/api";
                 <i class="fa fa-user"></i> 联系人：{{store.contact}}
               </p>
               <p class="text-right">
-                <button class="btn btn-default" uiSref="shop.stores.store.edit" [uiParams]="{storeId: store.id}" role="button">
-                  修改门店信息
+                <button class="btn btn-default btn-circle-micro" uiSref="shop.stores.store.edit" [uiParams]="{storeId: store.id}" role="button">
+                  <i class="wj-icon wj-edit"></i>
                 </button>
               </p>
             </div>

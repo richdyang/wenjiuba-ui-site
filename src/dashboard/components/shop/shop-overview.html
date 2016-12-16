@@ -33,15 +33,15 @@
 
 <div class="row">
     <div class="col-xs-12 col-md-12">
-        <div class="well">
-                <i class="wj-icon wj-wallet fa-3x"> {{shopAccount.balance}}</i>
-                <p class="pull-right">
-                    <i class="wj-icon wj-payment fa-2x"></i>
-                    <a class="btn btn-danger btn-outline btn-sm" (click)="pay(200)">¥ 200</a>
-                    <a class="btn btn-danger btn-outline btn-sm" (click)="pay(500)">¥ 500</a>
-                    <a class="btn btn-danger btn-outline btn-sm" (click)="pay(1000)">¥ 1000</a>
-                    <a class="btn btn-danger btn-outline btn-sm" (click)="pay(2000)">¥ 2000</a>
-                </p>
+        <div class="well well-sm">
+            <i class="wj-icon wj-wallet fa-3x"> {{shopAccount.balance}}</i>
+            <div class="pull-right" style="vertical-align: middle">
+                <i class="wj-icon wj-payment fa-2x"></i>
+                <a class="btn btn-danger btn-outline btn-sm" (click)="pay(200)">¥ 200</a>
+                <a class="btn btn-danger btn-outline btn-sm" (click)="pay(500)">¥ 500</a>
+                <a class="btn btn-danger btn-outline btn-sm" (click)="pay(1000)">¥ 1000</a>
+                <a class="btn btn-danger btn-outline btn-sm" (click)="pay(2000)">¥ 2000</a>
+            </div>
         </div>
     </div>
 </div>

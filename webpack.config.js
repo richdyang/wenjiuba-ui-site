@@ -26,13 +26,14 @@ var webpackConfig = {
       // { context: 'src/', from: '**/*.html'  }
     ]),
     new ExtractTextPlugin('styles/app.css'),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false
-    //   },
-    //   minimize: true,
-    //   sourceMap: true // here control the final typescript sourcemap generation
-    // })
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      minimize: true,
+      comments: false,
+      sourceMap: false // here control the final typescript sourcemap generation
+    })
   ],
 
   module: {

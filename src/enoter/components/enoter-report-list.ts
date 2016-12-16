@@ -37,7 +37,7 @@ import {DictService} from "../../shared/services/dict";
             <button class="btn btn-default btn-circle-micro" *ngIf="report.paymentInd !== 'Y'" (click)="pay(report)">
                 <i class="wj-icon wj-alipay"></i>
             </button>
-            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports-detail" [uiParams]="{id: report.id}" *ngIf="canViewReport(report)">
+            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports.report.detail" [uiParams]="{reportId: report.id}" *ngIf="canViewReport(report)">
                 <i class="wj-icon wj-view fa"></i>
             </button> 
         </td>
@@ -75,7 +75,7 @@ export class EnoterReportListComponent {
 
     private pay(report) {
         if(report.paymentInd !== 'N') return;
-        this.api.post(`/enoter/reports/${report.id}/payment`).then(alipayTrade => {
+        this.api.post(`/enoter/reports/${report.id}/payment`, null, false).then(alipayTrade => {
             this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: alipayTrade});
         })
     }

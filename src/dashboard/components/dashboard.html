@@ -53,23 +53,25 @@
     <div class="panel-heading">
         我的灸馆
     </div>
-    <div class="panel-body">
-        <div class="row" *ngIf="shop && shop.verificationInd === 'Y'">
+    <div class="panel-body" *ngIf="shop">
+        <div class="row" *ngIf="shop.verificationInd === 'Y'">
             <div class="col-xs-6 col-md-4">
                 <a uiSref="shop.overview" class="thumbnail" style="margin-bottom: 0">
                     <img src="{{shop.brand}}" alt="店务管理">
                 </a>
             </div>
         </div>
-        <div class="panel-body" *ngIf="shop.verificationInd === 'N'">
+        <div class="row" *ngIf="shop.verificationInd === 'N'">
             <div class="row" >
                 <div class="col-xs-6 col-md-4">
                     申请已经提交，正在审核中
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="row" *ngIf="!shop">
+    <div class="panel-body" *ngIf="!shop">
+        <div class="row">
             <div class="col-xs-12 col-md-12">
                 <div style="border: dashed 2px #cccccc; padding: 10px">
                     <h4 class="text-muted text-center">您还没有开店。</h4>

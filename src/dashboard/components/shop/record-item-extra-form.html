@@ -1,5 +1,5 @@
 <div class="page-header">
-    <h4>灸例单项信息</h4>
+    <h4>灸例单项信息 - 附加</h4>
     <div class="pull-right">
         <a href uiSref="shop.records.record.items.item.edit" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-default btn-circle btn-circle-sm"><i class="fa fa-book"></i></a>
         <a href uiSref="shop.records.record.items.item.extra" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-primary btn-circle btn-circle-sm"><i class="fa fa-ellipsis-h"></i></a>
@@ -25,13 +25,16 @@
                 <input type="text" [(ngModel)]="extra['acupoint'+i]" name="acupoint{{i}}" class="form-control" required minlength="2">
             </p-form-field>
             <p-form-field label="施灸时间{{i}} *">
-                <input type="text" [(ngModel)]="extra['duration'+i]" name="duration{{i}}" class="form-control" required minlength="2">
+                <div class="input-group">
+                <input type="number" [(ngModel)]="extra['duration'+i]" name="duration{{i}}" class="form-control" required>
+                <span class="input-group-addon" id="basic-addon2">分钟</span>
+                </div>
             </p-form-field>
             <p-form-field label="灸感{{i}} *">
                 <input type="text" [(ngModel)]="extra['response'+i]" name="response{{i}}" class="form-control" required minlength="2">
             </p-form-field>
         </div>
-        <a class="btn btn-circle" ngClass="{hide: apSeq.length >= 5}" (click)="addAcupoint()">增加一个穴位</a>
+        <a class="btn btn-circle" *ngIf="acupoints.length < 5" (click)="addAcupoint()">增加一个穴位</a>
         <p-form-field label="回访 *">
             <p-editor [(ngModel)]="extra.feedback" name="feedback" [uploadHandler]="api.uploadHandler"></p-editor>
         </p-form-field>

@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {Transition, UIRouter} from "ui-router-ng2/ng2";
 import {ApiService} from "../../../shared/services/api";
+import {DictService} from "../../../shared/services/dict";
 
 @Component({
     selector: 'expert-enoter-report-form',
@@ -9,6 +10,18 @@ import {ApiService} from "../../../shared/services/api";
         <h4>e络通判读</h4>
     </div>
     
+    <div class="well well-sm">
+        <h5>{{report.fullName}}</h5>
+        <p>年龄：{{report.age}}</p>
+        <p>性别：{{dict.display('genders', report.gender)}}</p>
+        <p *ngIf="report.gender === 'F'">
+        月经情况：{{dict.display('menses', report.menses)}}
+        </p>
+        <p>身高：{{report.height}} cm</p>
+        <p>体重：{{report.weight}}</p>
+        <p>血压：{{report.bpLow}} mmHg ～ {{report.bpHigh}} mmHg</p>
+    </div>
+        
     <table class="table table-bordered text-center">
     <thead>
     <tr>
@@ -95,7 +108,7 @@ import {ApiService} from "../../../shared/services/api";
 })
 export class ExpertEnoterReportFormComponent implements OnInit {
 
-    constructor(private api:ApiService, private router:UIRouter) {}
+    constructor(private api:ApiService, private dict:DictService, private router:UIRouter) {}
 
     //resolve
     @Input() expert:any = {} // from parent route
