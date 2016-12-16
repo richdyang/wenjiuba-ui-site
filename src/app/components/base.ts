@@ -10,54 +10,54 @@ import {SessionService} from "../../shared/services/session";
     <div class="container" id="side-wrap">
       <aside id="sidebar-nav-wrap">
         <ul class="sidebar-nav">
-              <li class="sidebar-brand" uiSrefActive="active">
+              <li class="sidebar-brand" uiSrefActive="menu-active">
                   <a>
                      <img src="images/logo.png" style="vertical-align: middle">
                   </a>
               </li>
-              <li uiSrefActive="active">
+              <li uiSrefActive="menu-active">
                   <a href uiSref="i" *ngIf="session?.logined && session?.currentUser">
                       <i class="wj-icon wj-profile"></i>&nbsp;&nbsp;
                       {{session.currentUser.realName || session.currentUser.displayName}}
                   </a>
               </li>
-              <li uiSrefActive="active">
+              <li uiSrefActive="menu-active">
                   <a href uiSref="stream">
                       <i class="wj-icon wj-stream"></i>&nbsp;&nbsp;
                       我的动态
                   </a>
               </li>
-              <li uiSrefActive="active">
-                  <a href uiSref="questions" uiSrefActive="active">
+              <li uiSrefActive="menu-active">
+                  <a href uiSref="questions" uiSrefActive="menu-active">
                       <i class="wj-icon wj-qanda"></i>&nbsp;&nbsp;
                       有问灸答
                   </a>
               </li>
-              <li uiSrefActive="active">
-                  <a href uiSref="cases" uiSrefActive="active">
+              <li uiSrefActive="menu-active">
+                  <a href uiSref="cases" uiSrefActive="menu-active">
                       <i class="wj-icon wj-case"></i>&nbsp;&nbsp;
                       案例分享
                   </a>
               </li>
-              <li uiSrefActive="active">
+              <li uiSrefActive="menu-active">
                   <a href uiSref="enoter">
                       <i class="wj-icon wj-enoter"></i>&nbsp;&nbsp;
                       灸灸判读
                   </a>
               </li>
-              <li uiSrefActive="active">
+              <li uiSrefActive="menu-active">
                   <a href>
                       <i class="wj-icon wj-event"></i>&nbsp;&nbsp;
                       线下活动
                   </a>
               </li>
-              <li uiSrefActive="active">
+              <li uiSrefActive="menu-active">
                   <a href>
                       <i class="wj-icon wj-interview"></i>&nbsp;&nbsp;
                       在线访谈
                   </a>
               </li>
-              <li uiSrefActive="active">
+              <li uiSrefActive="menu-active">
                     <a href (click)="logout()">
                         <i class="fa fa-sign-out"></i>&nbsp;&nbsp;
                         退出登陆
@@ -158,6 +158,10 @@ import {SessionService} from "../../shared/services/session";
   .sidebar-nav > .sidebar-brand a:hover {
       color: #fff;
       background: none;
+  }
+  
+  .menu-active {
+      background: #444444;
   }
   `],
   entryComponents: [PeekPanel]

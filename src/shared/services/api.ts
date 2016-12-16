@@ -6,7 +6,7 @@ import {LoginModalService} from "./ui/login-modal";
 import {FlashService} from "./ui/flash";
 import {EventBus} from "./event";
 
-export const API_BASE= 'http://api.wenjiuba.com';
+export const API_BASE= '//api.wenjiuba.com';
 
 @Injectable()
 export class ApiService {

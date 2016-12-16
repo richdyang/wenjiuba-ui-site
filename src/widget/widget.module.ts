@@ -16,10 +16,11 @@ import {CalendarModule} from "./calendar/calendar";
 import {PickListModule} from "./picklist/picklist";
 import {SelectModule} from "./select/select";
 import {ChartsModule} from "./charts/charts";
+import {TabsModule} from "ng2-bootstrap";
 
 @NgModule({
   imports     : [
-    CommonModule,
+    CommonModule, TabsModule,
     MomentModule,  // 3rd-party
     BlockUIModule, InplaceModule, SelectButtonModule, GrowlModule, PickListModule,
     EditorModule, FileInputModule, FormFieldModule, OffcanvasModule, TagInputModule,
@@ -28,6 +29,7 @@ import {ChartsModule} from "./charts/charts";
   declarations: [], // all private by default
   providers   : [], // services which are public globally
   exports     : [
+    TabsModule,
     BlockUIModule, InplaceModule, SelectButtonModule, GrowlModule, PickListModule,
     EditorModule, FileInputModule, FormFieldModule, OffcanvasModule, TagInputModule,
       TimelineModule, WizardModule, CalendarModule, SelectModule, ChartsModule
