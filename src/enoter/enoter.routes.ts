@@ -65,8 +65,8 @@ export const states:any[] = [
         params: {
             alipayTrade: { }
         },
-        resolve: PaymentComponent.resolve,
-        peek: true
+        peek: true,
+        resolve: PaymentComponent.resolve
     },
 
 ]

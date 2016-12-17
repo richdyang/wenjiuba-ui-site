@@ -8,24 +8,26 @@
 
         <form ngNoForm action="{{paymentSubmitUrl}}" method="POST" target="_blank">
             <input type="hidden" name="Authorization" value="Bearer {{session.token}}">
-            <p-form-field label="商户订单号">
-                <p class="form-control-static">{{alipayTrade.tradeNo}}</p>
-                <input type="hidden" name="WIDout_trade_no" id="out_trade_no" value="{{alipayTrade.tradeNo}}">
-            </p-form-field>
+            <!--<p-form-field label="商户订单号">-->
+                <!--<p class="form-control-static">{{alipayTrade.tradeNo}}</p>-->
+                <!--<input type="hidden" name="WIDout_trade_no" id="out_trade_no" value="{{alipayTrade.tradeNo}}">-->
+            <!--</p-form-field>-->
+            <input type="hidden" name="businessType" value="{{alipayTrade.businessType}}">
+            <input type="hidden" name="businessId" value="{{alipayTrade.businessId}}">
             <p-form-field label="产品名称">
                 <p class="form-control-static">{{alipayTrade.subject}}</p>
-                <input type="hidden" name="WIDsubject" value="{{alipayTrade.subject}}">
+                <input type="hidden" name="subject" value="{{alipayTrade.subject}}">
             </p-form-field>
             <p-form-field label="付款金额">
                 <p class="form-control-static">{{alipayTrade.totalFee}}</p>
-                <input type="hidden" name="WIDtotal_fee" value="{{alipayTrade.totalFee}}">
+                <input type="hidden" name="totalFee" value="{{alipayTrade.totalFee}}">
             </p-form-field>
             <p-form-field label="商品描述">
                 <p class="form-control-static">{{alipayTrade.body}}</p>
-                <input type="hidden" name="WIDbody" value="{{alipayTrade.body}}">
+                <input type="hidden" name="body" value="{{alipayTrade.body}}">
             </p-form-field>
 
-            <input type="submit" class="btn btn-danger" [disabled]="!(alipayTrade.tradeNo && alipayTrade.subject && alipayTrade.totalFee)" value ="确认支付">
+            <input type="submit" class="btn btn-danger" [disabled]="!(alipayTrade.subject && alipayTrade.totalFee)" value ="确认支付">
         </form>
     </main>
 
