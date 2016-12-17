@@ -4,7 +4,6 @@ import {ApiService} from "../../shared/services/api";
 @Component({
     selector: 'enoter',
     template: `
-      <div class="col-sm-12">
         <div class="panel">
             <div class="panel-body" >
               <h2>经络辩证</h2>
@@ -28,7 +27,6 @@ import {ApiService} from "../../shared/services/api";
               </div>
             </div>
         </div>
-      </div>
     `,
     providers: []
 })

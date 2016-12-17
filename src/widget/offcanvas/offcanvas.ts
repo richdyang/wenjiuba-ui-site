@@ -205,6 +205,45 @@ export class CloseOffcanvas {
         z-index: 3002;
      }
      
+     @media only screen and (max-device-width: 736px) {
+        .bb-close:after {
+            display: none;
+        }
+        
+        .sidebar--1 {
+            left: 0px;
+         }
+         
+         .closer--1 {
+            left: 0px;
+         }
+    
+         
+         .overlay--2 {
+            padding-left: 0px;
+         }
+         
+         .sidebar--2 {
+            left: 0px;
+         }
+         
+         .closer--2 {
+            left: 0px;
+         }
+         
+         .overlay--3 {
+            padding-left: 0px;
+         }
+         
+         .sidebar--3 {
+            left: 0px;
+         }
+         
+         .closer--3 {
+            left: 0px;
+         }
+     }
+     
      
   `],
   animations: [
