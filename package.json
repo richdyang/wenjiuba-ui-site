@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Angular2 + Bootstrap + Webpack",
   "scripts": {
-    "build": "webpack --inline --colors --progress --display-error-details --display-cached",
+    "build": "webpack --inline --colors --progress --display-error-details --display-cached --config webpack.prod.js",
     "watch": "npm run build -- --watch",
-    "server": "webpack-dev-server --inline --hot --colors --progress --display-error-details --display-cached --port 3000  --content-base src",
+    "server": "webpack-dev-server --inline --hot --colors --progress --display-error-details --display-cached --port 3000  --content-base src --config webpack.dev.js",
     "start": "npm run server"
   },
   "contributors": [
@@ -31,7 +31,7 @@
     "style-loader": "~0.13.1",
     "to-string-loader": "^1.1.4",
     "ts-loader": "^0.8.2",
-    "typescript": "^2.0.2",
+    "typescript": "2.0.2",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0",
@@ -40,7 +40,7 @@
   "dependencies": {
     "@angular/common": "2.2.4",
     "@angular/compiler": "2.2.4",
-    "@angular/compiler-cli": "^2.2.4",
+    "@angular/compiler-cli": "2.2.4",
     "@angular/core": "2.2.4",
     "@angular/forms": "2.2.4",
     "@angular/http": "2.2.4",
