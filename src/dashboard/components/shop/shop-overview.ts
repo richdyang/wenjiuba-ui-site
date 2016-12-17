@@ -16,7 +16,7 @@ export class ShopOverviewComponent {
   @Input() shopAccount;
 
   private pay(amount:number) {
-      this.api.post('/shop/account/payment', {amount: amount}).then(alipayTrade => {
+      this.api.get(`/alipay/presubmit?businessType=SHOP_ACCOUNT&totalFee=${amount}`).then(alipayTrade => {
           this.router.stateService.go('shop.overview.payment', {alipayTrade: alipayTrade});
       })
   }
