@@ -10,8 +10,8 @@ import {ApiService} from "../../shared/services/api";
             <p-editor [(ngModel)]="answer.content" [uploadHandler]="api.uploadHandler" name="content" required mintextlength="20">
             </p-editor>
         </p-form-field>
-        <button class="btn btn-info" [disabled]="!answerForm.valid" (click)="onSave()">保存</button>
-        <button class="btn btn-default" (click)="onCancel()">取消</button>
+        <button class="btn btn-primary" [disabled]="!answerForm.valid" (click)="onSave()">保存</button>
+        <!--<button class="btn btn-default" (click)="onCancel()">取消</button>-->
     </form>
     `,
 })

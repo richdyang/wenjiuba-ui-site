@@ -7,28 +7,35 @@ import {SessionService} from "../../shared/services/session";
 @Component({
   selector   : 'base',
   template: `
-    <div class="container" id="side-wrap">
-      <aside id="sidebar-nav-wrap">
-        <ul class="sidebar-nav">
+    <div class="container" id="site-wrap">
+      <div id="topbar">
+        <a class="btn btn-link" (click)="toggleNav()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img src="images/logo.png" style="vertical-align: middle; width:45px">
+      </div>
+      
+      <aside id="sidebar" [ngClass]="{'toggled': toggled}">
+        <ul class="sidebar-nav" (click)="toggleNav()">
               <li class="sidebar-brand" uiSrefActive="menu-active">
                   <a>
                      <img src="images/logo.png" style="vertical-align: middle">
                   </a>
               </li>
-              <li uiSrefActive="menu-active">
-                  <a href uiSref="i" *ngIf="session?.logined && session?.currentUser">
+              <li uiSrefActive="active">
+                  <a uiSref="i" *ngIf="session?.logined && session?.currentUser">
                       <i class="wj-icon wj-profile"></i>&nbsp;&nbsp;
                       {{session.currentUser.realName || session.currentUser.displayName}}
                   </a>
               </li>
               <li uiSrefActive="menu-active">
-                  <a href uiSref="stream">
+                  <a uiSref="stream">
                       <i class="wj-icon wj-stream"></i>&nbsp;&nbsp;
                       我的动态
                   </a>
               </li>
               <li uiSrefActive="menu-active">
-                  <a href uiSref="questions" uiSrefActive="menu-active">
+                  <a uiSref="questions" uiSrefActive="menu-active">
                       <i class="wj-icon wj-qanda"></i>&nbsp;&nbsp;
                       有问灸答
                   </a>
@@ -64,9 +71,9 @@ import {SessionService} from "../../shared/services/session";
                     </a>
                 </li>
           </ul>
-  
       </aside>
-      <main id="main-content-wrap" peekAnchor>
+      
+      <main id="main-content" peekAnchor>
         <!--<div id="main-content">-->
             <!--<div class="row">-->
               <ui-view></ui-view>
@@ -75,95 +82,7 @@ import {SessionService} from "../../shared/services/session";
       </main>
     </div>
     `,
-  styles: [`
-  #side-wrap {
-    position: relative;
-    background-color: #F8F8F8;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  #sidebar-nav-wrap {
-    background-color: #272727;
-    position: fixed;
-    z-index: 10;
-    overflow-x: hidden;
-    overflow-y: auto;
-    top: 0;
-    left: auto;
-    right: auto;
-    text-align: left;
-    width: 200px;
-    height: 100%;
-  }
-  
-  #main-content-wrap {
-    position: relative;
-    padding-left: 230px;
-    padding-right: 30px;
-    height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  
-  #main-content {
-    
-  }
-  
-  .sidebar-nav {
-      position: absolute;
-      top: 0;
-      width: 200px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-  
-  .sidebar-nav li {
-      line-height: 40px;
-    }
-  
-  .sidebar-nav li a {
-      padding-left: 25px;
-      font-size: 1.05em;
-    }
-  
-  .sidebar-nav li a {
-      display: block;
-      text-decoration: none;
-      color: #999999;
-    }
-  
-  .sidebar-nav li a:hover {
-      text-decoration: none;
-      color: #fff;
-      background: rgba(255,255,255,0.2);
-    }
-  
-  .sidebar-nav li a:active,
-  .sidebar-nav li a:focus {
-      text-decoration: none;
-    }
-  
-  .sidebar-nav > .sidebar-brand {
-      height: 65px;
-      font-size: 18px;
-      line-height: 60px;
-      background-color: #1C1C1C;
-    }
-  
-  .sidebar-nav > .sidebar-brand a {
-      color: #999999;
-    }
-  
-  .sidebar-nav > .sidebar-brand a:hover {
-      color: #fff;
-      background: none;
-  }
-  
-  .menu-active {
-      background: #444444;
-  }
-  `],
+  styleUrls: ['./base.scss'],
   entryComponents: [PeekPanel]
 })
 export class BaseComponent {
@@ -178,6 +97,6 @@ export class BaseComponent {
   toggled = false;
 
   toggleNav() {
-    this.toggled = !this.toggled;
+      this.toggled = !this.toggled;
   }
 }

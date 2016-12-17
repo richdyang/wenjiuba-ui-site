@@ -1,3 +1,4 @@
+<div class="col-xs-12">
 <div id="banner">
     <div id="avatar">
         <img src="{{session.currentUser.avatar}}" alt="..." class="img-circle">
@@ -14,19 +15,19 @@
     </div>
     <div class="panel-body">
         <div class="row" style="margin-bottom: 10px">
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
                     <p>需要付款</p>
                     <p class="badge">0</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
                     <p>等待报告</p>
                     <p class="badge">0</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
                     <p><a uiSref="enoter.reports">全部报告</a></p>
                     <p class="badge">0</p>
@@ -55,7 +56,7 @@
     </div>
     <div class="panel-body" *ngIf="shop">
         <div class="row" *ngIf="shop.verificationInd === 'Y'">
-            <div class="col-xs-6 col-md-4">
+            <div class="col-xs-12 col-sm-4">
                 <a uiSref="shop.overview" class="thumbnail" style="margin-bottom: 0">
                     <img src="{{shop.brand}}" alt="店务管理">
                 </a>
@@ -100,19 +101,19 @@
     </div>
     <div class="panel-body" *ngIf="expert.verificationInd === 'Y'">
         <div class="row" style="margin-bottom: 10px">
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
                     <p>等待判读</p>
                     <p class="badge">0</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
                     <p>等待发布</p>
                     <p class="badge">0</p>
                 </div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">
                     <p><a uiSref="expert.enoter-reports">全部报告</a></p>
                     <p class="badge">0</p>
@@ -141,4 +142,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
