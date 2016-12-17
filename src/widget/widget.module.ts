@@ -16,7 +16,7 @@ import {CalendarModule} from "./calendar/calendar";
 import {PickListModule} from "./picklist/picklist";
 import {SelectModule} from "./select/select";
 import {ChartsModule} from "./charts/charts";
-import {TabsModule} from "ng2-bootstrap";
+import {TabsModule} from "ng2-bootstrap/ng2-bootstrap";
 
 @NgModule({
   imports     : [
