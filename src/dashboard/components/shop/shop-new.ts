@@ -34,7 +34,7 @@ export class ShopNewComponent {
     }
 
     private onSubmit() {
-        this.api.post('/shops', {employee: this.employee, shop: this.shop, shopVerification: this.shopVerification})
+        this.api.post('/shop', {employee: this.employee, shop: this.shop, shopVerification: this.shopVerification})
     }
 
 }

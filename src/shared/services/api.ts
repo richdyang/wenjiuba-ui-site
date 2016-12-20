@@ -89,8 +89,10 @@ export class ApiService {
       this.loginModal.show();
     } else if(res.status == 403) {
       this.flash.warn(data.message);
+      this.eventBus.httpServerError.next(data.message)
     } else if(res.status == 422) {
       this.flash.warn(data.message);
+        this.eventBus.httpServerError.next(data.message)
       //todo in-place errors show
       console.debug(data.debug);
     } else {
@@ -101,15 +103,16 @@ export class ApiService {
     return Promise.reject(res);
   }
 
-  uploadOptions:UploadOptions = {
-    url: API_BASE + '/upload',
-    authToken: sessionStorage.getItem('token'),
-    authTokenPrefix: 'Bearer',
+  uploadOptions():UploadOptions {
+      return {
+          url: API_BASE + '/upload',
+          authToken: sessionStorage.getItem('token'),
+          authTokenPrefix: 'Bearer',
+      }
   }
 
-
   uploadHandler = (file:File, onSuccess, onFail) => {
-    let options = this.uploadOptions;
+    let options = this.uploadOptions();
     let form = new FormData();
     form.append("Content-Type", file.type);
     form.append("file", file);
