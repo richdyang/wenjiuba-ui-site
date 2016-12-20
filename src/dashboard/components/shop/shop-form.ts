@@ -34,7 +34,7 @@ export class ShopFormComponent {
     @Input() shop:any = {};
 
     private submit() {
-        this.api.post('/shops', this.shop)
+        this.api.post('/shop', this.shop)
     }
 
 }

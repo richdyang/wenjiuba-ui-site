@@ -76,7 +76,7 @@ export class FileInput implements ControlValueAccessor, OnInit {
 
   ngOnInit():void {
     // populate
-    Object.assign(this.options, this.uploadOptions);
+    Object.assign(this.options, this.uploadOptions());
   }
 
   // <- output callback
