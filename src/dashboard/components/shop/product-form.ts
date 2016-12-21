@@ -22,7 +22,7 @@ import {Transition} from "ui-router-ng2/ng2";
           <input type="number" [(ngModel)]="product.price" name="mobile" class="form-control" required>
         </p-form-field>
         <p-form-field label="项目类型? *">
-          <p-selectButton [options]="dict.options('product.types')" [(ngModel)]="product.productType" name="productType" required></p-selectButton>
+          <p-selectButton [options]="dict.options('product.productType')" [(ngModel)]="product.productType" name="productType" required></p-selectButton>
         </p-form-field>
         
         <button class="btn btn-primary" [disabled]="!productForm.valid" (click)="onSubmit()">保存</button>

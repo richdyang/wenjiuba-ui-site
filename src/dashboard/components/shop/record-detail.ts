@@ -30,7 +30,7 @@ const template = `
 
 <div class="panel panel-default" *ngFor="let recordItem of record.items">
     <div class="panel-heading">
-        <span class="label label-danger">{{dict.display('product.types', recordItem.productType)}}</span>
+        <span class="label label-danger">{{dict.display('product.productType', recordItem.productType)}}</span>
         <span>{{recordItem.title}} </span>
         <button uiSref="shop.records.record.items.item.edit" [uiParams]="{recordItemId: recordItem.id}" class="btn btn-default btn-circle-micro pull-right" title="修改">
             <i class="wj-icon wj-edit"></i>

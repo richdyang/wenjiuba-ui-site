@@ -9,35 +9,35 @@ export class DictService {
 
     private map:{[id: string]:{[id: string]:string}} = {
         yesno: {
-            'Y': '是',
-            'N': '否'
+            'YES': '是',
+            'NO': '否'
         },
         genders: {
-            'M': '男',
-            'F': '女'
+            'MALE': '男',
+            'FEMALE': '女'
         },
         menses: {
-            'P': '未行经',
-            'M': '行经',
-            'A': '闭经'
+            'IMMENSES': '未行经',
+            'MENSES': '行经',
+            'CEASE': '闭经'
         },
-        "enoter.requestPackages": {
-            'R': '机器人判读',
-            'E': '专家判读',
+        "enoterReport.requestPackageInd": {
+            'ROBOT': '机器人判读',
+            'EXPERT': '专家判读',
         },
-        "enoter.reviews": {
-            'P': '未开始',
-            'I': '进行中',
-            'F': '已完成'
+        "enoterReport.reviewInd": {
+            'PENDING': '未开始',
+            'INPROGRESS': '进行中',
+            'FINISHED': '已完成'
         },
-        "enoter.payments": {
-            'Y': '已付款',
-            'N': '未付款',
-            'E': '异常'
+        "enoterReport.paymentInd": {
+            'PAID': '已付款',
+            'UNPAID': '未付款',
+            'EXCEPTION': '异常'
         },
-        "product.types": {
+        "product.productType": {
             'ENOTER': 'e络通',
-            'MOXI': '艾灸',
+            'MOXIBUSTION': '艾灸',
             'MISC': '其它'
         }
     }

@@ -107,7 +107,7 @@
             <fieldset>
                 <legend>订单支付</legend>
                 <p-form-field label="判读套餐 *">
-                    <p-selectButton [options]="dict.options('enoter.requestPackages')" [(ngModel)]="report.requestPackageInd" name="requestPackageInd" required></p-selectButton>
+                    <p-selectButton [options]="dict.options('enoterReport.requestPackageInd')" [(ngModel)]="report.requestPackageInd" name="requestPackageInd" required></p-selectButton>
                 </p-form-field>
 
                 <p *ngIf="report.requestPackageInd === 'E'">

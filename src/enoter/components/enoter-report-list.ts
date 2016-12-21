@@ -24,13 +24,13 @@ import {DictService} from "../../shared/services/dict";
       <tbody>
       <tr *ngFor="let report of reports">
         <td>{{report.fullName}}</td>
-        <td>{{dict.display('enoter.requestPackages', report.requestPackageInd)}}</td>
-        <td>{{dict.display('enoter.payments', report.paymentInd)}}</td>
-        <td>{{dict.display('enoter.reviews', report.robotReviewInd)}}</td>
+        <td>{{dict.display('enoterReport.requestPackageInd', report.requestPackageInd)}}</td>
+        <td>{{dict.display('enoterReport.paymentInd', report.paymentInd)}}</td>
+        <td>{{dict.display('enoterReport.reviewInd', report.robotReviewInd)}}</td>
         <td>
-        {{dict.display('enoter.reviews', report.expert1ReviewInd)}}
+        {{dict.display('enoterReport.reviewInd', report.expert1ReviewInd)}}
         /
-        {{dict.display('enoter.reviews', report.expert2ReviewInd)}}
+        {{dict.display('enoterReport.reviewInd', report.expert2ReviewInd)}}
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
