@@ -23,9 +23,9 @@ import {DictService} from "../../../shared/services/dict";
       <tbody>
       <tr *ngFor="let report of reports">
         <td>{{report.fullName}}</td>
-        <td>{{dict.display('enoter.requestPackages', report.requestPackageInd)}}</td>
-        <td>{{dict.display('enoter.payments', report.paymentInd)}}</td>
-        <td>{{dict.display('enoter.reviews', reviewInd(report))}}</td>
+        <td>{{dict.display('enoterReport.requestPackageInd', report.requestPackageInd)}}</td>
+        <td>{{dict.display('enoterReport.paymentInd', report.paymentInd)}}</td>
+        <td>{{dict.display('enoterReport.reviewInd', reviewInd(report))}}</td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
             <button class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report.review" [uiParams]="{reportId: report.id}" *ngIf="report.publishInd !== 'Y'">

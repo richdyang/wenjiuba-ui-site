@@ -16,7 +16,7 @@
         </p-form-field>
     </fieldset>
 
-    <fieldset *ngIf="recordItem.product.productType === 'MOXI'">
+    <fieldset *ngIf="recordItem.product.productType === 'MOXIBUSTION'">
         <p-form-field label="主症 *">
             <input type="text" [(ngModel)]="extra.symptom" name="symptom" class="form-control" required minlength="2">
         </p-form-field>
@@ -131,7 +131,7 @@
             </div>
         </div>
         <div *ngIf="extra.id">
-            您选择了{{dict.display('enoter.requestPackages', extra.requestPackageInd)}}，支付状态: {{dict.display('yesno', extra.paymentInd)}}
+            您选择了{{dict.display('enoterReport.requestPackageInd', extra.requestPackageInd)}}，支付状态: {{dict.display('yesno', extra.paymentInd)}}
         </div>
     </fieldset>
 
