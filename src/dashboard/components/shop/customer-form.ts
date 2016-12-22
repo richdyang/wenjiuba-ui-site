@@ -58,7 +58,7 @@ import {DictService} from "../../../shared/services/dict";
     <p-form-field label="体重 ">
         <input type="number" [(ngModel)]="customer.weight" name="weight" class="form-control">
     </p-form-field>
-    <p-form-field label="月经情况?" *ngIf="customer.gender === 'F'" help="以下这类隐私数据对于e络通辩证可能有用">
+    <p-form-field label="月经情况?" *ngIf="customer.gender === 'FEMALE'" help="以下这类隐私数据对于e络通辩证可能有用">
       <p-selectButton [options]="dict.options('menses')" [(ngModel)]="customer.menses" name="menses" required></p-selectButton>
     </p-form-field>
     <p-form-field label="血压（高） ">

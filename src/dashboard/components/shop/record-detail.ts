@@ -13,8 +13,8 @@ const template = `
     <caption class="text-center">
         <span style="font-size: 2em; vertical-align: middle">{{record.customer.fullName}}</span>
         <span class="pull-right">
-            <button uiSref="shop.records.record.items.new" class="btn btn-default btn-circle-micro"><i class="wj-icon wj-add"></i></button>
-            <button uiSref="shop.records.record.edit" [uiParams]="{recordId: record.id}" class="btn btn-default btn-circle-micro" title="修改">
+            <button uiSref="shop.records.record.items.new" class="btn btn-default btn-circle-micro" tooltip="添加" tooltipPlacement="bottom"><i class="wj-icon wj-add"></i></button>
+            <button uiSref="shop.records.record.edit" [uiParams]="{recordId: record.id}" class="btn btn-default btn-circle-micro" tooltip="修改" tooltipPlacement="bottom">
                 <i class="wj-icon wj-edit"></i>
             </button>
         </span>
@@ -32,7 +32,7 @@ const template = `
     <div class="panel-heading">
         <span class="label label-danger">{{dict.display('product.productType', recordItem.productType)}}</span>
         <span>{{recordItem.title}} </span>
-        <button uiSref="shop.records.record.items.item.edit" [uiParams]="{recordItemId: recordItem.id}" class="btn btn-default btn-circle-micro pull-right" title="修改">
+        <button uiSref="shop.records.record.items.item.edit" [uiParams]="{recordItemId: recordItem.id}" class="btn btn-default btn-circle-micro pull-right" tooltip="修改" tooltipPlacement="bottom">
             <i class="wj-icon wj-edit"></i>
         </button>
     </div>

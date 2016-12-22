@@ -67,7 +67,7 @@ export class EnoterReportFormComponent implements OnInit {
 
     submit() {
         this.apiService.post('/enoter/reports', this.report).then((report) => {
-            if(report.paymentInd === 'N') {
+            if(report.paymentInd === 'UNPAID') {
                 this.apiService.get(`/alipay/presubmit?businessType=ENOTER_REPORT&businessId=${report.id}`).then(alipayTrade => {
                     this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: alipayTrade});
                 })

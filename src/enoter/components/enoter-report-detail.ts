@@ -16,7 +16,7 @@ import {DictService} from "../../shared/services/dict";
             <h5>{{report.fullName}}</h5>
             <p>年龄：{{report.age}}</p>
             <p>性别：{{dict.display('genders', report.gender)}}</p>
-            <p *ngIf="report.gender === 'F'">
+            <p *ngIf="report.gender === 'FEMALE'">
             月经情况：{{dict.display('menses', report.menses)}}
             </p>
             <p>身高：{{report.height}} cm</p>

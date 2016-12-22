@@ -55,14 +55,14 @@
         我的灸馆
     </div>
     <div class="panel-body" *ngIf="shop">
-        <div class="row" *ngIf="shop.verificationInd === 'Y'">
+        <div class="row" *ngIf="shop.verificationInd === 'YES'">
             <div class="col-xs-12 col-sm-4">
                 <a uiSref="shop.overview" class="thumbnail" style="margin-bottom: 0">
                     <img src="{{shop.brand}}" alt="店务管理">
                 </a>
             </div>
         </div>
-        <div class="row" *ngIf="shop.verificationInd === 'N'">
+        <div class="row" *ngIf="shop.verificationInd === 'NO'">
             <div class="row" >
                 <div class="col-xs-6 col-md-4">
                     申请已经提交，正在审核中
@@ -92,14 +92,14 @@
     <div class="panel-heading">
         我是灸专家
     </div>
-    <div class="panel-body" *ngIf="expert.verificationInd === 'N'">
+    <div class="panel-body" *ngIf="expert.verificationInd === 'NO'">
         <div class="row" >
             <div class="col-xs-6 col-md-4">
                 申请已经提交，正在审核中
             </div>
         </div>
     </div>
-    <div class="panel-body" *ngIf="expert.verificationInd === 'Y'">
+    <div class="panel-body" *ngIf="expert.verificationInd === 'YES'">
         <div class="row" style="margin-bottom: 10px">
             <div class="col-xs-4">
                 <div class="bg-info text-center" style="padding: 10px 10px 0 10px">

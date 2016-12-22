@@ -28,16 +28,17 @@ import {DictService} from "../../shared/services/dict";
         <td>{{dict.display('enoterReport.paymentInd', report.paymentInd)}}</td>
         <td>{{dict.display('enoterReport.reviewInd', report.robotReviewInd)}}</td>
         <td>
-        {{dict.display('enoterReport.reviewInd', report.expert1ReviewInd)}}
-        /
-        {{dict.display('enoterReport.reviewInd', report.expert2ReviewInd)}}
+        {{report.requestPackageInd === 'EXPERT' ? 
+        dict.display('enoterReport.reviewInd', report.expert1ReviewInd) + '/' +
+        dict.display('enoterReport.reviewInd', report.expert2ReviewInd) : '-'
+        }}
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <button class="btn btn-default btn-circle-micro" *ngIf="report.paymentInd !== 'Y'" (click)="pay(report)">
+            <button class="btn btn-default btn-circle-micro" tooltip="支付" tooltipPlacement="bottom" *ngIf="report.paymentInd !== 'PAID'" (click)="pay(report)">
                 <i class="wj-icon wj-alipay"></i>
             </button>
-            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports.report.detail" [uiParams]="{reportId: report.id}" *ngIf="canViewReport(report)">
+            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports.report.detail" [uiParams]="{reportId: report.id}" tooltip="查看" tooltipPlacement="bottom" *ngIf="canViewReport(report)">
                 <i class="wj-icon wj-view fa"></i>
             </button> 
         </td>
@@ -65,16 +66,16 @@ export class EnoterReportListComponent {
     @Input() reports: any[] = []
 
     private canViewReport(report:any) {
-        if(report.requestPackageInd === 'R') {
-            return report.robotReviewInd === 'F';
+        if(report.requestPackageInd === 'ROBOT') {
+            return report.robotReviewInd === 'FINISHED';
         }
-        if(report.requestPackageInd === 'E') {
-            return report.expert1ReviewInd === 'F' && report.expert2ReviewInd === 'F';
+        if(report.requestPackageInd === 'EXPERT') {
+            return report.expert1ReviewInd === 'FINISHED' && report.expert2ReviewInd === 'FINISHED';
         }
     }
 
     private pay(report) {
-        if(report.paymentInd !== 'N') return;
+        if(report.paymentInd !== 'UNPAID') return;
         this.api.post(`/enoter/reports/${report.id}/payment`, null, false).then(alipayTrade => {
             this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: alipayTrade});
         })

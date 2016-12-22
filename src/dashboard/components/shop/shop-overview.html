@@ -1,13 +1,13 @@
 <div class="page-header">
     <h4>店务管理</h4>
     <div class="pull-right">
-        <button uiSref="shop.overview" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-shop"></i></button>
-        <button uiSref="shop.stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-store"></i></button>
-        <button uiSref="shop.employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-employee"></i></button>
-        <button uiSref="shop.products" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-product"></i></button>
-        <button uiSref="shop.customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-customer"></i></button>
-        <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-record"></i></button>
-        <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary"><i class="wj-icon wj-health-record"></i></button>
+        <button uiSref="shop.overview" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="店务管理" tooltipPlacement="bottom"><i class="wj-icon wj-shop"></i></button>
+        <button uiSref="shop.stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="门店管理" tooltipPlacement="bottom"><i class="wj-icon wj-store"></i></button>
+        <button uiSref="shop.employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="员工管理" tooltipPlacement="bottom"><i class="wj-icon wj-employee"></i></button>
+        <button uiSref="shop.products" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="产品管理" tooltipPlacement="bottom"><i class="wj-icon wj-product"></i></button>
+        <button uiSref="shop.customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="客户管理" tooltipPlacement="bottom"><i class="wj-icon wj-customer"></i></button>
+        <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="灸例管理" tooltipPlacement="bottom"><i class="wj-icon wj-record"></i></button>
+        <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="健康档案" tooltipPlacement="bottom"><i class="wj-icon wj-health-record"></i></button>
     </div>
 </div>
 
@@ -19,10 +19,10 @@
         <h4>{{shop.name}}</h4>
         <p>{{shop.description | excerpt}}</p>
         <p class="text-right">
-          <button class="btn btn-primary" role="button" [disabled]="true" *ngIf="shop.verificationInd==='N'">
+          <button class="btn btn-primary" role="button" [disabled]="true" *ngIf="shop.verificationInd === 'NO'">
             审核中..
           </button>
-          <button uiSref="shop.overview.edit" class="btn btn-default btn-circle-micro" title="修改" *ngIf="shop.verificationInd==='Y'">
+          <button uiSref="shop.overview.edit" class="btn btn-default btn-circle-micro" tooltip="修改" tooltipPlacement="bottom" *ngIf="shop.verificationInd==='YES'">
             <i class="wj-icon wj-edit"></i>
           </button>
         </p>

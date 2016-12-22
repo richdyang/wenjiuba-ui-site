@@ -16,7 +16,7 @@ import {UIRouter} from "ui-router-ng2/ng2";
         <!--<label for="userName" class="col-sm-3 control-label sr-only">用户名</label>-->
         <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': !signupForm.valid}">
           <input type="text" class="form-control" formControlName="userName" [(ngModel)]="user.userName" placeholder="用户名" 
-                 required minlength="6" maxlength="50" pattern="[a-zA-Z][0-9a-zA-Z]+">
+                 required minlength="6" maxlength="50" pattern="[a-zA-Z][0-9a-zA-Z_.]+">
           <span *ngIf="!signupForm.valid" class="help-block text-danger" style="font-size: .9em">
             <div *ngIf="signupForm.controls['userName'].errors?.required">此项为必填</div>
             <div *ngIf="signupForm.controls['userName'].errors?.minlength">此项小于字数{{signupForm.controls['userName'].errors?.minlength?.requiredLength}}</div>

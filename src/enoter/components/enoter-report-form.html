@@ -22,7 +22,7 @@
                 <p-selectButton [options]="dict.options('genders')" [(ngModel)]="report.gender" name="gender"
                                 required></p-selectButton>
             </p-form-field>
-            <p-form-field label="月经情况?" *ngIf="report.gender === 'F'">
+            <p-form-field label="月经情况?" *ngIf="report.gender === 'FEMALE'">
                 <p-selectButton [options]="dict.options('menses')" [(ngModel)]="report.menses" name="menses"
                                 required></p-selectButton>
             </p-form-field>
@@ -110,7 +110,7 @@
                     <p-selectButton [options]="dict.options('enoterReport.requestPackageInd')" [(ngModel)]="report.requestPackageInd" name="requestPackageInd" required></p-selectButton>
                 </p-form-field>
 
-                <p *ngIf="report.requestPackageInd === 'E'">
+                <p *ngIf="report.requestPackageInd === 'EXPERT'">
                 <p-form-field label="判读专家1 *">
                     <p-select [(ngModel)]="report.expert1" name="expert1" [items]="availableExperts(2)" placeholder="请选择专家1.." [allowClear]="true" required></p-select>
                 </p-form-field>
@@ -122,11 +122,11 @@
                 <div class="well" style="margin-top: 10px">
                     <p>
                         你需要支付：
-                        <span class="label label-danger" *ngIf="report.requestPackageInd==='R'">
+                        <span class="label label-danger" *ngIf="report.requestPackageInd==='ROBOT'">
                             <del>{{package.namedRobotPrice}}</del>
                             {{package.robotPrice}}元/次
                         </span>
-                        <span class="label label-danger" *ngIf="report.requestPackageInd==='E'">
+                        <span class="label label-danger" *ngIf="report.requestPackageInd==='EXPERT'">
                             <del>{{package.namedExpertPrice}}</del>
                             {{package.expertPrice}}元/次
                         </span>

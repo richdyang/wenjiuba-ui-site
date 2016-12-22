@@ -43,7 +43,7 @@
         </p-form-field>
     </fieldset>
 
-    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'" [disabled]="extra.robotReviewInd !== 'P' || extra.expert1ReviewInd !== 'P' || extra.expert2ReviewInd !== 'P'">
+    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'" [disabled]="extra.robotReviewInd !== 'PENDING' || extra.expert1ReviewInd !== 'PENDING' || extra.expert2ReviewInd !== 'PENDING'">
         <h4>客户基本信息</h4>
         <p-form-field label="姓名 *">
             <input type="text" [(ngModel)]="extra.fullName" name="name" class="form-control" required>
@@ -55,7 +55,7 @@
             <p-selectButton [options]="dict.options('genders')" [(ngModel)]="extra.gender" name="gender"
                             required></p-selectButton>
         </p-form-field>
-        <p-form-field label="月经情况?" *ngIf="extra.gender === 'F'">
+        <p-form-field label="月经情况?" *ngIf="extra.gender === 'FEMALE'">
             <p-selectButton [options]="dict.options('menses')" [(ngModel)]="extra.menses" name="menses"
                             required></p-selectButton>
         </p-form-field>
@@ -109,11 +109,11 @@
             <div class="well" style="margin-top: 10px">
                 <p>
                     你需要支付：
-                        <span class="label label-danger" *ngIf="extra.requestInd==='R'">
+                        <span class="label label-danger" *ngIf="extra.requestInd==='ROBOT'">
                             <del>{{package.namedRobotPrice}}</del>
                             {{package.robotPrice}}元/次
                         </span>
-                        <span class="label label-danger" *ngIf="extra.requestInd==='E'">
+                        <span class="label label-danger" *ngIf="extra.requestInd==='EXPERT'">
                             <del>{{package.namedExpertPrice}}</del>
                             {{package.expertPrice}}元/次
                         </span>
