@@ -14,7 +14,7 @@ import {DictService} from "../../../shared/services/dict";
         <h5>{{report.fullName}}</h5>
         <p>年龄：{{report.age}}</p>
         <p>性别：{{dict.display('genders', report.gender)}}</p>
-        <p *ngIf="report.gender === 'F'">
+        <p *ngIf="report.gender === 'FEMALE'">
         月经情况：{{dict.display('menses', report.menses)}}
         </p>
         <p>身高：{{report.height}} cm</p>
@@ -94,7 +94,8 @@ import {DictService} from "../../../shared/services/dict";
     </div>
     
     <form>
-        <p-form-field label="专家判读结果">
+        <p-form-field label="判读结果">
+            <p class="alert alert-info" *ngIf="expert.robotInd === 'YES'">你是判读机器人</p>
             <p-editor [(ngModel)]="expertReport" name="expertReport"></p-editor>
         </p-form-field>
         

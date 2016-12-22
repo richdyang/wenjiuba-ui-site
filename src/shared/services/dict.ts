@@ -17,7 +17,7 @@ export class DictService {
             'FEMALE': '女'
         },
         menses: {
-            'IMMENSES': '未行经',
+            'IMMATURE': '未行经',
             'MENSES': '行经',
             'CEASE': '闭经'
         },
