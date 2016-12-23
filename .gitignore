@@ -2,4 +2,4 @@ node_modules/
 dist/
 npm-debug.log
 .idea/workspace.xml
-.idea/task.xml
+.idea/tasks.xml
