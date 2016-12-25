@@ -1,8 +1,6 @@
 import {BaseComponent} from "./components/base";
 import {WelcomeComponent} from "./components/welcome";
 import {SignupForm} from "./components/signup-form";
-import {PaymentComponent, AlipayTrade} from "../shared/components/payment";
-import {DashboardComponent} from "../dashboard/components/dashboard";
 
 export const states = [
     {

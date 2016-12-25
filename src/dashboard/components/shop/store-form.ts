@@ -10,13 +10,13 @@ import {Transition} from "ui-router-ng2/ng2";
   </div>
   
   <form #storeForm="ngForm">
-    <p-form-field label="分店名称 *">
+    <p-form-field label="门店名称 *">
       <input type="text" [(ngModel)]="store.name" name="name" class="form-control" required>
     </p-form-field>
-    <p-form-field label="分店介绍 *">
+    <p-form-field label="门店介绍 *">
       <p-editor [(ngModel)]="store.introduction" name="introduction" [uploadHandler]="api.uploadHandler" required mintextlength="20"></p-editor>
     </p-form-field>
-    <p-form-field label="分店地址 *">
+    <p-form-field label="门店地址 *">
       <input type="text" [(ngModel)]="store.address" name="address" class="form-control" required>
     </p-form-field>
     <p-form-field label="联系电话 *">

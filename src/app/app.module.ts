@@ -21,7 +21,6 @@ import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {DashboardModule} from "../dashboard/dashboard.module";
 import {EnoterModule} from "../enoter/enoter.module";
-import {PaymentComponent} from "../shared/components/payment";
 
 @NgModule({
     imports: [
