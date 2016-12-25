@@ -14,7 +14,7 @@ import {UIRouter} from "ui-router-ng2/ng2";
   <form [formGroup]="signupForm" class="form-horizontal">
       <div class="form-group">
         <!--<label for="userName" class="col-sm-3 control-label sr-only">用户名</label>-->
-        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': !signupForm.valid}">
+        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': signupForm.controls['userName'].errors}">
           <input type="text" class="form-control" formControlName="userName" [(ngModel)]="user.userName" placeholder="用户名" 
                  required minlength="6" maxlength="50" pattern="[a-zA-Z][0-9a-zA-Z_.]+">
           <span *ngIf="!signupForm.valid" class="help-block text-danger" style="font-size: .9em">
@@ -28,7 +28,7 @@ import {UIRouter} from "ui-router-ng2/ng2";
       </div>
       <div class="form-group">
         <!--<label for="password" class="col-sm-3 control-label sr-only">密码</label>-->
-        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': !signupForm.valid}">
+        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': signupForm.controls['password'].errors}">
           <input type="password" class="form-control" formControlName="password" [(ngModel)]="user.password" placeholder="密码"
                  required minlength="6" maxlength="50">
           <span *ngIf="!signupForm.valid" class="help-block text-danger" style="font-size: .9em">
@@ -40,9 +40,9 @@ import {UIRouter} from "ui-router-ng2/ng2";
       </div>
       
       <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': !signupForm.valid}">
+        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': signupForm.controls['email'].errors}">
           <input type="email" class="form-control" formControlName="email" [(ngModel)]="user.email" placeholder="邮箱"
-                 required pattern="[a-zA-Z][a-zA-Z0-9._]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+">
+                 required pattern="[a-zA-Z0-9][a-zA-Z0-9._]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+">
           <span *ngIf="!signupForm.valid" class="help-block text-danger" style="font-size: .9em">
             <div *ngIf="signupForm.controls['email'].errors?.required">此项为必填</div>
             <div *ngIf="signupForm.controls['email'].errors?.pattern">请输入正确的邮箱格式</div>
@@ -51,7 +51,7 @@ import {UIRouter} from "ui-router-ng2/ng2";
       </div>
       
       <div class="form-group">
-        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': !signupForm.valid}">
+        <div class="col-sm-offset-3 col-sm-6" [ngClass]="{'has-error': signupForm.controls['realName'].errors}">
           <input type="text" class="form-control" formControlName="realName" [(ngModel)]="user.realName" placeholder="姓名"
                  >
         </div>
