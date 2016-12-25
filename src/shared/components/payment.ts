@@ -1,8 +1,9 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, ViewChild, Output, EventEmitter, ViewContainerRef} from '@angular/core';
 import {ApiService, API_BASE} from "../services/api";
 import {DictService} from "../services/dict";
 import {Transition, UIRouter} from "ui-router-ng2/ng2";
 import {SessionService} from "../services/session";
+import { ModalDirective } from 'ng2-bootstrap';
 
 @Component({
     selector: 'payment',
@@ -14,6 +15,7 @@ export class PaymentComponent {
     private paymentSubmitUrl: string = API_BASE + "/alipay/submit"
 
     @Input() alipayTrade: any|AlipayTrade = {};
+    @Input() returnTo: string;
 
     static resolve = [
         {
@@ -22,10 +24,24 @@ export class PaymentComponent {
             resolveFn: (api, transition:Transition) => {
                 return transition.params()['alipayTrade']
             }
+        },
+        {
+            token: 'returnTo',
+            deps: [ApiService,Transition],
+            resolveFn: (api, transition:Transition) => {
+                return transition.params()['returnTo']
+            }
         }
     ]
 
-    constructor(public apiService: ApiService, private session:SessionService, private router: UIRouter) {}
+    @ViewChild('resultModal') resultModal:ModalDirective;
+
+    goto() {
+        this.router.stateService.go(this.returnTo, null, {inherit: true})
+    }
+
+    constructor(public apiService: ApiService, private session:SessionService, private router: UIRouter) {
+    }
 }
 
 export interface AlipayTrade {

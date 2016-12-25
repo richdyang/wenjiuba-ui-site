@@ -63,7 +63,8 @@ export const states:any[] = [
             'enoter-reports-report-payment@base': {component: PaymentComponent}
         },
         params: {
-            alipayTrade: { }
+            alipayTrade: { },
+            returnTo: 'enoter.reports'
         },
         peek: true,
         resolve: PaymentComponent.resolve

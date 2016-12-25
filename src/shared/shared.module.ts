@@ -11,9 +11,11 @@ import {NgModule} from "@angular/core";
 import {DictService} from "./services/dict";
 import {PaymentComponent} from "./components/payment";
 import {WidgetModule} from "../widget/widget.module";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   imports: [
+    CommonModule,
     WidgetModule,
     ClonePipeModule, ExcerptPipeModule
   ],

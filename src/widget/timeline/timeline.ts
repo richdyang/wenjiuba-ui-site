@@ -1,12 +1,12 @@
 import {NgModule,Component,Input,Output,EventEmitter} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {UIRouterModule} from "ui-router-ng2/ng2";
-import {MomentModule} from "angular2-moment/index";
+import {MomentModule} from "angular2-moment";
 
-import * as moment from 'angular2-moment/node_modules/moment';
-import 'angular2-moment/node_modules/moment/min/locales';
+import * as moment from 'moment';
+import 'moment/min/locales';
 
-moment.locale('zh-cn');
+moment().locale('zh-cn');
 
 
 @Component({

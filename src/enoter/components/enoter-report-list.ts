@@ -35,10 +35,10 @@ import {DictService} from "../../shared/services/dict";
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <button class="btn btn-default btn-circle-micro" tooltip="支付" tooltipPlacement="bottom" *ngIf="report.paymentInd !== 'PAID'" (click)="pay(report)">
+            <button class="btn btn-default btn-circle-micro" tooltip="支付" placement="bottom" *ngIf="report.paymentInd !== 'PAID'" (click)="pay(report)">
                 <i class="wj-icon wj-alipay"></i>
             </button>
-            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports.report.detail" [uiParams]="{reportId: report.id}" tooltip="查看" tooltipPlacement="bottom" *ngIf="canViewReport(report)">
+            <button class="btn btn-default btn-circle-micro" uiSref="enoter.reports.report.detail" [uiParams]="{reportId: report.id}" tooltip="查看" placement="bottom" *ngIf="canViewReport(report)">
                 <i class="wj-icon wj-view fa"></i>
             </button> 
         </td>
@@ -64,6 +64,7 @@ export class EnoterReportListComponent {
     //resolve
 
     @Input() reports: any[] = []
+    modalShown = false;
 
     private canViewReport(report:any) {
         if(report.requestPackageInd === 'ROBOT') {
@@ -76,7 +77,7 @@ export class EnoterReportListComponent {
 
     private pay(report) {
         if(report.paymentInd !== 'UNPAID') return;
-        this.api.post(`/enoter/reports/${report.id}/payment`, null, false).then(alipayTrade => {
+        this.api.get(`/alipay/presubmit?businessType=ENOTER_REPORT&businessId=${report.id}`).then(alipayTrade => {
             this.router.stateService.go('enoter.reports.report.payment', {reportId: report.id, alipayTrade: alipayTrade});
         })
     }

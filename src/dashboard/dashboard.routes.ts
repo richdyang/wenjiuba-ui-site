@@ -83,7 +83,8 @@ export const states: any[] = [
             'shop-overview-payment@base': {component: PaymentComponent}
         },
         params: {
-            alipayTrade: { }
+            alipayTrade: { },
+            returnTo: 'shop.overview'
         },
         peek: true,
         resolve: PaymentComponent.resolve

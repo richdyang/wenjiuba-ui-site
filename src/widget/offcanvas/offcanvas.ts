@@ -72,7 +72,7 @@ export class CloseOffcanvas {
       overflow: auto;
       pointer-events: none;
       position: absolute;
-      z-index: 10000;
+      z-index: 10;
       padding: 0 40px;
       height: auto;
     }
@@ -114,7 +114,7 @@ export class CloseOffcanvas {
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: 9999;
+      z-index: 9;
     }
 
     .ng2-sidebar__overlay--style {
@@ -129,7 +129,7 @@ export class CloseOffcanvas {
         right: auto;
         left: 84px;
         top: 15px;
-        z-index: 10001;
+        z-index: 11;
         height: 32px;
         width: 32px;
         line-height: 1.5rem;
@@ -159,50 +159,50 @@ export class CloseOffcanvas {
      }
      
      .overlay--1 {
-        z-index: 1000;
+        z-index: 9;
      }
      
      .sidebar--1 {
         left: 200px;
-        z-index: 1001;
+        z-index: 10;
      }
      
      .closer--1 {
         left: 184px;
-        z-index: 1002;
+        z-index: 11;
      }
 
      
      .overlay--2 {
         padding-left: 200px;
         background-clip: content-box;
-        z-index: 2000;
+        z-index: 19;
      }
      
      .sidebar--2 {
         left: 250px;
-        z-index: 2001;
+        z-index: 20;
      }
      
      .closer--2 {
         left: 234px;
-        z-index: 2002;
+        z-index: 21;
      }
      
      .overlay--3 {
         padding-left: 250px;
         background-clip: content-box;
-        z-index: 3000;
+        z-index: 29;
      }
      
      .sidebar--3 {
         left: 300px;
-        z-index: 3001;
+        z-index: 30;
      }
      
      .closer--3 {
         left: 284px;
-        z-index: 3002;
+        z-index: 31;
      }
      
      @media only screen and (max-device-width: 736px) {
