@@ -35,7 +35,7 @@ import {DictService} from "../../../shared/services/dict";
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
         <td class="text-right">
-            <button class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report.review" [uiParams]="{reportId: report.id}" tooltip="查看" tooltipPlacement="bottom" *ngIf="report.publishInd !== 'YES'">
+            <button class="btn btn-default btn-circle-micro" uiSref="expert.enoter-reports.report.review" [uiParams]="{reportId: report.id}" tooltip="查看" placement="bottom" *ngIf="report.publishInd !== 'YES'">
                 <i class="wj-icon wj-view"></i>
             </button> 
         </td>

@@ -5,7 +5,6 @@
 <!--{{report | json}}-->
 <div class="row">
     <main class="col-sm-9">
-
         <form ngNoForm action="{{paymentSubmitUrl}}" method="POST" target="_blank">
             <input type="hidden" name="Authorization" value="Bearer {{session.token}}">
             <!--<p-form-field label="商户订单号">-->
@@ -27,7 +26,7 @@
                 <input type="hidden" name="body" value="{{alipayTrade.body}}">
             </p-form-field>
 
-            <input type="submit" class="btn btn-danger" [disabled]="!(alipayTrade.subject && alipayTrade.totalFee)" value ="确认支付">
+            <input type="submit" class="btn btn-danger" [disabled]="!(alipayTrade.subject && alipayTrade.totalFee)" value ="确认支付" (click)="resultModal.show()">
         </form>
     </main>
 
@@ -37,4 +36,23 @@
             请仔细核对确认后，点击支付
         </p>
     </aside>
+</div>
+
+<div bsModal #resultModal="bs-modal" class="modal fade" [config]="{backdrop: false}" (onShow)="modalShown=true"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">支付结果</h4>
+            </div>
+            <div class="modal-body">
+                <button class="btn btn-primary" (click)="goto()">支付完成</button>
+                <button class="btn btn-warning btn-outline" (click)="goto()">支付遇到问题?</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="modalShown">
+<bs-modal-backdrop class="modal-backdrop fade in active" ></bs-modal-backdrop>
 </div>
