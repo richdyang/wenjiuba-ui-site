@@ -12,10 +12,6 @@ import {UIRouter} from "ui-router-ng2/ng2";
 export class StreamListComponent {
     streamEvents: any[] = []
 
-    static resolve() {
-
-    }
-
     constructor(public session:SessionService, public apiService:ApiService, private router: UIRouter) {
         this.apiService.get('/me/stream').then(streamEvents => {
             this.streamEvents = streamEvents.map(streamEvent => {
@@ -24,12 +20,14 @@ export class StreamListComponent {
                     streamEvent.uiSref = 'questions.detail'
                     streamEvent.uiParams = {id: streamEvent.questionId}
                     streamEvent.iconClasses = 'wj-icon wj-answer'
+                    streamEvent.date = streamEvent.happenedAt
                 }
                 if(streamEvent.type == 'question') {
                     streamEvent.uiSref = 'questions.detail'
                     streamEvent.uiParams = {id: streamEvent.id}
                     streamEvent.link = `/questions/${streamEvent.id}`
                     streamEvent.iconClasses = 'wj-icon wj-qanda'
+                    streamEvent.date = streamEvent.happenedAt
                 }
                 return streamEvent;
             })

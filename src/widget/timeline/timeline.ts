@@ -6,8 +6,7 @@ import {MomentModule} from "angular2-moment";
 import * as moment from 'moment';
 import 'moment/min/locales';
 
-moment().locale('zh-cn');
-
+moment.locale('zh-cn');
 
 @Component({
   selector: 'p-timeline',
@@ -22,7 +21,7 @@ moment().locale('zh-cn');
 			<div class="ui-timeline-content">
 				<h5>{{item.title}}</h5>
 				<p>{{item.content}}</p>
-				<a uiSref="{{item.uiSref}}" [uiParams]="item.uiParams" class="ui-timeline-readmore">Read more</a>
+				<a uiSref="{{item.uiSref}}" [uiParams]="item.uiParams" class="ui-timeline-readmore">查看</a>
 				<span class="ui-timeline-date">{{item.date | amTimeAgo}}</span>
 			</div> <!-- ui-timeline-content -->
 		</div> <!-- ui-timeline-block -->
