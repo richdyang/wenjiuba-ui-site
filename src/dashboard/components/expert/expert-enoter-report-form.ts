@@ -123,6 +123,9 @@ export class ExpertEnoterReportFormComponent implements OnInit {
         if(this.expert.id == this.report.expert2) {
             this.expertReport = this.report.expert2Report
         }
+        if(this.expert.robotInd === 'YES') {
+            this.expertReport = this.report.robotReport
+        }
     }
 
 
