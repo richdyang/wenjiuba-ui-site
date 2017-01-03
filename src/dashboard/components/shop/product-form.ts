@@ -2,7 +2,7 @@ import {Component, ViewEncapsulation, Input} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
 import {MenuItem} from "../../../widget/common/api";
 import {DictService} from "../../../shared/services/dict";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "ui-router-ng2/ng2";
 
 @Component({
     selector: 'product-form',
@@ -33,7 +33,7 @@ import {Transition} from "ui-router-ng2/ng2";
     encapsulation: ViewEncapsulation.None
 })
 export class ProductFormComponent {
-    constructor(private api:ApiService, private dict:DictService) {}
+    constructor(private api:ApiService, private dict:DictService, private router: UIRouter) {}
 
     // models
     @Input() product:any= {};
@@ -42,7 +42,9 @@ export class ProductFormComponent {
     }
 
     private onSubmit() {
-        this.api.save('/shop/products', this.product);
+        this.api.save('/shop/products', this.product).then(_ => {
+            this.router.stateService.go('shop.products', null, {reload: 'shop.products'})
+        });
     }
 
 }

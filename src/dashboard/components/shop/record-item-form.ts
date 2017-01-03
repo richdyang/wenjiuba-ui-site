@@ -85,9 +85,13 @@ export class RecordItemFormComponent implements OnInit {
     }
 
     private onSubmit() {
-        this.api.save(`/shop/records/${this.record.id}/items`, this.recordItem).then(recordItem => {
-            this.router.stateService.go('shop-records.record.items.item.extra', {recordId: this.record.id, recordItemId: this.recordItem.id})
-        });
+        this.api.save(`/shop/records/${this.record.id}/items`, this.recordItem)
+            .then(_ => {
+                this.router.stateService.go('shop.records.record', {recordId: this.record.id}, {reload: 'shop.records.record'});
+            });
+        // .then(recordItem => {
+        //     this.router.stateService.go('shop.records.record.items.item.extra', {recordId: this.record.id, recordItemId: this.recordItem.id}, {reload: 'shop.records.record.items.item.extra'})
+        // });
     }
 
 }

@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
 import {MenuItem} from "../../../widget/common/api";
 import {DictService} from "../../../shared/services/dict";
+import {UIRouter} from "ui-router-ng2";
 
 @Component({
     selector: 'shop-new',
@@ -14,7 +15,7 @@ import {DictService} from "../../../shared/services/dict";
     providers: [],
 })
 export class ShopNewComponent {
-    constructor(private api:ApiService, private dict:DictService) {}
+    constructor(private api:ApiService, private dict:DictService, private router: UIRouter) {}
 
     // ui control
     private steps:MenuItem[];
@@ -34,7 +35,9 @@ export class ShopNewComponent {
     }
 
     private onSubmit() {
-        this.api.post('/shop', {employee: this.employee, shop: this.shop, shopVerification: this.shopVerification})
+        this.api.post('/shop', {employee: this.employee, shop: this.shop, shopVerification: this.shopVerification}).then(_ => {
+            this.router.stateService.go('shop.overview', null, {reload: 'shop.overview'})
+        })
     }
 
 }

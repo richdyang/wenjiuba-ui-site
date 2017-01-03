@@ -59,7 +59,10 @@ export class RecordItemExtraFormComponent {
 
     private onSubmit() {
         let params:any = this.router.stateService.params
-        this.api.post(`/shop/records/${params.recordId}/items/${params.recordItemId}/extra`, this.extra);
+        this.api.post(`/shop/records/${params.recordId}/items/${params.recordItemId}/extra`, this.extra)
+            .then(_ => {
+                this.router.stateService.go('shop.records.record', {recordId: this.record.id}, {reload: 'shop.records.record'});
+            });
     }
 
 }

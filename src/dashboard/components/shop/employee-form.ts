@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "ui-router-ng2/ng2";
 import {DictService} from "../../../shared/services/dict";
 
 @Component({
@@ -69,7 +69,7 @@ import {DictService} from "../../../shared/services/dict";
 })
 export class EmployeeFormComponent {
 
-  constructor(private api:ApiService, private dict: DictService) {}
+  constructor(private api:ApiService, private dict: DictService, private router: UIRouter) {}
 
   private today:Date = new Date();
 
@@ -87,7 +87,9 @@ export class EmployeeFormComponent {
 
 
   private onSubmit() {
-    this.api.save('/shop/employees', this.employee);
+    this.api.save('/shop/employees', this.employee).then(_ => {
+        this.router.stateService.go('shop.employees', null, {reload: 'shop.employees'})
+    });
   }
 
 }

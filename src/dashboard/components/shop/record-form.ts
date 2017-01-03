@@ -61,7 +61,7 @@ export class RecordFormComponent {
 
     private onSubmit() {
         this.api.save('/shop/records', this.record).then(record => {
-            this.router.stateService.go('shop-records.record', {recordId: record.id});
+            this.router.stateService.go('shop.records.record', {recordId: record.id}, {reload: 'shop.records.record'});
         });
     }
 
