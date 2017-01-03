@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "ui-router-ng2/ng2";
 import {DictService} from "../../../shared/services/dict";
 
 @Component({
@@ -80,7 +80,7 @@ import {DictService} from "../../../shared/services/dict";
 })
 export class CustomerFormComponent {
 
-  constructor(private api:ApiService, private dict: DictService) {}
+  constructor(private api:ApiService, private dict: DictService, private router: UIRouter) {}
 
   private today:Date = new Date();
 
@@ -98,7 +98,9 @@ export class CustomerFormComponent {
 
 
   private onSubmit() {
-    this.api.save('/shop/customers', this.customer);
+    this.api.save('/shop/customers', this.customer).then(_ => {
+        this.router.stateService.go('shop.customers', null, {reload: 'shop.customers'})
+    });
   }
 
 }

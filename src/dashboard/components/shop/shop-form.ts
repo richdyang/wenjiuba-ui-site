@@ -2,6 +2,7 @@ import {Component, ViewEncapsulation, Input} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
 import {MenuItem} from "../../../widget/common/api";
 import {DictService} from "../../../shared/services/dict";
+import {UIRouter} from "ui-router-ng2";
 
 @Component({
     selector: 'shop-form',
@@ -28,13 +29,15 @@ import {DictService} from "../../../shared/services/dict";
     providers: [],
 })
 export class ShopFormComponent {
-    constructor(private api:ApiService, private dict:DictService) {}
+    constructor(private api:ApiService, private dict:DictService, private router: UIRouter) {}
 
     // models
     @Input() shop:any = {};
 
     private submit() {
-        this.api.post('/shop', this.shop)
+        this.api.put('/shop', this.shop).then(_ => {
+            this.router.stateService.go('shop.overview', null, {reload: 'shop.overview'})
+        })
     }
 
 }

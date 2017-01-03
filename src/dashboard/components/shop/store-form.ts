@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "ui-router-ng2/ng2";
 
 @Component({
   selector: 'store-form',
@@ -34,7 +34,7 @@ import {Transition} from "ui-router-ng2/ng2";
 })
 export class StoreFormComponent {
 
-  constructor(private api:ApiService) {}
+  constructor(private api:ApiService, private router: UIRouter) {}
 
   static resolve = [
     {
@@ -49,7 +49,9 @@ export class StoreFormComponent {
 
 
   private onSubmit() {
-    this.api.save('/shop/stores', this.store);
+    this.api.save('/shop/stores', this.store).then(_ => {
+        this.router.stateService.go('shop.stores', null, {reload: 'shop.stores'})
+    })
   }
 
 }
