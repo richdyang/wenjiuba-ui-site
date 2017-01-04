@@ -28,13 +28,13 @@
     <main class="col-sm-9">
         <form #customerForm="ngForm">
             <p-form-field label="姓名 *">
-                <input type="text" [(ngModel)]="expert.fullName" name="fullName" class="form-control" required>
+                <input type="text" [(ngModel)]="expert.fullName" name="fullName" class="form-control" required minlength="2" maxlength="20">
             </p-form-field>
             <p-form-field label="头衔 *">
-                <input type="text" [(ngModel)]="expert.title" name="title" class="form-control" required>
+                <input type="text" [(ngModel)]="expert.title" name="title" class="form-control" required maxlength="20">
             </p-form-field>
             <p-form-field label="手机 *">
-                <input type="text" [(ngModel)]="expert.mobile" name="mobile" class="form-control" required>
+                <input type="text" [(ngModel)]="expert.mobile" name="mobile" class="form-control" required maxlength="15">
             </p-form-field>
             <p-form-field label="头像 *">
                 <p-file-input [(ngModel)]="expert.avatar" name="avatar" [uploadOptions]="api.uploadOptions"></p-file-input>

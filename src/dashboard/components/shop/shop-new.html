@@ -15,13 +15,13 @@
     <main class="col-sm-9">
         <form #employeeForm="ngForm">
           <p-form-field label="真实姓名 *">
-            <input type="text" [(ngModel)]="employee.fullName" name="fullName" class="form-control" required minlength="2">
+            <input type="text" [(ngModel)]="employee.fullName" name="fullName" class="form-control" required minlength="2" maxlength="50">
           </p-form-field>
           <p-form-field label="联系地址 *">
-            <input type="text" [(ngModel)]="employee.address" name="address" class="form-control" required minlength="10">
+            <input type="text" [(ngModel)]="employee.address" name="address" class="form-control" required minlength="10" maxlength="60">
           </p-form-field>
           <p-form-field label="联系手机 *">
-            <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11">
+            <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11" maxlength="20">
           </p-form-field>
           <p-form-field label="出生日期 *">
             <p-calendar [(ngModel)]="employee.birthday" name="birthday" required placeholder="格式：1980-08-29"></p-calendar>

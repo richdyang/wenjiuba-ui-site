@@ -17,7 +17,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
     <form #recordItemForm="ngForm">
         <fieldset>
             <p-form-field label="标题 *">
-                <input type="text" [(ngModel)]="recordItem.title" name="title" class="form-control" required minlength="2">
+                <input type="text" [(ngModel)]="recordItem.title" name="title" class="form-control" required minlength="2" maxlength="100">
             </p-form-field>
             <p-form-field label="产品 *">
                 <p-select [(ngModel)]="recordItem.product.id" name="productId" [items]="products" textField="name" placeholder="请选择产品.." [allowClear]="true" [disabled]="recordItem.id"></p-select>
@@ -39,10 +39,10 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
                 <!--<p-calendar [(ngModel)]="recordItem.happenedTo" name="happenedTo" timeOnly="true" hourFormat="24"></p-calendar>-->
             </p-form-field>
             <p-form-field label="地点1 *">
-                <input type="text" [(ngModel)]="recordItem.location1" name="location1" class="form-control" required minlength="2">
+                <input type="text" [(ngModel)]="recordItem.location1" name="location1" class="form-control" required minlength="2" maxlength="50">
             </p-form-field>
             <p-form-field label="地点2">
-                <input type="text" [(ngModel)]="recordItem.location2" name="location2" class="form-control">
+                <input type="text" [(ngModel)]="recordItem.location2" name="location2" class="form-control" maxlength="50">
             </p-form-field>
             <p-form-field label="消费金额 *">
                 <input type="number" [(ngModel)]="recordItem.price" name="price" class="form-control">

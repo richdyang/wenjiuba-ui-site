@@ -27,16 +27,28 @@
                                 required></p-selectButton>
             </p-form-field>
             <p-form-field label="身高 " help="身高、体重等数据对于健康档案很重要">
-                <input type="number" [(ngModel)]="report.height" name="height" class="form-control">
+                <div class="input-group">
+                    <input type="number" [(ngModel)]="report.height" name="height" class="form-control">
+                    <span class="input-group-addon">厘米</span>
+                </div>
             </p-form-field>
             <p-form-field label="体重 ">
-                <input type="number" [(ngModel)]="report.weight" name="weight" class="form-control">
+                <div class="input-group">
+                    <input type="number" [(ngModel)]="report.weight" name="weight" class="form-control">
+                    <span class="input-group-addon">公斤</span>
+                </div>
             </p-form-field>
             <p-form-field label="血压（高） ">
-                <input type="number" [(ngModel)]="report.bpHigh" name="bpHigh" class="form-control">
+                <div class="input-group">
+                    <input type="number" [(ngModel)]="report.bpHigh" name="bpHigh" class="form-control">
+                    <span class="input-group-addon">毫米汞柱</span>
+                </div>
             </p-form-field>
             <p-form-field label="血压（低） ">
-                <input type="number" [(ngModel)]="report.bpLow" name="bpLow" class="form-control">
+                <div class="input-group">
+                    <input type="number" [(ngModel)]="report.bpLow" name="bpLow" class="form-control">
+                    <span class="input-group-addon">毫米汞柱</span>
+                </div>
             </p-form-field>
 
             <button type="button" class="btn btn-primary" (click)="activeIndex=1" [disabled]="!customerForm.valid">
