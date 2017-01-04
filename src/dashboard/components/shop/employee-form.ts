@@ -12,7 +12,7 @@ import {DictService} from "../../../shared/services/dict";
   
   <form #employeeForm="ngForm">
     <p-form-field label="员工姓名 *">
-      <input type="text" [(ngModel)]="employee.fullName" name="name" class="form-control" required minlength="2">
+      <input type="text" [(ngModel)]="employee.fullName" name="name" class="form-control" required minlength="2" maxlength="20">
     </p-form-field>
     <p-form-field label="主属门店">
       <select name="primaryStoreId" [(ngModel)]="employee.primaryStoreId" class="form-control">
@@ -29,16 +29,16 @@ import {DictService} from "../../../shared/services/dict";
       </select>
     </p-form-field>
     <p-form-field label="联系地址 *">
-      <input type="text" [(ngModel)]="employee.address" name="address" class="form-control" required minlength="10">
+      <input type="text" [(ngModel)]="employee.address" name="address" class="form-control" required minlength="10" maxlength="60">
     </p-form-field>
     <p-form-field label="邮编 ">
-      <input type="text" [(ngModel)]="employee.postcode" name="postcode" class="form-control">
+      <input type="text" [(ngModel)]="employee.postcode" name="postcode" class="form-control" maxlength="6">
     </p-form-field>
     <p-form-field label="联系电话 ">
-      <input type="text" [(ngModel)]="employee.telephone" name="telephone" class="form-control" >
+      <input type="text" [(ngModel)]="employee.telephone" name="telephone" class="form-control" maxlength="20">
     </p-form-field>
     <p-form-field label="手机 *">
-      <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11">
+      <input type="text" [(ngModel)]="employee.mobile" name="mobile" class="form-control" required minlength="11" maxlength="20">
     </p-form-field>
     <p-form-field label="性别 *">
       <p-selectButton [options]="dict.options('genders')" [(ngModel)]="employee.gender" name="gender" required></p-selectButton>

@@ -13,7 +13,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
     
     <form #productForm="ngForm">
         <p-form-field label="名称 *">
-          <input type="text" [(ngModel)]="product.name" name="name" class="form-control" required minlength="2">
+          <input type="text" [(ngModel)]="product.name" name="name" class="form-control" required minlength="2" maxlength="50">
         </p-form-field>
         <p-form-field label="描述 *">
           <p-editor [(ngModel)]="product.introduction" name="introduction" [uploadHandler]="api.uploadHandler" required mintextlength="20"></p-editor>

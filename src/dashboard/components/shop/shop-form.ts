@@ -14,7 +14,7 @@ import {UIRouter} from "ui-router-ng2";
     
     <form #shopForm="ngForm">
         <p-form-field label="店名 *">
-          <input type="text" [(ngModel)]="shop.name" name="name" class="form-control" required minlength="2" disabled>
+          <input type="text" [(ngModel)]="shop.name" name="name" class="form-control" required minlength="2" maxlength="50" disabled>
         </p-form-field>
         <p-form-field label="介绍 *">
           <p-editor [(ngModel)]="shop.description" name="description" [uploadHandler]="api.uploadHander" required mintextlength="20"></p-editor>

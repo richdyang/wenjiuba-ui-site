@@ -32,7 +32,10 @@ export class ExpertFormComponent implements OnInit {
     constructor(public api: ApiService, private dict:DictService, private router: UIRouter) {}
 
     submit() {
-        this.api.save('/experts', {expert: this.expert, invitationCode: this.invitationCode, expertVerification: this.expertVerification});
+        this.api.save('/experts', {expert: this.expert, invitationCode: this.invitationCode, expertVerification: this.expertVerification})
+            .then(_ => {
+                this.router.stateService.go('i', null, {reload: 'i'})
+            });
     }
 
 }
