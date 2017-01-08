@@ -101,11 +101,11 @@ import {DictService} from "../../shared/services/dict";
         <p class="text-justify" [innerHtml]="report.robotReport"></p>
       </tab>
       
-      <tab heading="专家1判读 - {{report.expert1}}">
+      <tab heading="专家1判读 - {{report.expert1}}" *ngIf="report.requestPackageInd === 'EXPERT'">
         <p class="text-justify" [innerHtml]="report.expert1Report"></p>
       </tab>
       
-      <tab heading="专家2判读 - {{report.expert2}}">
+      <tab heading="专家2判读 - {{report.expert2}}" *ngIf="report.requestPackageInd === 'EXPERT'">
         <p class="text-justify" [innerHtml]="report.expert2Report"></p>
       </tab>
     </tabset>

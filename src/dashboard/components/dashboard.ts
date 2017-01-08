@@ -31,7 +31,7 @@ import {UIRouter} from "ui-router-ng2/ng2";
     `],
     providers: [],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
 
     streamEvents: any[] = []
 
@@ -61,6 +61,14 @@ export class DashboardComponent {
 
     @Input() expert;
     @Input() expertInvitation;
+
+
+    reportsSummary;
+    ngOnInit() {
+        this.apiService.get('/enoter/reports/summary').then(summary => {
+            this.reportsSummary = summary;
+        })
+    }
 
 
 }
