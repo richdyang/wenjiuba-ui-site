@@ -234,7 +234,7 @@ export const states: any[] = [
         abstract: true
     },
     {
-        name: 'shop-products.packages.new',
+        name: 'shop.products.packages.new',
         url: '/new',
         views: {
             'shop-products-packages-new@base': {component: ProductPackageFormComponent}

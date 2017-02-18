@@ -6,7 +6,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
 
 const template = `
 <div class="page-header">
-    <h4>灸例信息</h4>
+    <h4>灸历信息</h4>
 </div>
 
 <table class="table">

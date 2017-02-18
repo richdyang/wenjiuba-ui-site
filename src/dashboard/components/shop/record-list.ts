@@ -5,15 +5,15 @@ import {ApiService} from "../../../shared/services/api";
     selector: 'record-list',
     template: `
     <div class="page-header">
-      <h4>灸例管理</h4>
+      <h4>灸历管理</h4>
       <div class="pull-right">
           <button uiSref="shop.overview" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="店务管理" placement="bottom"><i class="wj-icon wj-shop"></i></button>
           <button uiSref="shop.stores" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="门店管理" placement="bottom"><i class="wj-icon wj-store"></i></button>
           <button uiSref="shop.employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="员工管理" placement="bottom"><i class="wj-icon wj-employee"></i></button>
           <button uiSref="shop.products" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="产品管理" placement="bottom"><i class="wj-icon wj-product"></i></button>
           <button uiSref="shop.customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="客户管理" placement="bottom"><i class="wj-icon wj-customer"></i></button>
-          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="灸例管理" placement="bottom"><i class="wj-icon wj-record"></i></button>
-          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="健康档案" placement="bottom"><i class="wj-icon wj-health-record"></i></button>
+          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="灸历管理" placement="bottom"><i class="wj-icon wj-record"></i></button>
+          <!--<button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="健康档案" placement="bottom"><i class="wj-icon wj-health-record"></i></button>-->
       </div>
     </div>
   
@@ -49,7 +49,7 @@ import {ApiService} from "../../../shared/services/api";
             <p>
                 <i class="wj-icon wj-empty3 fa-4x"></i> 
             </p>
-            <p>还没有一份灸例？</p>
+            <p>还没有一份灸历？</p>
             </td>
         </tr>
         </tbody>

@@ -37,10 +37,10 @@
                 <input type="text" [(ngModel)]="expert.mobile" name="mobile" class="form-control" required maxlength="15">
             </p-form-field>
             <p-form-field label="头像 *">
-                <p-file-input [(ngModel)]="expert.avatar" name="avatar" [uploadOptions]="api.uploadOptions"></p-file-input>
+                <p-file-input [(ngModel)]="expert.avatar" name="avatar" [uploadOptions]="api.uploadOptions" required></p-file-input>
             </p-form-field>
             <p-form-field label="个人介绍 *">
-                <p-editor [(ngModel)]="expert.description" name="description" [uploadHandler]="api.uploadHandler"></p-editor>
+                <p-editor [(ngModel)]="expert.description" name="description" [uploadHandler]="api.uploadHandler" required></p-editor>
             </p-form-field>
 
             <button type="button" class="btn btn-primary" (click)="activeIndex=2" [disabled]="!customerForm.valid">
@@ -68,10 +68,10 @@
             <p-form-field label="身份证 *">
                 <p-file-input [(ngModel)]="expertVerification.uploadIdCard" name="uploadIdCard" [uploadOptions]="api.uploadOptions" required></p-file-input>
             </p-form-field>
-            <p-form-field label="其他证明1 *">
+            <p-form-field label="其他证明1">
                 <p-file-input [(ngModel)]="expertVerification.uploadOther1" name="uploadOther1" [uploadOptions]="api.uploadOptions"></p-file-input>
             </p-form-field>
-            <p-form-field label="其他证明2 *">
+            <p-form-field label="其他证明2">
                 <p-file-input [(ngModel)]="expertVerification.uploadOther2" name="uploadOther2" [uploadOptions]="api.uploadOptions"></p-file-input>
             </p-form-field>
 

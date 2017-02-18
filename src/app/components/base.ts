@@ -52,18 +52,18 @@ import {SessionService} from "../../shared/services/session";
                       灸灸判读
                   </a>
               </li>
-              <li uiSrefActive="menu-active">
-                  <a href>
-                      <i class="wj-icon wj-event"></i>&nbsp;&nbsp;
-                      线下活动
-                  </a>
-              </li>
-              <li uiSrefActive="menu-active">
-                  <a href>
-                      <i class="wj-icon wj-interview"></i>&nbsp;&nbsp;
-                      在线访谈
-                  </a>
-              </li>
+              <!--<li uiSrefActive="menu-active">-->
+                  <!--<a href>-->
+                      <!--<i class="wj-icon wj-event"></i>&nbsp;&nbsp;-->
+                      <!--线下活动-->
+                  <!--</a>-->
+              <!--</li>-->
+              <!--<li uiSrefActive="menu-active">-->
+                  <!--<a href>-->
+                      <!--<i class="wj-icon wj-interview"></i>&nbsp;&nbsp;-->
+                      <!--在线访谈-->
+                  <!--</a>-->
+              <!--</li>-->
               <li uiSrefActive="menu-active">
                     <a href (click)="logout()">
                         <i class="fa fa-sign-out"></i>&nbsp;&nbsp;
