@@ -1,6 +1,5 @@
 import {Component, ViewEncapsulation, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {MenuItem} from "../../../widget/common/api";
 import {DictService} from "../../../shared/services/dict";
 import {Transition, UIRouter} from "ui-router-ng2/ng2";
 
@@ -8,7 +7,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
     selector: 'record-item-form',
     template:  `
     <div class="page-header">
-        <h4>灸例单项信息</h4>
+        <h4>灸历单项信息</h4>
         <div class="pull-right" *ngIf="recordItem.id">
             <a href uiSref="shop.records.record.items.item.edit" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-primary btn-circle btn-circle-sm"><i class="fa fa-book"></i></a>
             <a href uiSref="shop.records.record.items.item.extra" [uiParams]="{recordId: record.id, recordItemId: recordItem.id}" class="btn btn-default btn-circle btn-circle-sm"><i class="fa fa-ellipsis-h"></i></a>
@@ -32,16 +31,16 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
                 <!--</select>-->
             </p-form-field>
             <p-form-field label="时间 *">
-                <input type="text" [(ngModel)]="recordItem.happenedFrom" name="happenedFrom" class="form-control">
+                <input type="text" [(ngModel)]="recordItem.happenedFrom" name="happenedFrom" class="form-control" required placeholder="14:00:00">
                 <!--<p-calendar [(ngModel)]="recordItem.happenedFrom" name="happenedFrom" timeOnly="true" hourFormat="24"></p-calendar>-->
                 ~
-                <input type="text" [(ngModel)]="recordItem.happenedTo" name="happenedTo" class="form-control">
+                <input type="text" [(ngModel)]="recordItem.happenedTo" name="happenedTo" class="form-control" required placeholder="15:00:00">
                 <!--<p-calendar [(ngModel)]="recordItem.happenedTo" name="happenedTo" timeOnly="true" hourFormat="24"></p-calendar>-->
             </p-form-field>
-            <p-form-field label="地点1 *">
+            <p-form-field label="地点1 *" help="例如：房间名、房间号">
                 <input type="text" [(ngModel)]="recordItem.location1" name="location1" class="form-control" required minlength="2" maxlength="50">
             </p-form-field>
-            <p-form-field label="地点2">
+            <p-form-field label="地点2" help="例如：房间名、房间号">
                 <input type="text" [(ngModel)]="recordItem.location2" name="location2" class="form-control" maxlength="50">
             </p-form-field>
             <p-form-field label="消费金额 *">

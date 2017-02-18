@@ -8,7 +8,7 @@ import {Transition, UIRouter} from "ui-router-ng2/ng2";
     selector: 'record-form',
     template: `
     <div class="page-header">
-        <h4>灸例基本信息</h4>
+        <h4>灸历基本信息</h4>
     </div>
     
     <form #recordForm="ngForm">

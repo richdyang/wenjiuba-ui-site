@@ -13,8 +13,8 @@ import {DictService} from "../../../shared/services/dict";
           <button uiSref="shop.employees" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="员工管理" placement="bottom"><i class="wj-icon wj-employee"></i></button>
           <button uiSref="shop.products" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="产品管理" placement="bottom"><i class="wj-icon wj-product"></i></button>
           <button uiSref="shop.customers" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="客户管理" placement="bottom"><i class="wj-icon wj-customer"></i></button>
-          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="灸例管理" placement="bottom"><i class="wj-icon wj-record"></i></button>
-          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="健康档案" placement="bottom"><i class="wj-icon wj-health-record"></i></button>
+          <button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="灸历管理" placement="bottom"><i class="wj-icon wj-record"></i></button>
+          <!--<button uiSref="shop.records" class="btn btn-default btn-circle" uiSrefActive="btn-primary" tooltip="健康档案" placement="bottom"><i class="wj-icon wj-health-record"></i></button>-->
       </div>
   </div>
 
