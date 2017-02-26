@@ -29,8 +29,7 @@ import {DictService} from "../../shared/services/dict";
         <td>{{dict.display('enoterReport.reviewInd', report.robotReviewInd)}}</td>
         <td>
         {{report.requestPackageInd === 'EXPERT' ? 
-        dict.display('enoterReport.reviewInd', report.expert1ReviewInd) + '/' +
-        dict.display('enoterReport.reviewInd', report.expert2ReviewInd) : '-'
+        dict.display('enoterReport.reviewInd', report.expert1ReviewInd) : '-'
         }}
         </td>
         <td>{{report.createdAt | date: 'yyyy-MM-dd HH:mm'}}</td>
@@ -71,7 +70,7 @@ export class EnoterReportListComponent {
             return report.robotReviewInd === 'FINISHED';
         }
         if(report.requestPackageInd === 'EXPERT') {
-            return report.expert1ReviewInd === 'FINISHED' && report.expert2ReviewInd === 'FINISHED';
+            return report.expert1ReviewInd === 'FINISHED' //&& report.expert2ReviewInd === 'FINISHED';
         }
     }
 

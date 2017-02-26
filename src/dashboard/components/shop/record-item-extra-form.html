@@ -43,7 +43,7 @@
         </p-form-field>
     </fieldset>
 
-    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'" [disabled]="extra.robotReviewInd !== 'PENDING' || extra.expert1ReviewInd !== 'PENDING' || extra.expert2ReviewInd !== 'PENDING'">
+    <fieldset *ngIf="recordItem.product.productType === 'ENOTER'" [disabled]="extra.robotReviewInd !== 'PENDING' || extra.expert1ReviewInd !== 'PENDING'">
         <h4>客户基本信息</h4>
         <p-form-field label="姓名 *">
             <input type="text" [(ngModel)]="extra.fullName" name="name" class="form-control" required>
