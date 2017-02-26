@@ -105,9 +105,9 @@ import {DictService} from "../../shared/services/dict";
         <p class="text-justify" [innerHtml]="report.expert1Report"></p>
       </tab>
       
-      <tab heading="专家2判读 - {{report.expert2}}" *ngIf="report.requestPackageInd === 'EXPERT'">
-        <p class="text-justify" [innerHtml]="report.expert2Report"></p>
-      </tab>
+      <!--<tab heading="专家2判读 - {{report.expert2}}" *ngIf="report.requestPackageInd === 'EXPERT'">-->
+        <!--<p class="text-justify" [innerHtml]="report.expert2Report"></p>-->
+      <!--</tab>-->
     </tabset>
     `,
     providers: [],
