@@ -1,6 +1,6 @@
 import {Directive, ViewContainerRef, ComponentFactoryResolver, ComponentFactory, OnInit} from "@angular/core";
 import {PeekPanel} from "./peekPanel";
-import {UIRouter, StateDeclaration, Transition} from "ui-router-ng2/ng2";
+import {UIRouter, StateDeclaration, Transition} from "@uirouter/angular";
 import {PeekService} from "../../shared/services/peek";
 
 @Directive({

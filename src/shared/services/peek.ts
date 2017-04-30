@@ -1,5 +1,5 @@
 import {Injectable, ComponentRef} from "@angular/core";
-import {TransitionHookFn, StateDeclaration, Transition, UIRouter} from "ui-router-ng2/ng2";
+import {TransitionHookFn, StateDeclaration, Transition, UIRouter} from "@uirouter/angular";
 import {Subject} from "rxjs/Rx";
 import {PeekPanel} from "../../app/components/peekpanel";
 

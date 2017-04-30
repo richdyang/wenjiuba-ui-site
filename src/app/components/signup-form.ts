@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 import {ApiService} from "../../shared/services/api";
-import {UIRouter} from "ui-router-ng2/ng2";
+import {UIRouter} from "@uirouter/angular";
 
 @Component({
   selector: 'signup-form',

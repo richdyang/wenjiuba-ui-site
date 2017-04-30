@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {UIRouter} from "ui-router-ng2";
+import {UIRouter} from "@uirouter/angular";
 
 @Component({
   selector: 'shop-overview',

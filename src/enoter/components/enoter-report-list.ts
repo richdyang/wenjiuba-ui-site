@@ -1,6 +1,6 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ApiService} from "../../shared/services/api";
-import {Transition, UIRouter} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "@uirouter/angular";
 import {DictService} from "../../shared/services/dict";
 
 @Component({

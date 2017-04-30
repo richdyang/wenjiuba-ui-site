@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition} from "@uirouter/angular";
 import {DictService} from "../../../shared/services/dict";
 
 @Component({

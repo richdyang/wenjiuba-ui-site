@@ -4,7 +4,7 @@ import {HttpModule} from "@angular/http";
 import {CaseListComponent} from "./components/case-list";
 import {CaseFormComponent} from "./components/case-form";
 import {CommentFormComponent} from "./components/comment-form";
-import {UIRouterModule} from "ui-router-ng2";
+import {UIRouterModule} from "@uirouter/angular";
 import {states} from "./case.routes";
 import {NgModule} from "@angular/core";
 import {CaseNewComponent} from "./components/case-new";

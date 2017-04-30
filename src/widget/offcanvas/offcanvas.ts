@@ -21,7 +21,7 @@ import {
   animate, Directive, HostListener, ContentChild, HostBinding, NgModule
 } from '@angular/core';
 import { DOCUMENT } from '@angular/platform-browser';
-import {UIView, Transition, StateService} from "ui-router-ng2/ng2";
+import {UIView, Transition, StateService} from "@uirouter/angular";
 import {CommonModule} from "@angular/common";
 
 export const SIDEBAR_POSITION = {

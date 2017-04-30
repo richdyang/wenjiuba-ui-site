@@ -1,7 +1,7 @@
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
-import {UIRouterModule} from "ui-router-ng2";
+import {UIRouterModule} from "@uirouter/angular";
 import {NgModule} from "@angular/core";
 import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";

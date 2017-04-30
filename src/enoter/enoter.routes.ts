@@ -4,7 +4,7 @@ import {EnoterReportListComponent} from "./components/enoter-report-list";
 import {PaymentComponent} from "../shared/components/payment";
 import {EnoterReportDetailComponent} from "./components/enoter-report-detail";
 import {ApiService} from "../shared/services/api";
-import {Transition} from "ui-router-ng2";
+import {Transition} from "@uirouter/angular";
 
 export const states:any[] = [
     {

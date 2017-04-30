@@ -8,7 +8,7 @@ import {QuestionDetailComponent} from "./components/question-detail";
 import {QuestionFormComponent} from "./components/question-form";
 import {AnswerFormComponent} from "./components/answer-form";
 import {AnswerVoteComponent} from "./components/answer-vote";
-import {UIRouterModule} from "ui-router-ng2";
+import {UIRouterModule} from "@uirouter/angular";
 import {QuestionSettingComponent} from "./components/question-setting";
 import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";

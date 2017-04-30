@@ -2,7 +2,7 @@ import {Component, ViewEncapsulation, Input} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
 import {MenuItem} from "../../../widget/common/api";
 import {DictService} from "../../../shared/services/dict";
-import {Transition, UIRouter} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "@uirouter/angular";
 
 @Component({
     selector: 'record-form',

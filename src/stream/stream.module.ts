@@ -1,7 +1,7 @@
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
-import {UIRouterModule} from "ui-router-ng2";
+import {UIRouterModule} from "@uirouter/angular";
 import {states} from "./stream.routes";
 import {NgModule} from "@angular/core";
 import {StreamListComponent} from "./components/stream-list";

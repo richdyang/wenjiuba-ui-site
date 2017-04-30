@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation, Input, OnInit} from '@angular/core';
 import {ApiService} from "../../../shared/services/api";
-import {Transition, UIRouter} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "@uirouter/angular";
 
 @Component({
   selector: 'store-form',

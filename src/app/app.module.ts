@@ -7,7 +7,7 @@ import {HttpModule} from "@angular/http";
 import {BaseComponent} from "./components/base";
 import {SidenavComponent} from "./components/sidenav";
 import {QandaModule} from "../qanda/qanda.module";
-import {UIRouterModule, RootModule, UIRouter, Transition, StateDeclaration} from "ui-router-ng2";
+import {UIRouterModule, RootModule, UIRouter, Transition, StateDeclaration} from "@uirouter/angular";
 import {PeekPanel} from "./components/peekPanel";
 import {PeekAnchor} from "./components/peekAnchor";
 import {PeekService} from "../shared/services/peek";
@@ -21,10 +21,11 @@ import {WidgetModule} from "../widget/widget.module";
 import {SharedModule} from "../shared/shared.module";
 import {DashboardModule} from "../dashboard/dashboard.module";
 import {EnoterModule} from "../enoter/enoter.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
     imports: [
-        BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, // ng
+        BrowserModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, HttpModule, // ng
         UIRouterModule.forRoot(<RootModule>{states: states, configClass: PeekService}),           // root routes
         WidgetModule, SharedModule,            // common ui and shared module
         QandaModule,                            // feature module

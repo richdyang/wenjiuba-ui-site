@@ -1,7 +1,7 @@
 import {NgModule,Component,Input,Output,EventEmitter} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MenuItem} from '../common/api';
-import {UIRouter} from "ui-router-ng2/ng2";
+import {UIRouter} from "@uirouter/angular";
 
 @Component({
     selector: 'p-wizard',

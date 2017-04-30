@@ -20,7 +20,7 @@ import {ExpertEnoterReportListComponent} from "./components/expert/expert-enoter
 import {ExpertEnoterReportFormComponent} from "./components/expert/expert-enoter-report-form";
 import {RecordDetailComponent} from "./components/shop/record-detail";
 import {ApiService} from "../shared/services/api";
-import {Transition} from "ui-router-ng2/ng2";
+import {Transition} from "@uirouter/angular";
 import {ShopFormComponent} from "./components/shop/shop-form";
 import {PaymentComponent} from "../shared/components/payment";
 

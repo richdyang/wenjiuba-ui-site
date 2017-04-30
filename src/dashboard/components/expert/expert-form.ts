@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Transition, UIRouter} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "@uirouter/angular";
 import {ApiService} from "../../../shared/services/api";
 import {DictService} from "../../../shared/services/dict";
 import {MenuItem} from "../../../widget/common/api";

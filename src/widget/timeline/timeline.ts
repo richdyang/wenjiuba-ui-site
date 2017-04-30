@@ -1,6 +1,6 @@
 import {NgModule,Component,Input,Output,EventEmitter} from '@angular/core';
 import {CommonModule} from "@angular/common";
-import {UIRouterModule} from "ui-router-ng2/ng2";
+import {UIRouterModule} from "@uirouter/angular";
 import {MomentModule} from "angular2-moment";
 
 import * as moment from 'moment';

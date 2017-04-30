@@ -1,5 +1,5 @@
 import {Component, ViewContainerRef, ComponentFactoryResolver} from '@angular/core';
-import {Transition, StateService, UIRouter} from "ui-router-ng2";
+import {Transition, StateService, UIRouter} from "@uirouter/angular";
 import {PeekPanel} from "./peekPanel";
 import {AuthService} from "../../shared/services/auth";
 import {SessionService} from "../../shared/services/session";

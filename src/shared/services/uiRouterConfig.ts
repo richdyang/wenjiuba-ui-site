@@ -1,5 +1,5 @@
 import {Injectable, EventEmitter} from "@angular/core";
-import {UIRouter, Transition, StateDeclaration} from "ui-router-ng2/ng2";
+import {UIRouter, Transition, StateDeclaration} from "@uirouter/angular";
 import {Subject} from "rxjs/Rx";
 import {PeekService} from "./peek";
 

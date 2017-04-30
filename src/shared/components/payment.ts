@@ -1,9 +1,9 @@
 import {Component, OnInit, Input, ViewChild, Output, EventEmitter, ViewContainerRef} from '@angular/core';
 import {ApiService, API_BASE} from "../services/api";
 import {DictService} from "../services/dict";
-import {Transition, UIRouter} from "ui-router-ng2/ng2";
+import {Transition, UIRouter} from "@uirouter/angular";
 import {SessionService} from "../services/session";
-import { ModalDirective } from 'ng2-bootstrap';
+import { ModalDirective } from 'ngx-bootstrap';
 
 @Component({
     selector: 'payment',
