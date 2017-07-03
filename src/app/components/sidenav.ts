@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 
 @Component({
     selector   : 'sidenav',
-    templateUrl: `
+    template: `
     this is side menu
     <a p-offcanvas-close>111</a>
     <p-offcanvas [(open)]="_open">nested</p-offcanvas>
