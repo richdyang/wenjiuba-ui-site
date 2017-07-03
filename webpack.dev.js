@@ -8,12 +8,17 @@ const SERVER_PORT = '3000';
 var config = {
     devtool: 'inline-source-map',
     cache: true,
-    debug: true,
     output: {
         filename: '[name].js',
         sourceMapFilename: '[name].map',
         chunkFilename: '[id].chunk.js'
     },
+    plugins: [
+        new webpack.LoaderOptionsPlugin({
+            debug: true,
+            minimize: false
+        })
+    ],
     devServer: {
         quiet: false,
         noInfo: false,

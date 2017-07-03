@@ -4,7 +4,7 @@ import {EventBus} from "../../shared/services/event";
 
 @Component({
   selector   : 'app',
-  templateUrl: `
+  template: `
     <!--<login-modal></login-modal>-->
     <!--<flash></flash>-->
     

@@ -10,20 +10,26 @@ module.exports = {
         'main':       './src/main.browser.ts',
     },
 
-    output: {
-        path: './dist',
-    },
-
     resolve: {
-        root: [ path.join(__dirname, 'src') ],
-        modulesDirectories: ['node_modules'],
-        extensions: ['', '.ts', '.js']
+        modules: [helpers.root('src'), helpers.root('node_modules')],
+        extensions: ['.ts', '.js']
     },
 
     plugins: [
-        new webpack.optimize.OccurenceOrderPlugin(true),
         new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
-        new ExtractTextPlugin('styles/app.css')
+        new ExtractTextPlugin('styles/app.css'),
+        new webpack.ContextReplacementPlugin(
+            /**
+             * The (\\|\/) piece accounts for path separators in *nix and Windows
+             */
+            /angular(\\|\/)core(\\|\/)@angular/,
+            helpers.root('src'), // location of your src
+            {
+                /**
+                 * Your Angular Async Route paths relative to this root directory
+                 */
+            }
+        ),
     ],
 
     module: {
@@ -34,20 +40,23 @@ module.exports = {
             { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
             { test: /\.html$/, loader: 'raw-loader' },
             /* global styles */
-            { test: /\.scss$/, loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap'), include: [helpers.root('src', 'styles')]},
+            { test: /\.scss$/, loader: ExtractTextPlugin.extract({
+                fallbackLoader: 'style-loader',
+                loader: "css-loader!sass-loader",
+            }), include: [helpers.root('src', 'styles')]},
             /* component styles */
-            { test: /\.scss$/, loader: 'raw!sass?sourceMap', exclude: [helpers.root('src', 'styles')]},
-            { test: /\.(png|jpe?g|gif|ico)\??.*$/, loader: 'url?limit=1024&name=/images/[name].[ext]' },
-            { test: /\.(woff(2)?|svg|eot|ttf)\??.*$/, loader: 'file?name=/fonts/[name].[ext]'}
+            { test: /\.scss$/, loader: 'raw-loader!sass-loader?sourceMap', exclude: [helpers.root('src', 'styles')]},
+            { test: /\.(png|jpe?g|gif|ico)\??.*$/, loader: 'url-loader?limit=1024&name=/images/[name].[ext]' },
+            { test: /\.(woff(2)?|svg|eot|ttf)\??.*$/, loader: 'file-loader?name=/fonts/[name].[ext]'}
         ]
     },
 
     node: {
-        global: 1,
+        global: true,
         crypto: 'empty',
-        module: 0,
-        Buffer: 0,
-        clearImmediate: 0,
-        setImmediate: 0
+        process: true,
+        module: false,
+        clearImmediate: false,
+        setImmediate: false
     }
 }

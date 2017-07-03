@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var config = {
     devtool: 'hidden-source-map',
     output: {
+        path: helpers.root('dist'),
         filename: '[name].js'
     },
     plugins: [
@@ -29,7 +30,11 @@ var config = {
             compress : { screw_ie8 : true, warnings: false },
             comments: false,
             sourceMap: false
-        })
+        }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false
+        }),
     ]
 };
 

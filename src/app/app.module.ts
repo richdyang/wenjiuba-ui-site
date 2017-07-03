@@ -5,7 +5,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserModule} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
 import {BaseComponent} from "./components/base";
-import {SidenavComponent} from "./components/sidenav";
 import {QandaModule} from "../qanda/qanda.module";
 import {UIRouterModule, RootModule, UIRouter, Transition, StateDeclaration} from "@uirouter/angular";
 import {PeekPanel} from "./components/peekPanel";
@@ -35,7 +34,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         EnoterModule,
     ],
     declarations: [
-        AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm, SidenavComponent,
+        AppComponent, BaseComponent, WelcomeComponent, LoginForm, SignupForm,
         PeekAnchor, PeekPanel
     ],
     providers: [
