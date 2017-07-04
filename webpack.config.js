@@ -1,13 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
-var helpers = require('./config/helpers');
+const helpers = require('./config/helpers');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
         'polyfills': './src/polyfills.browser.ts',
         'vendor':    './src/vendor.browser.ts',
-        'main':       './src/main.browser.ts',
+        'main':      './src/main.browser.ts',
     },
 
     resolve: {
@@ -16,7 +16,6 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
         new ExtractTextPlugin('styles/app.css'),
         new webpack.ContextReplacementPlugin(
             /**
@@ -33,21 +32,19 @@ module.exports = {
     ],
 
     module: {
-        loaders: [
+        rules: [
             // .ts files for TypeScript
-            { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: /node_modules/ },
-            { test: /\.ts$/, loaders: ['awesome-typescript-loader', 'angular2-template-loader'], include: /node_modules\/ng2-uploader/ },
-            { test: /\.css$/, loaders: ['to-string-loader', 'css-loader'] },
-            { test: /\.html$/, loader: 'raw-loader' },
+            { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], exclude: /node_modules/ },
+            { test: /\.ts$/, use: ['awesome-typescript-loader', 'angular2-template-loader'], include: /node_modules\/ng2-uploader/ },
+            { test: /\.css$/, use: ['to-string-loader', 'css-loader'] },
+            { test: /\.html$/, use: 'raw-loader' },
             /* global styles */
-            { test: /\.scss$/, loader: ExtractTextPlugin.extract({
-                fallbackLoader: 'style-loader',
-                loader: "css-loader!sass-loader",
-            }), include: [helpers.root('src', 'styles')]},
+            { test: /\.scss$/, use: ExtractTextPlugin.extract({fallback: 'style-loader', loader: "css-loader!sass-loader",}),
+              include: [helpers.root('src', 'styles')]},
             /* component styles */
-            { test: /\.scss$/, loader: 'raw-loader!sass-loader?sourceMap', exclude: [helpers.root('src', 'styles')]},
-            { test: /\.(png|jpe?g|gif|ico)\??.*$/, loader: 'url-loader?limit=1024&name=/images/[name].[ext]' },
-            { test: /\.(woff(2)?|svg|eot|ttf)\??.*$/, loader: 'file-loader?name=/fonts/[name].[ext]'}
+            { test: /\.scss$/, use: ['raw-loader', 'sass-loader?sourceMap'], exclude: [helpers.root('src', 'styles')]},
+            { test: /\.(png|jpe?g|gif|ico)\??.*$/, use: 'url-loader?limit=1024&name=/images/[name].[ext]' },
+            { test: /\.(woff(2)?|svg|eot|ttf)\??.*$/, use: 'url-loader?name=/fonts/[name].[ext]'}
         ]
     },
 

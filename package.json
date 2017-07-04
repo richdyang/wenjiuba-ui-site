@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Angular2 + Bootstrap + Webpack",
   "scripts": {
-    "build": "webpack --inline --colors --progress --display-error-details --display-cached --config webpack.prod.js",
+    "build": "webpack --colors --progress --config webpack.prod.js",
     "watch": "npm run build -- --watch",
     "server": "webpack-dev-server --inline --hot --colors --progress --port 3000  --content-base src --config webpack.dev.js",
     "start": "npm run server"

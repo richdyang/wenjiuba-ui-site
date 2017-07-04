@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const default_config = require('./webpack.config.js');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var helpers = require('./config/helpers');
 
 var config = {
     devtool: 'hidden-source-map',
@@ -16,13 +17,9 @@ var config = {
             { context: 'src/', from: 'favicon.ico'  },
             // { context: 'src/', from: '**/*.html'  }
         ]),
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(true),
+        new webpack.optimize.CommonsChunkPlugin({ name: ['main', 'vendor', 'polyfills'], minChunks: Infinity }),
         // new webpack.optimize.CommonsChunkPlugin({name:'vendor', filename:'[name].[chunkhash:8].js', minChunks: Infinity}),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true,
-        //     debug: false
-        // }),
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             mangle: { screw_ie8 : true },
